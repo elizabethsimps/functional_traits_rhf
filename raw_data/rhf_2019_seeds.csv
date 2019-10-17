@@ -1,4 +1,4 @@
-Date_collected,Recorder_1,Recorder_2,Plot_id,lat,long,Sp_num,Species,seeds_individual,notes
+Date_collected,Recorder_1,Recorder_2,Plot_id,lat,long,sp_num_indiv,Species,seeds_individual,notes
 2019-06-17,Elizabeth Simpson,,2323,,,S19-6a,Arnica cordifolia,all,wind blown some escaped
 2019-06-17,Elizabeth Simpson,,2323,,,S19-6b,Arnica cordifolia,all,wind blown some escaped
 2019-06-17,Elizabeth Simpson,,2323,,,S19-6c,Arnica cordifolia,all,wind blown some escaped
@@ -327,3 +327,34 @@ Date_collected,Recorder_1,Recorder_2,Plot_id,lat,long,Sp_num,Species,seeds_indiv
 2019-09-19,Elizabeth Simpson,,3323,,,S19-2c,Erigeron sp.,all,
 2019-09-19,Elizabeth Simpson,,3323,,,S19-2c,Erigeron sp.,all,
 2019-09-19,Elizabeth Simpson,,3322,,,S19-3a,Lupinus sericeus,all,just a few seeds - most of them are open
+2019-10-08,Elizabeth Simpson,Austin Koontz,2311,,,S19-6a,Leucopoa kingii,all,
+2019-10-08,Elizabeth Simpson,Austin Koontz,2311,,,S19-6b,Leucopoa kingii,all,
+2019-10-08,Elizabeth Simpson,Austin Koontz,2311,,,S19-6c,Leucopoa kingii,all,
+2019-10-08,Elizabeth Simpson,Austin Koontz,2311,,,S19-4a,Carex sp.,all,
+2019-10-08,Elizabeth Simpson,Austin Koontz,2311,,,S19-4b,Carex sp.,all,
+2019-10-08,Elizabeth Simpson,Austin Koontz,2311,,,S19-4c,Carex sp.,all,
+2019-10-08,Elizabeth Simpson,Austin Koontz,2311,,,S19-13a,Bromus carinatus,all,
+2019-10-08,Elizabeth Simpson,Austin Koontz,2311,,,S19-13b,Bromus carinatus,all,
+2019-10-08,Elizabeth Simpson,Austin Koontz,2311,,,S19-13c,Bromus carinatus,all,
+2019-10-08,Elizabeth Simpson,Austin Koontz,2311,,,S19-13d,Bromus carinatus,all,
+2019-10-08,Elizabeth Simpson,Austin Koontz,2313,,,S19-1a,Pseudotsuga menziesii,10 cones,
+2019-10-08,Elizabeth Simpson,Austin Koontz,2313,,,S19-1b,Pseudotsuga menziesii,10 cones,
+2019-10-16,Elizabeth Simpson,,2232,,,S19-4a,Artemesia ludoviciana,all,
+2019-10-16,Elizabeth Simpson,,2232,,,S19-4b,Artemesia ludoviciana,all,
+2019-10-16,Elizabeth Simpson,,2232,,,S19-4c,Artemesia ludoviciana,all,
+2019-10-16,Elizabeth Simpson,,2211,,,S19-10a1-2,Artemesia tridentata,11 inflorecenses,not really gone to seed though
+2019-10-16,Elizabeth Simpson,,1322,41.77389,-111.58972,S19-7a,Verbascum thapsus,all,
+2019-10-16,Elizabeth Simpson,,1322,41.77389,-111.58972,S19-7b,Verbascum thapsus,all,
+2019-10-16,Elizabeth Simpson,,1322,41.77389,-111.58972,S19-7c,Verbascum thapsus,all,
+2019-10-16,Elizabeth Simpson,,1322,41.77389,-111.58972,S19-8a,Rosa woodsii,all,
+2019-10-16,Elizabeth Simpson,,1322,41.77395,-111.59082,S19-10a,Apocynum androecephalum,all,
+2019-10-16,Elizabeth Simpson,,1322,41.77395,-111.59082,S19-10b,Apocynum androecephalum,all,
+2019-10-16,Elizabeth Simpson,,1322,41.77395,-111.59082,S19-10c,Apocynum androecephalum,all,
+2019-10-16,Elizabeth Simpson,,1322,,,S19-5a,Humulus lulupus,all,
+2019-10-16,Elizabeth Simpson,,1322,,,S19-5b,Humulus lulupus,all,
+2019-10-16,Elizabeth Simpson,,1322,,,S19-2a1-3,Arctium minus,all,
+2019-10-16,Elizabeth Simpson,,1322,,,S19-2b,Arctium minus,all,
+2019-10-16,Elizabeth Simpson,,1331,,,S19-6b,Geum macrophyllum,all,
+2019-10-16,Elizabeth Simpson,,1331,,,S19-6c,Geum macrophyllum,all,
+2019-10-16,Elizabeth Simpson,,1331,,,S19-6d,Geum macrophyllum,all,
+2019-10-16,Elizabeth Simpson,,1331,,,S19-10a,Geraium richardsonii,all,
