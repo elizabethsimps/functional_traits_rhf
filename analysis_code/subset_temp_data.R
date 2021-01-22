@@ -1,34 +1,30 @@
 # Subset temperature data change plot ID
 # Elizabeth Simpson # 2019-07-29
-setwd("~/Documents/projects/")
+setwd("~/Documents/projects/functional_traits_rhf")
 library(tidyverse)
 library(lubridate)
 
 # load data
-temp <- read.csv("./functional_traits_rhf/clean_data/formatted_temp_data.csv", as.is=TRUE)
+### Double check that this is correclty formatted ###
+temp <- read.csv("./clean_data/17-18_temp_data.csv", as.is=TRUE)
 
-# reformat plot ID to match
-temp <- temp %>% extract(Plotcode, c("first", "second", "third", "fourth"), "([[:digit:]]+)([[:digit:]]+)([[:digit:]]+)([[:digit:]]+)", remove = FALSE)
-temp$Plot_id <- with(temp, paste0(first, second, third, fourth))
-temp$Plot_id <- as.integer(temp$Plot_id)
-temp <- temp[,-c(1:5)]
-temp <- temp[c(6,1:5)]
-
-temp$datetime <- with(temp, paste0(Year,"-",Month,"-",Day,"T",Time))
+temp$datetime <- with(temp, paste0(year,"-",month,"-",day,"T",time))
 temp$datetime <- as.POSIXct(temp$datetime,
                                     format = "%Y-%m-%dT%H:%M",
                                     tz = "MST")
-# subset data - 2009-2011
+
+# summarize date ranges to get time period completely covered by sensors
+date.range <- as.data.frame(temp %>%
+                              group_by(plot) %>%
+                              summarize(first.m=first(month),first.d=first(day), first.t=first(time),last.m=last(month),last.d=last(day), last.t=last(time)))
+
+# subset data
 temp.sub <- subset(temp,
-                    datetime >= as.POSIXct('2017-09-28 00:00',
-                                                tz = "MST") &
-                    datetime <= as.POSIXct('2018-09-12 00:00',
-                                                tz = "MST"))
-
-# test date range
-date.range <- as.data.frame(temp.sub %>%
-                              group_by(Plot_id) %>%
-                              summarize(first.m=first(Month),first.d=first(Day), first.t=first(Time),last.m=last(Month),last.d=last(Day), last.t=last(Time)))
-
-# make dataframe and save
+                   datetime >= as.POSIXct('2017-09-28 00:00',
+                                          tz = "MST") &
+                     datetime <= as.POSIXct('2018-09-12 00:00',
+                                            tz = "MST"))
 temp.sub <- temp.sub[,1:6]
+
+######################################################
+### START ANALYSIS ... what are you interested in? ###
