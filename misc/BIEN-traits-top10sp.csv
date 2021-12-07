@@ -1,0 +1,983 @@
+54,Artemisia tridentata,whole plant woodiness,woody,NA
+167,Bromus tectorum,whole plant woodiness,herbaceous,NA
+225,Lactuca serriola,whole plant woodiness,herbaceous,NA
+255,Lactuca serriola,whole plant woodiness,herbaceous,NA
+518,Poa bulbosa,whole plant woodiness,herbaceous,NA
+604,Poa pratensis,whole plant woodiness,herbaceous,NA
+880,Poa pratensis,whole plant woodiness,herbaceous,NA
+886,Pseudoroegneria spicata,whole plant woodiness,herbaceous,NA
+965,Tragopogon dubius,whole plant woodiness,herbaceous,NA
+24,Artemisia tridentata,whole plant vegetative phenology,evergreen,NA
+18,Artemisia tridentata,whole plant height,3.9624,m
+84,Artemisia tridentata,whole plant height,5.1816,m
+103,Bromus tectorum,whole plant height,0.14,m
+112,Bromus tectorum,whole plant height,0.16,m
+115,Bromus tectorum,whole plant height,0.22,m
+117,Bromus tectorum,whole plant height,0.23,m
+118,Bromus tectorum,whole plant height,0.05,m
+119,Bromus tectorum,whole plant height,0.39,m
+121,Bromus tectorum,whole plant height,0.21,m
+130,Bromus tectorum,whole plant height,0.23,m
+137,Bromus tectorum,whole plant height,0.125,m
+141,Bromus tectorum,whole plant height,0.29,m
+144,Bromus tectorum,whole plant height,0.14,m
+145,Bromus tectorum,whole plant height,0.32,m
+150,Bromus tectorum,whole plant height,0.13,m
+152,Bromus tectorum,whole plant height,0.23,m
+156,Bromus tectorum,whole plant height,0.19,m
+157,Bromus tectorum,whole plant height,0.36,m
+161,Bromus tectorum,whole plant height,0.52,m
+163,Bromus tectorum,whole plant height,0.6,m
+164,Bromus tectorum,whole plant height,0.21,m
+171,Bromus tectorum,whole plant height,0.24,m
+178,Bromus tectorum,whole plant height,0.19,m
+179,Bromus tectorum,whole plant height,0.2,m
+180,Bromus tectorum,whole plant height,0.17,m
+181,Bromus tectorum,whole plant height,0.884211,m
+189,Bromus tectorum,whole plant height,0.2,m
+192,Bromus tectorum,whole plant height,0.4,m
+193,Bromus tectorum,whole plant height,0.23,m
+210,Bromus tectorum,whole plant height,0.24,m
+214,Bromus tectorum,whole plant height,0.26,m
+220,Lactuca serriola,whole plant height,0.219473,m
+222,Lactuca serriola,whole plant height,0.731363,m
+228,Lactuca serriola,whole plant height,0.158212,m
+233,Lactuca serriola,whole plant height,0.184423,m
+234,Lactuca serriola,whole plant height,0.675,m
+237,Lactuca serriola,whole plant height,0.186042,m
+245,Lactuca serriola,whole plant height,0.634758,m
+248,Lactuca serriola,whole plant height,0.673803,m
+252,Lactuca serriola,whole plant height,0.495145,m
+258,Lactuca serriola,whole plant height,0.310045,m
+264,Lactuca serriola,whole plant height,1,m
+268,Lactuca serriola,whole plant height,0.536377,m
+272,Lactuca serriola,whole plant height,1.5,m
+280,Lactuca serriola,whole plant height,0.629048,m
+283,Lactuca serriola,whole plant height,1,m
+287,Lactuca serriola,whole plant height,0.9,m
+298,Lactuca serriola,whole plant height,0.200159,m
+311,Lactuca serriola,whole plant height,0.18353,m
+335,Lactuca serriola,whole plant height,0.43076,m
+359,Lactuca serriola,whole plant height,0.192725,m
+360,Lactuca serriola,whole plant height,0.776825,m
+361,Lactuca serriola,whole plant height,0.249439,m
+372,Lactuca serriola,whole plant height,0.288114,m
+375,Lactuca serriola,whole plant height,0.291125,m
+378,Lactuca serriola,whole plant height,0.775056,m
+379,Lactuca serriola,whole plant height,0.413482,m
+381,Lactuca serriola,whole plant height,0.186137,m
+383,Lactuca serriola,whole plant height,0.742204,m
+385,Lactuca serriola,whole plant height,0.45,m
+388,Lactuca serriola,whole plant height,0.285,m
+402,Lactuca serriola,whole plant height,0.337873,m
+403,Lactuca serriola,whole plant height,0.538905,m
+405,Lactuca serriola,whole plant height,0.551319,m
+417,Lactuca serriola,whole plant height,1.01585,m
+424,Lactuca serriola,whole plant height,0.9025,m
+426,Lactuca serriola,whole plant height,0.769449,m
+429,Lactuca serriola,whole plant height,0.186902,m
+435,Lactuca serriola,whole plant height,0.249502,m
+450,Lactuca serriola,whole plant height,0.691234,m
+459,Lactuca serriola,whole plant height,0.510512,m
+461,Lactuca serriola,whole plant height,0.228163,m
+466,Lactuca serriola,whole plant height,0.423431,m
+472,Lactuca serriola,whole plant height,0.280934,m
+490,Lactuca serriola,whole plant height,0.03,m
+498,Poa bulbosa,whole plant height,0.11,m
+504,Poa bulbosa,whole plant height,0.07,m
+523,Poa bulbosa,whole plant height,0.15,m
+530,Poa bulbosa,whole plant height,0.6,m
+545,Poa pratensis,whole plant height,0.217,m
+603,Poa pratensis,whole plant height,0.27,m
+619,Poa pratensis,whole plant height,0.3,m
+636,Poa pratensis,whole plant height,0.8,m
+641,Poa pratensis,whole plant height,0.135,m
+665,Poa pratensis,whole plant height,0.5,m
+733,Poa pratensis,whole plant height,0.18,m
+748,Poa pratensis,whole plant height,0.04,m
+829,Poa pratensis,whole plant height,0.1,m
+845,Poa pratensis,whole plant height,0.27,m
+850,Poa pratensis,whole plant height,0.09,m
+865,Poa pratensis,whole plant height,0.461538,m
+899,Tragopogon dubius,whole plant height,0.3,m
+902,Tragopogon dubius,whole plant height,0.425,m
+929,Tragopogon dubius,whole plant height,0.55,m
+4,Alyssum desertorum,whole plant growth form diversity,Herb,NA
+127,Bromus tectorum,whole plant growth form diversity,Herb,NA
+219,Crepis acuminata,whole plant growth form diversity,Herb,NA
+351,Lactuca serriola,whole plant growth form diversity,Herb,NA
+493,Poa bulbosa,whole plant growth form diversity,Herb,NA
+700,Poa pratensis,whole plant growth form diversity,Tree_Herb,NA
+890,Pseudoroegneria spicata,whole plant growth form diversity,Herb,NA
+894,Symphoricarpos oreophilus,whole plant growth form diversity,Shrub,NA
+936,Tragopogon dubius,whole plant growth form diversity,Herb,NA
+3,Alyssum desertorum,whole plant growth form,Herb,NA
+65,Artemisia tridentata,whole plant growth form,shrub,NA
+70,Artemisia tridentata,whole plant growth form,shrub,NA
+76,Artemisia tridentata,whole plant growth form,shrub,NA
+81,Artemisia tridentata,whole plant growth form,shrub,NA
+88,Artemisia tridentata,whole plant growth form,shrub,NA
+162,Bromus tectorum,whole plant growth form,grass,NA
+201,Bromus tectorum,whole plant growth form,Herb,NA
+217,Crepis acuminata,whole plant growth form,Herb,NA
+271,Lactuca serriola,whole plant growth form,Herb,NA
+510,Poa bulbosa,whole plant growth form,Herb,NA
+632,Poa pratensis,whole plant growth form,grass,NA
+642,Poa pratensis,whole plant growth form,sedge,NA
+650,Poa pratensis,whole plant growth form,grass,NA
+774,Poa pratensis,whole plant growth form,Herb,NA
+786,Poa pratensis,whole plant growth form,grass,NA
+881,Pseudoroegneria spicata,whole plant growth form,grass,NA
+883,Pseudoroegneria spicata,whole plant growth form,per grass,NA
+887,Pseudoroegneria spicata,whole plant growth form,bunchgrass,NA
+889,Pseudoroegneria spicata,whole plant growth form,Herb,NA
+891,Pseudoroegneria spicata,whole plant growth form,bunchgrass,NA
+893,Symphoricarpos oreophilus,whole plant growth form,Shrub,NA
+963,Tragopogon dubius,whole plant growth form,Herb,NA
+,scrubbed_species_binomial,trait_name,trait_value,unit
+1,Alyssum desertorum,seed mass,0.46,mg
+2,Alyssum desertorum,seed mass,0.46,mg
+5,Alyssum desertorum,seed mass,0.46,mg
+14,Artemisia tridentata,seed mass,0.259,mg
+30,Artemisia tridentata,seed mass,0.1839,mg
+35,Artemisia tridentata,seed mass,0.183939,mg
+43,Artemisia tridentata,seed mass,0.2,mg
+59,Artemisia tridentata,seed mass,0.183939,mg
+60,Artemisia tridentata,seed mass,0.2,mg
+82,Artemisia tridentata,seed mass,0.2,mg
+91,Artemisia tridentata,seed mass,0.272,mg
+94,Artemisia tridentata,seed mass,0.272,mg
+98,Artemisia tridentata,seed mass,0.259,mg
+102,Bromus tectorum,seed mass,1.372,mg
+104,Bromus tectorum,seed mass,2.181,mg
+111,Bromus tectorum,seed mass,2.04,mg
+113,Bromus tectorum,seed mass,2.995,mg
+114,Bromus tectorum,seed mass,2.6,mg
+125,Bromus tectorum,seed mass,3.65,mg
+126,Bromus tectorum,seed mass,1.83,mg
+135,Bromus tectorum,seed mass,2.995,mg
+136,Bromus tectorum,seed mass,3.27,mg
+140,Bromus tectorum,seed mass,2.443,mg
+148,Bromus tectorum,seed mass,3.026209,mg
+154,Bromus tectorum,seed mass,2.4,mg
+160,Bromus tectorum,seed mass,1.83,mg
+170,Bromus tectorum,seed mass,2.6,mg
+173,Bromus tectorum,seed mass,2.04,mg
+186,Bromus tectorum,seed mass,1.83,mg
+190,Bromus tectorum,seed mass,2.995,mg
+198,Bromus tectorum,seed mass,2.04,mg
+207,Bromus tectorum,seed mass,2.995,mg
+213,Bromus tectorum,seed mass,2.6,mg
+223,Lactuca serriola,seed mass,0.515,mg
+230,Lactuca serriola,seed mass,0.515,mg
+231,Lactuca serriola,seed mass,0.515,mg
+238,Lactuca serriola,seed mass,0.37,mg
+239,Lactuca serriola,seed mass,0.515,mg
+244,Lactuca serriola,seed mass,0.515,mg
+247,Lactuca serriola,seed mass,0.462,mg
+261,Lactuca serriola,seed mass,0.515,mg
+263,Lactuca serriola,seed mass,0.533,mg
+266,Lactuca serriola,seed mass,0.515,mg
+273,Lactuca serriola,seed mass,0.550291,mg
+275,Lactuca serriola,seed mass,0.2,mg
+281,Lactuca serriola,seed mass,0.515,mg
+289,Lactuca serriola,seed mass,0.515,mg
+291,Lactuca serriola,seed mass,0.515,mg
+295,Lactuca serriola,seed mass,0.515,mg
+296,Lactuca serriola,seed mass,0.515,mg
+297,Lactuca serriola,seed mass,0.515,mg
+299,Lactuca serriola,seed mass,0.462,mg
+304,Lactuca serriola,seed mass,0.515,mg
+307,Lactuca serriola,seed mass,0.37,mg
+314,Lactuca serriola,seed mass,0.515,mg
+315,Lactuca serriola,seed mass,0.515,mg
+327,Lactuca serriola,seed mass,0.515,mg
+328,Lactuca serriola,seed mass,0.383,mg
+330,Lactuca serriola,seed mass,0.515,mg
+339,Lactuca serriola,seed mass,0.515,mg
+341,Lactuca serriola,seed mass,0.45,mg
+343,Lactuca serriola,seed mass,0.515,mg
+346,Lactuca serriola,seed mass,0.515,mg
+349,Lactuca serriola,seed mass,0.515,mg
+356,Lactuca serriola,seed mass,0.5,mg
+357,Lactuca serriola,seed mass,0.45,mg
+362,Lactuca serriola,seed mass,0.462,mg
+368,Lactuca serriola,seed mass,0.515,mg
+374,Lactuca serriola,seed mass,0.515,mg
+384,Lactuca serriola,seed mass,0.515,mg
+389,Lactuca serriola,seed mass,0.417,mg
+392,Lactuca serriola,seed mass,0.515,mg
+399,Lactuca serriola,seed mass,0.515,mg
+407,Lactuca serriola,seed mass,0.515,mg
+409,Lactuca serriola,seed mass,0.5,mg
+419,Lactuca serriola,seed mass,0.383,mg
+425,Lactuca serriola,seed mass,0.515,mg
+427,Lactuca serriola,seed mass,0.37,mg
+433,Lactuca serriola,seed mass,0.515,mg
+437,Lactuca serriola,seed mass,0.515,mg
+445,Lactuca serriola,seed mass,0.515,mg
+451,Lactuca serriola,seed mass,0.515,mg
+453,Lactuca serriola,seed mass,0.5,mg
+464,Lactuca serriola,seed mass,0.45,mg
+465,Lactuca serriola,seed mass,0.515,mg
+477,Lactuca serriola,seed mass,0.515,mg
+478,Lactuca serriola,seed mass,0.515,mg
+496,Poa bulbosa,seed mass,0.04,mg
+502,Poa bulbosa,seed mass,0.69,mg
+503,Poa bulbosa,seed mass,1.7,mg
+512,Poa bulbosa,seed mass,0.08,mg
+519,Poa bulbosa,seed mass,0.04,mg
+520,Poa bulbosa,seed mass,0.04,mg
+521,Poa bulbosa,seed mass,0.5731,mg
+541,Poa pratensis,seed mass,0.37,mg
+546,Poa pratensis,seed mass,0.38,mg
+547,Poa pratensis,seed mass,0.39,mg
+555,Poa pratensis,seed mass,0.195,mg
+559,Poa pratensis,seed mass,0.52,mg
+562,Poa pratensis,seed mass,0.14,mg
+572,Poa pratensis,seed mass,0.23,mg
+579,Poa pratensis,seed mass,0.2,mg
+583,Poa pratensis,seed mass,0.31,mg
+584,Poa pratensis,seed mass,0.34,mg
+585,Poa pratensis,seed mass,0.313,mg
+595,Poa pratensis,seed mass,0.195,mg
+614,Poa pratensis,seed mass,0.313,mg
+615,Poa pratensis,seed mass,0.2,mg
+626,Poa pratensis,seed mass,0.2,mg
+640,Poa pratensis,seed mass,0.282177,mg
+643,Poa pratensis,seed mass,0.38,mg
+672,Poa pratensis,seed mass,0.4,mg
+681,Poa pratensis,seed mass,0.37,mg
+688,Poa pratensis,seed mass,0.2,mg
+690,Poa pratensis,seed mass,0.197877,mg
+734,Poa pratensis,seed mass,0.4,mg
+760,Poa pratensis,seed mass,0.19,mg
+761,Poa pratensis,seed mass,0.14,mg
+762,Poa pratensis,seed mass,0.27,mg
+765,Poa pratensis,seed mass,0.14,mg
+772,Poa pratensis,seed mass,0.19,mg
+789,Poa pratensis,seed mass,0.313,mg
+791,Poa pratensis,seed mass,0.43,mg
+795,Poa pratensis,seed mass,0.37,mg
+796,Poa pratensis,seed mass,0.25,mg
+813,Poa pratensis,seed mass,0.32,mg
+819,Poa pratensis,seed mass,0.4,mg
+821,Poa pratensis,seed mass,0.2,mg
+825,Poa pratensis,seed mass,0.3,mg
+851,Poa pratensis,seed mass,0.14,mg
+854,Poa pratensis,seed mass,0.35,mg
+882,Pseudoroegneria spicata,seed mass,3.6,mg
+888,Pseudoroegneria spicata,seed mass,4.8,mg
+898,Tragopogon dubius,seed mass,12.2,mg
+900,Tragopogon dubius,seed mass,10.745,mg
+905,Tragopogon dubius,seed mass,6.84,mg
+920,Tragopogon dubius,seed mass,7,mg
+923,Tragopogon dubius,seed mass,10.745,mg
+925,Tragopogon dubius,seed mass,6.84,mg
+926,Tragopogon dubius,seed mass,12.2,mg
+935,Tragopogon dubius,seed mass,6.84,mg
+938,Tragopogon dubius,seed mass,6.84,mg
+941,Tragopogon dubius,seed mass,12.2,mg
+975,Tragopogon dubius,seed mass,6.84,mg
+980,Tragopogon dubius,seed mass,6.84,mg
+107,Bromus tectorum,plant flowering begin,6/5/1958,date
+108,Bromus tectorum,plant flowering begin,6,month
+168,Bromus tectorum,plant flowering begin,5,month
+200,Bromus tectorum,plant flowering begin,6,month
+216,Bromus tectorum,plant flowering begin,6/4/1960,date
+232,Lactuca serriola,plant flowering begin,7/21/1957,date
+236,Lactuca serriola,plant flowering begin,7,month
+250,Lactuca serriola,plant flowering begin,7/20/1958,date
+285,Lactuca serriola,plant flowering begin,7,month
+301,Lactuca serriola,plant flowering begin,7/8/1920,date
+303,Lactuca serriola,plant flowering begin,7/20/1954,date
+306,Lactuca serriola,plant flowering begin,7/18/1911,date
+309,Lactuca serriola,plant flowering begin,7,month
+313,Lactuca serriola,plant flowering begin,7/6/1921,date
+325,Lactuca serriola,plant flowering begin,7,month
+331,Lactuca serriola,plant flowering begin,7,month
+338,Lactuca serriola,plant flowering begin,7/16/1955,date
+358,Lactuca serriola,plant flowering begin,7,month
+365,Lactuca serriola,plant flowering begin,7,month
+367,Lactuca serriola,plant flowering begin,7,month
+390,Lactuca serriola,plant flowering begin,7/8/1923,date
+400,Lactuca serriola,plant flowering begin,7/13/1913,date
+430,Lactuca serriola,plant flowering begin,7,month
+431,Lactuca serriola,plant flowering begin,7,month
+434,Lactuca serriola,plant flowering begin,7/25/1951,date
+438,Lactuca serriola,plant flowering begin,7,month
+439,Lactuca serriola,plant flowering begin,7,month
+442,Lactuca serriola,plant flowering begin,7/18/1922,date
+468,Lactuca serriola,plant flowering begin,7/9/1910,date
+473,Lactuca serriola,plant flowering begin,7,month
+476,Lactuca serriola,plant flowering begin,7,month
+479,Lactuca serriola,plant flowering begin,7/22/1929,date
+481,Lactuca serriola,plant flowering begin,7,month
+486,Lactuca serriola,plant flowering begin,7/21/1912,date
+532,Poa bulbosa,plant flowering begin,5,month
+533,Poa pratensis,plant flowering begin,6/10/1913,date
+540,Poa pratensis,plant flowering begin,6/17/1917,date
+542,Poa pratensis,plant flowering begin,6,month
+550,Poa pratensis,plant flowering begin,6/3/1914,date
+551,Poa pratensis,plant flowering begin,6,month
+567,Poa pratensis,plant flowering begin,6/6/1912,date
+598,Poa pratensis,plant flowering begin,6,month
+606,Poa pratensis,plant flowering begin,6/3/1911,date
+609,Poa pratensis,plant flowering begin,5,month
+623,Poa pratensis,plant flowering begin,6/7/1956,date
+638,Poa pratensis,plant flowering begin,6,month
+691,Poa pratensis,plant flowering begin,6,month
+697,Poa pratensis,plant flowering begin,6,month
+703,Poa pratensis,plant flowering begin,6,month
+707,Poa pratensis,plant flowering begin,6/7/1920,date
+711,Poa pratensis,plant flowering begin,6/1/1961,date
+714,Poa pratensis,plant flowering begin,6/1/1921,date
+723,Poa pratensis,plant flowering begin,5/15/1955,date
+724,Poa pratensis,plant flowering begin,6,month
+727,Poa pratensis,plant flowering begin,5/31/1934,date
+754,Poa pratensis,plant flowering begin,6/7/1925,date
+766,Poa pratensis,plant flowering begin,6,month
+768,Poa pratensis,plant flowering begin,6,month
+773,Poa pratensis,plant flowering begin,5,month
+776,Poa pratensis,plant flowering begin,6,month
+777,Poa pratensis,plant flowering begin,5,month
+809,Poa pratensis,plant flowering begin,6,month
+811,Poa pratensis,plant flowering begin,6/6/1928,date
+814,Poa pratensis,plant flowering begin,6/12/1915,date
+827,Poa pratensis,plant flowering begin,6/13/1950,date
+838,Poa pratensis,plant flowering begin,6,month
+841,Poa pratensis,plant flowering begin,6,month
+866,Poa pratensis,plant flowering begin,5/28/1958,date
+871,Poa pratensis,plant flowering begin,6/11/1918,date
+872,Poa pratensis,plant flowering begin,6/8/1953,date
+874,Poa pratensis,plant flowering begin,5,month
+876,Poa pratensis,plant flowering begin,6,month
+895,Tragopogon dubius,plant flowering begin,6/18/1910,date
+906,Tragopogon dubius,plant flowering begin,6/6/1960,date
+909,Tragopogon dubius,plant flowering begin,6,month
+910,Tragopogon dubius,plant flowering begin,6/13/1935,date
+911,Tragopogon dubius,plant flowering begin,6,month
+913,Tragopogon dubius,plant flowering begin,6/11/1957,date
+917,Tragopogon dubius,plant flowering begin,6/14/1914,date
+919,Tragopogon dubius,plant flowering begin,6/2/1946,date
+922,Tragopogon dubius,plant flowering begin,6,month
+927,Tragopogon dubius,plant flowering begin,5,month
+928,Tragopogon dubius,plant flowering begin,6/13/1953,date
+930,Tragopogon dubius,plant flowering begin,6/6/1937,date
+931,Tragopogon dubius,plant flowering begin,6/12/1952,date
+933,Tragopogon dubius,plant flowering begin,6,month
+934,Tragopogon dubius,plant flowering begin,5,month
+937,Tragopogon dubius,plant flowering begin,6/10/1956,date
+943,Tragopogon dubius,plant flowering begin,6,month
+944,Tragopogon dubius,plant flowering begin,6/9/1954,date
+946,Tragopogon dubius,plant flowering begin,6/5/1934,date
+948,Tragopogon dubius,plant flowering begin,6,month
+949,Tragopogon dubius,plant flowering begin,5/30/1955,date
+950,Tragopogon dubius,plant flowering begin,5/28/1958,date
+951,Tragopogon dubius,plant flowering begin,6,month
+952,Tragopogon dubius,plant flowering begin,6/8/1931,date
+953,Tragopogon dubius,plant flowering begin,6,month
+954,Tragopogon dubius,plant flowering begin,6,month
+955,Tragopogon dubius,plant flowering begin,6/12/1961,date
+957,Tragopogon dubius,plant flowering begin,5,month
+958,Tragopogon dubius,plant flowering begin,6,month
+960,Tragopogon dubius,plant flowering begin,6,month
+961,Tragopogon dubius,plant flowering begin,6,month
+962,Tragopogon dubius,plant flowering begin,6,month
+969,Tragopogon dubius,plant flowering begin,6,month
+970,Tragopogon dubius,plant flowering begin,6,month
+971,Tragopogon dubius,plant flowering begin,6/5/1940,date
+71,Artemisia tridentata,maximum whole plant longevity,42,years
+885,Pseudoroegneria spicata,maximum whole plant longevity,43,years
+134,Bromus tectorum,maximum whole plant height,0.6,m
+410,Lactuca serriola,maximum whole plant height,1,m
+804,Poa pratensis,maximum whole plant height,0.8,m
+276,Lactuca serriola,leaf thickness,0.5725,mm
+353,Lactuca serriola,leaf thickness,0.366666667,mm
+729,Poa pratensis,leaf thickness,0.180833333,mm
+824,Poa pratensis,leaf thickness,0.211333333,mm
+48,Artemisia tridentata,leaf stomatal conductance for H2O per leaf area,221,mol.H2O.m-2.s-1
+55,Artemisia tridentata,leaf stomatal conductance for H2O per leaf area,174,mol.H2O.m-2.s-1
+78,Artemisia tridentata,leaf stomatal conductance for H2O per leaf area,94,mol.H2O.m-2.s-1
+86,Artemisia tridentata,leaf stomatal conductance for H2O per leaf area,133,mol.H2O.m-2.s-1
+702,Poa pratensis,leaf stomatal conductance for H2O per leaf area,747,mol.H2O.m-2.s-1
+722,Poa pratensis,leaf stomatal conductance for H2O per leaf area,251,mol.H2O.m-2.s-1
+759,Poa pratensis,leaf stomatal conductance for H2O per leaf area,242.433333,mol.H2O.m-2.s-1
+36,Artemisia tridentata,leaf photosynthetic rate per leaf dry mass,0.05226,Âµmol.g-1.s-1
+39,Artemisia tridentata,leaf photosynthetic rate per leaf dry mass,0.08307,Âµmol.g-1.s-1
+51,Artemisia tridentata,leaf photosynthetic rate per leaf dry mass,0.06102,Âµmol.g-1.s-1
+66,Artemisia tridentata,leaf photosynthetic rate per leaf dry mass,0.03692,Âµmol.g-1.s-1
+810,Poa pratensis,leaf photosynthetic rate per leaf dry mass,0.11907,Âµmol.g-1.s-1
+846,Poa pratensis,leaf photosynthetic rate per leaf dry mass,0.30096,Âµmol.g-1.s-1
+20,Artemisia tridentata,leaf photosynthetic rate per leaf area,11.3,Âµmol.m-2.s-1
+31,Artemisia tridentata,leaf photosynthetic rate per leaf area,11.7,Âµmol.m-2.s-1
+42,Artemisia tridentata,leaf photosynthetic rate per leaf area,7.8,Âµmol.m-2.s-1
+62,Artemisia tridentata,leaf photosynthetic rate per leaf area,7.1,Âµmol.m-2.s-1
+543,Poa pratensis,leaf photosynthetic rate per leaf area,9.8,Âµmol.m-2.s-1
+549,Poa pratensis,leaf photosynthetic rate per leaf area,30.4,Âµmol.m-2.s-1
+842,Poa pratensis,leaf photosynthetic rate per leaf area,9.31166667,Âµmol.m-2.s-1
+11,Artemisia tridentata,leaf phosphorus content per leaf dry mass,2.6,mg.g-1
+21,Artemisia tridentata,leaf phosphorus content per leaf dry mass,2.63597,mg.g-1
+26,Artemisia tridentata,leaf phosphorus content per leaf dry mass,2.54018,mg.g-1
+27,Artemisia tridentata,leaf phosphorus content per leaf dry mass,2.27752,mg.g-1
+28,Artemisia tridentata,leaf phosphorus content per leaf dry mass,3.70144,mg.g-1
+32,Artemisia tridentata,leaf phosphorus content per leaf dry mass,3.26239,mg.g-1
+38,Artemisia tridentata,leaf phosphorus content per leaf dry mass,2.7,mg.g-1
+47,Artemisia tridentata,leaf phosphorus content per leaf dry mass,2.73677,mg.g-1
+52,Artemisia tridentata,leaf phosphorus content per leaf dry mass,2.5,mg.g-1
+69,Artemisia tridentata,leaf phosphorus content per leaf dry mass,2.5,mg.g-1
+80,Artemisia tridentata,leaf phosphorus content per leaf dry mass,2.11692,mg.g-1
+538,Poa pratensis,leaf phosphorus content per leaf dry mass,2.69961,mg.g-1
+907,Tragopogon dubius,leaf phosphorus content per leaf dry mass,2.50788,mg.g-1
+918,Tragopogon dubius,leaf phosphorus content per leaf dry mass,1.21156,mg.g-1
+947,Tragopogon dubius,leaf phosphorus content per leaf dry mass,2.65958,mg.g-1
+964,Tragopogon dubius,leaf phosphorus content per leaf dry mass,0.84565,mg.g-1
+976,Tragopogon dubius,leaf phosphorus content per leaf dry mass,2.51665,mg.g-1
+977,Tragopogon dubius,leaf phosphorus content per leaf dry mass,1.41769,mg.g-1
+15,Artemisia tridentata,leaf phosphorus content per leaf area,0.46296,g.m-2
+63,Artemisia tridentata,leaf phosphorus content per leaf area,0.37313,g.m-2
+74,Artemisia tridentata,leaf phosphorus content per leaf area,0.36619,g.m-2
+96,Artemisia tridentata,leaf phosphorus content per leaf area,0.51923,g.m-2
+6,Artemisia tridentata,leaf nitrogen content per leaf dry mass,25.1,mg.g-1
+9,Artemisia tridentata,leaf nitrogen content per leaf dry mass,16.487,mg.g-1
+10,Artemisia tridentata,leaf nitrogen content per leaf dry mass,14.1,mg.g-1
+17,Artemisia tridentata,leaf nitrogen content per leaf dry mass,14.398,mg.g-1
+23,Artemisia tridentata,leaf nitrogen content per leaf dry mass,32.204,mg.g-1
+25,Artemisia tridentata,leaf nitrogen content per leaf dry mass,22.082,mg.g-1
+34,Artemisia tridentata,leaf nitrogen content per leaf dry mass,17.8,mg.g-1
+44,Artemisia tridentata,leaf nitrogen content per leaf dry mass,44.057,mg.g-1
+49,Artemisia tridentata,leaf nitrogen content per leaf dry mass,14.1,mg.g-1
+50,Artemisia tridentata,leaf nitrogen content per leaf dry mass,43.553,mg.g-1
+56,Artemisia tridentata,leaf nitrogen content per leaf dry mass,18.312,mg.g-1
+77,Artemisia tridentata,leaf nitrogen content per leaf dry mass,26.702,mg.g-1
+87,Artemisia tridentata,leaf nitrogen content per leaf dry mass,14.6,mg.g-1
+282,Lactuca serriola,leaf nitrogen content per leaf dry mass,28,mg.g-1
+497,Poa bulbosa,leaf nitrogen content per leaf dry mass,13.42285,mg.g-1
+656,Poa pratensis,leaf nitrogen content per leaf dry mass,40.1,mg.g-1
+673,Poa pratensis,leaf nitrogen content per leaf dry mass,16.6,mg.g-1
+677,Poa pratensis,leaf nitrogen content per leaf dry mass,13.9,mg.g-1
+853,Poa pratensis,leaf nitrogen content per leaf dry mass,21.66493,mg.g-1
+896,Tragopogon dubius,leaf nitrogen content per leaf dry mass,15,mg.g-1
+897,Tragopogon dubius,leaf nitrogen content per leaf dry mass,28.824,mg.g-1
+903,Tragopogon dubius,leaf nitrogen content per leaf dry mass,15,mg.g-1
+912,Tragopogon dubius,leaf nitrogen content per leaf dry mass,16,mg.g-1
+915,Tragopogon dubius,leaf nitrogen content per leaf dry mass,22.841,mg.g-1
+968,Tragopogon dubius,leaf nitrogen content per leaf dry mass,28.825,mg.g-1
+8,Artemisia tridentata,leaf nitrogen content per leaf area,0.00261111111,kg.m-2
+13,Artemisia tridentata,leaf nitrogen content per leaf area,0.00210447761,kg.m-2
+64,Artemisia tridentata,leaf nitrogen content per leaf area,0.00280769231,kg.m-2
+89,Artemisia tridentata,leaf nitrogen content per leaf area,0.00250704225,kg.m-2
+634,Poa pratensis,leaf nitrogen content per leaf area,0.00182,kg.m-2
+738,Poa pratensis,leaf nitrogen content per leaf area,0.00114403292,kg.m-2
+99,Bromus tectorum,leaf dry mass per leaf fresh mass,194.09,mg.g-1
+147,Bromus tectorum,leaf dry mass per leaf fresh mass,139.36,mg.g-1
+158,Bromus tectorum,leaf dry mass per leaf fresh mass,151.45,mg.g-1
+175,Bromus tectorum,leaf dry mass per leaf fresh mass,151.45,mg.g-1
+188,Bromus tectorum,leaf dry mass per leaf fresh mass,155.1,mg.g-1
+240,Lactuca serriola,leaf dry mass per leaf fresh mass,176.6215919,mg.g-1
+277,Lactuca serriola,leaf dry mass per leaf fresh mass,178.4218523,mg.g-1
+441,Lactuca serriola,leaf dry mass per leaf fresh mass,191,mg.g-1
+456,Lactuca serriola,leaf dry mass per leaf fresh mass,191,mg.g-1
+500,Poa bulbosa,leaf dry mass per leaf fresh mass,235.8,mg.g-1
+507,Poa bulbosa,leaf dry mass per leaf fresh mass,215.06,mg.g-1
+508,Poa bulbosa,leaf dry mass per leaf fresh mass,178.3,mg.g-1
+509,Poa bulbosa,leaf dry mass per leaf fresh mass,210.9,mg.g-1
+511,Poa bulbosa,leaf dry mass per leaf fresh mass,215.06,mg.g-1
+582,Poa pratensis,leaf dry mass per leaf fresh mass,311.7203604,mg.g-1
+592,Poa pratensis,leaf dry mass per leaf fresh mass,342,mg.g-1
+625,Poa pratensis,leaf dry mass per leaf fresh mass,342,mg.g-1
+635,Poa pratensis,leaf dry mass per leaf fresh mass,319.5502646,mg.g-1
+652,Poa pratensis,leaf dry mass per leaf fresh mass,310,mg.g-1
+662,Poa pratensis,leaf dry mass per leaf fresh mass,283.36,mg.g-1
+736,Poa pratensis,leaf dry mass per leaf fresh mass,246.18,mg.g-1
+744,Poa pratensis,leaf dry mass per leaf fresh mass,310,mg.g-1
+745,Poa pratensis,leaf dry mass per leaf fresh mass,283.36,mg.g-1
+747,Poa pratensis,leaf dry mass per leaf fresh mass,299,mg.g-1
+798,Poa pratensis,leaf dry mass per leaf fresh mass,282.08,mg.g-1
+820,Poa pratensis,leaf dry mass per leaf fresh mass,351.69,mg.g-1
+839,Poa pratensis,leaf dry mass per leaf fresh mass,299,mg.g-1
+914,Tragopogon dubius,leaf dry mass per leaf fresh mass,292.26,mg.g-1
+939,Tragopogon dubius,leaf dry mass per leaf fresh mass,198.33,mg.g-1
+942,Tragopogon dubius,leaf dry mass per leaf fresh mass,198.33,mg.g-1
+966,Tragopogon dubius,leaf dry mass per leaf fresh mass,209.84,mg.g-1
+973,Tragopogon dubius,leaf dry mass per leaf fresh mass,173.49,mg.g-1
+105,Bromus tectorum,leaf dry mass,0.03096,g
+131,Bromus tectorum,leaf dry mass,0.01994,g
+149,Bromus tectorum,leaf dry mass,0.01994,g
+151,Bromus tectorum,leaf dry mass,0.02118,g
+165,Bromus tectorum,leaf dry mass,0.01553,g
+174,Bromus tectorum,leaf dry mass,0.01553,g
+176,Bromus tectorum,leaf dry mass,0.03096,g
+177,Bromus tectorum,leaf dry mass,0.01968,g
+185,Bromus tectorum,leaf dry mass,0.01968,g
+196,Bromus tectorum,leaf dry mass,0.02118,g
+221,Lactuca serriola,leaf dry mass,0.082,g
+226,Lactuca serriola,leaf dry mass,0.397118019,g
+242,Lactuca serriola,leaf dry mass,0.076,g
+249,Lactuca serriola,leaf dry mass,0.122,g
+256,Lactuca serriola,leaf dry mass,0.119,g
+257,Lactuca serriola,leaf dry mass,0.0396,g
+269,Lactuca serriola,leaf dry mass,0.188,g
+290,Lactuca serriola,leaf dry mass,0.088,g
+292,Lactuca serriola,leaf dry mass,0.137,g
+293,Lactuca serriola,leaf dry mass,0.0176,g
+294,Lactuca serriola,leaf dry mass,0.22,g
+318,Lactuca serriola,leaf dry mass,0.12,g
+319,Lactuca serriola,leaf dry mass,0.397118019,g
+320,Lactuca serriola,leaf dry mass,0.179,g
+323,Lactuca serriola,leaf dry mass,0.129,g
+324,Lactuca serriola,leaf dry mass,0.285,g
+332,Lactuca serriola,leaf dry mass,0.046,g
+340,Lactuca serriola,leaf dry mass,0.108,g
+342,Lactuca serriola,leaf dry mass,0.083,g
+355,Lactuca serriola,leaf dry mass,0.187,g
+370,Lactuca serriola,leaf dry mass,0.379,g
+371,Lactuca serriola,leaf dry mass,0.113,g
+391,Lactuca serriola,leaf dry mass,0.14,g
+397,Lactuca serriola,leaf dry mass,0.066,g
+398,Lactuca serriola,leaf dry mass,0.068,g
+411,Lactuca serriola,leaf dry mass,0.136,g
+412,Lactuca serriola,leaf dry mass,0.165,g
+414,Lactuca serriola,leaf dry mass,0.119,g
+416,Lactuca serriola,leaf dry mass,0.099,g
+420,Lactuca serriola,leaf dry mass,0.149,g
+421,Lactuca serriola,leaf dry mass,0.13,g
+446,Lactuca serriola,leaf dry mass,0.0174,g
+447,Lactuca serriola,leaf dry mass,0.0149,g
+454,Lactuca serriola,leaf dry mass,0.065,g
+457,Lactuca serriola,leaf dry mass,0.0549,g
+469,Lactuca serriola,leaf dry mass,0.041,g
+470,Lactuca serriola,leaf dry mass,0.122,g
+471,Lactuca serriola,leaf dry mass,0.084,g
+475,Lactuca serriola,leaf dry mass,0.053,g
+480,Lactuca serriola,leaf dry mass,0.0278,g
+482,Lactuca serriola,leaf dry mass,0.26,g
+484,Lactuca serriola,leaf dry mass,0.296,g
+485,Lactuca serriola,leaf dry mass,0.112,g
+487,Lactuca serriola,leaf dry mass,0.053,g
+492,Poa bulbosa,leaf dry mass,0.0008,g
+494,Poa bulbosa,leaf dry mass,0.0011,g
+495,Poa bulbosa,leaf dry mass,0.0008,g
+499,Poa bulbosa,leaf dry mass,0.0008,g
+506,Poa bulbosa,leaf dry mass,0.00034,g
+513,Poa bulbosa,leaf dry mass,0.0008,g
+522,Poa bulbosa,leaf dry mass,0.0008,g
+524,Poa bulbosa,leaf dry mass,0.00034,g
+527,Poa bulbosa,leaf dry mass,0.0011,g
+528,Poa bulbosa,leaf dry mass,0.0008,g
+535,Poa pratensis,leaf dry mass,*,g
+553,Poa pratensis,leaf dry mass,*,g
+557,Poa pratensis,leaf dry mass,*,g
+561,Poa pratensis,leaf dry mass,*,g
+563,Poa pratensis,leaf dry mass,*,g
+565,Poa pratensis,leaf dry mass,*,g
+566,Poa pratensis,leaf dry mass,*,g
+570,Poa pratensis,leaf dry mass,*,g
+574,Poa pratensis,leaf dry mass,0.00431,g
+575,Poa pratensis,leaf dry mass,*,g
+577,Poa pratensis,leaf dry mass,*,g
+580,Poa pratensis,leaf dry mass,*,g
+581,Poa pratensis,leaf dry mass,*,g
+588,Poa pratensis,leaf dry mass,*,g
+594,Poa pratensis,leaf dry mass,*,g
+596,Poa pratensis,leaf dry mass,*,g
+601,Poa pratensis,leaf dry mass,0,g
+602,Poa pratensis,leaf dry mass,*,g
+605,Poa pratensis,leaf dry mass,*,g
+607,Poa pratensis,leaf dry mass,*,g
+608,Poa pratensis,leaf dry mass,*,g
+610,Poa pratensis,leaf dry mass,0.00433,g
+612,Poa pratensis,leaf dry mass,0.00227,g
+613,Poa pratensis,leaf dry mass,*,g
+620,Poa pratensis,leaf dry mass,*,g
+624,Poa pratensis,leaf dry mass,*,g
+630,Poa pratensis,leaf dry mass,*,g
+631,Poa pratensis,leaf dry mass,*,g
+633,Poa pratensis,leaf dry mass,*,g
+637,Poa pratensis,leaf dry mass,*,g
+639,Poa pratensis,leaf dry mass,*,g
+645,Poa pratensis,leaf dry mass,*,g
+648,Poa pratensis,leaf dry mass,0.039464679,g
+649,Poa pratensis,leaf dry mass,*,g
+653,Poa pratensis,leaf dry mass,*,g
+654,Poa pratensis,leaf dry mass,*,g
+655,Poa pratensis,leaf dry mass,*,g
+657,Poa pratensis,leaf dry mass,*,g
+671,Poa pratensis,leaf dry mass,0,g
+680,Poa pratensis,leaf dry mass,*,g
+685,Poa pratensis,leaf dry mass,*,g
+693,Poa pratensis,leaf dry mass,*,g
+695,Poa pratensis,leaf dry mass,*,g
+701,Poa pratensis,leaf dry mass,*,g
+705,Poa pratensis,leaf dry mass,*,g
+708,Poa pratensis,leaf dry mass,*,g
+713,Poa pratensis,leaf dry mass,*,g
+715,Poa pratensis,leaf dry mass,*,g
+728,Poa pratensis,leaf dry mass,0.00697,g
+730,Poa pratensis,leaf dry mass,*,g
+732,Poa pratensis,leaf dry mass,0.045013256,g
+737,Poa pratensis,leaf dry mass,*,g
+739,Poa pratensis,leaf dry mass,*,g
+740,Poa pratensis,leaf dry mass,*,g
+741,Poa pratensis,leaf dry mass,*,g
+742,Poa pratensis,leaf dry mass,*,g
+743,Poa pratensis,leaf dry mass,0.00433,g
+746,Poa pratensis,leaf dry mass,*,g
+763,Poa pratensis,leaf dry mass,*,g
+764,Poa pratensis,leaf dry mass,0.054391857,g
+778,Poa pratensis,leaf dry mass,*,g
+780,Poa pratensis,leaf dry mass,*,g
+781,Poa pratensis,leaf dry mass,0,g
+782,Poa pratensis,leaf dry mass,*,g
+785,Poa pratensis,leaf dry mass,*,g
+788,Poa pratensis,leaf dry mass,*,g
+790,Poa pratensis,leaf dry mass,*,g
+794,Poa pratensis,leaf dry mass,*,g
+797,Poa pratensis,leaf dry mass,*,g
+801,Poa pratensis,leaf dry mass,*,g
+805,Poa pratensis,leaf dry mass,*,g
+806,Poa pratensis,leaf dry mass,*,g
+807,Poa pratensis,leaf dry mass,*,g
+812,Poa pratensis,leaf dry mass,*,g
+823,Poa pratensis,leaf dry mass,*,g
+830,Poa pratensis,leaf dry mass,0.039464679,g
+831,Poa pratensis,leaf dry mass,*,g
+832,Poa pratensis,leaf dry mass,*,g
+833,Poa pratensis,leaf dry mass,*,g
+835,Poa pratensis,leaf dry mass,*,g
+836,Poa pratensis,leaf dry mass,0.045013256,g
+837,Poa pratensis,leaf dry mass,*,g
+840,Poa pratensis,leaf dry mass,*,g
+849,Poa pratensis,leaf dry mass,*,g
+857,Poa pratensis,leaf dry mass,*,g
+859,Poa pratensis,leaf dry mass,*,g
+861,Poa pratensis,leaf dry mass,*,g
+867,Poa pratensis,leaf dry mass,*,g
+879,Poa pratensis,leaf dry mass,0.054391857,g
+904,Tragopogon dubius,leaf dry mass,0.01,g
+940,Tragopogon dubius,leaf dry mass,0.0164,g
+956,Tragopogon dubius,leaf dry mass,0.012,g
+974,Tragopogon dubius,leaf dry mass,0.012,g
+982,Tragopogon dubius,leaf dry mass,0.01225,g
+12,Artemisia tridentata,leaf carbon content per leaf nitrogen content,9.114,NA
+37,Artemisia tridentata,leaf carbon content per leaf nitrogen content,9.114,NA
+85,Artemisia tridentata,leaf carbon content per leaf nitrogen content,9.114,NA
+97,Artemisia tridentata,leaf carbon content per leaf nitrogen content,9.114,NA
+380,Lactuca serriola,leaf carbon content per leaf nitrogen content,20.7754011,NA
+526,Poa bulbosa,leaf carbon content per leaf nitrogen content,33.504,NA
+647,Poa pratensis,leaf carbon content per leaf nitrogen content,10.414,NA
+769,Poa pratensis,leaf carbon content per leaf nitrogen content,12.742,NA
+869,Poa pratensis,leaf carbon content per leaf nitrogen content,12.742,NA
+19,Artemisia tridentata,leaf carbon content per leaf dry mass,485,mg.g-1
+29,Artemisia tridentata,leaf carbon content per leaf dry mass,440.271,mg.g-1
+40,Artemisia tridentata,leaf carbon content per leaf dry mass,500.014,mg.g-1
+46,Artemisia tridentata,leaf carbon content per leaf dry mass,472.398,mg.g-1
+53,Artemisia tridentata,leaf carbon content per leaf dry mass,449.919,mg.g-1
+72,Artemisia tridentata,leaf carbon content per leaf dry mass,451.012,mg.g-1
+73,Artemisia tridentata,leaf carbon content per leaf dry mass,467.213,mg.g-1
+75,Artemisia tridentata,leaf carbon content per leaf dry mass,444.375,mg.g-1
+92,Artemisia tridentata,leaf carbon content per leaf dry mass,462.343,mg.g-1
+599,Poa pratensis,leaf carbon content per leaf dry mass,459.5,mg.g-1
+916,Tragopogon dubius,leaf carbon content per leaf dry mass,423.352808,mg.g-1
+921,Tragopogon dubius,leaf carbon content per leaf dry mass,433.783005,mg.g-1
+932,Tragopogon dubius,leaf carbon content per leaf dry mass,406.263,mg.g-1
+959,Tragopogon dubius,leaf carbon content per leaf dry mass,402.985,mg.g-1
+978,Tragopogon dubius,leaf carbon content per leaf dry mass,427.677,mg.g-1
+981,Tragopogon dubius,leaf carbon content per leaf dry mass,429.276011,mg.g-1
+7,Artemisia tridentata,leaf area per leaf dry mass,10.18235294,m2.kg-1
+16,Artemisia tridentata,leaf area per leaf dry mass,8.060869567,m2.kg-1
+22,Artemisia tridentata,leaf area per leaf dry mass,11.19333333,m2.kg-1
+33,Artemisia tridentata,leaf area per leaf dry mass,11.98571429,m2.kg-1
+41,Artemisia tridentata,leaf area per leaf dry mass,7.1,m2.kg-1
+57,Artemisia tridentata,leaf area per leaf dry mass,7.966666664,m2.kg-1
+58,Artemisia tridentata,leaf area per leaf dry mass,7.787500002,m2.kg-1
+61,Artemisia tridentata,leaf area per leaf dry mass,5.4,m2.kg-1
+67,Artemisia tridentata,leaf area per leaf dry mass,6.7,m2.kg-1
+68,Artemisia tridentata,leaf area per leaf dry mass,7.626194453,m2.kg-1
+79,Artemisia tridentata,leaf area per leaf dry mass,7.626194453,m2.kg-1
+83,Artemisia tridentata,leaf area per leaf dry mass,5.2,m2.kg-1
+90,Artemisia tridentata,leaf area per leaf dry mass,8.344827589,m2.kg-1
+93,Artemisia tridentata,leaf area per leaf dry mass,13.62,m2.kg-1
+95,Artemisia tridentata,leaf area per leaf dry mass,8.554999999,m2.kg-1
+101,Bromus tectorum,leaf area per leaf dry mass,25.642,m2.kg-1
+116,Bromus tectorum,leaf area per leaf dry mass,25.909,m2.kg-1
+120,Bromus tectorum,leaf area per leaf dry mass,24.651,m2.kg-1
+122,Bromus tectorum,leaf area per leaf dry mass,32.401,m2.kg-1
+123,Bromus tectorum,leaf area per leaf dry mass,35.03,m2.kg-1
+124,Bromus tectorum,leaf area per leaf dry mass,14.957,m2.kg-1
+128,Bromus tectorum,leaf area per leaf dry mass,29.759,m2.kg-1
+132,Bromus tectorum,leaf area per leaf dry mass,27.775,m2.kg-1
+133,Bromus tectorum,leaf area per leaf dry mass,36.842,m2.kg-1
+139,Bromus tectorum,leaf area per leaf dry mass,33.20807,m2.kg-1
+143,Bromus tectorum,leaf area per leaf dry mass,27.802,m2.kg-1
+146,Bromus tectorum,leaf area per leaf dry mass,39.01,m2.kg-1
+155,Bromus tectorum,leaf area per leaf dry mass,27.815,m2.kg-1
+172,Bromus tectorum,leaf area per leaf dry mass,35.03,m2.kg-1
+184,Bromus tectorum,leaf area per leaf dry mass,18.958,m2.kg-1
+195,Bromus tectorum,leaf area per leaf dry mass,30.827,m2.kg-1
+199,Bromus tectorum,leaf area per leaf dry mass,24.954,m2.kg-1
+203,Bromus tectorum,leaf area per leaf dry mass,51.641,m2.kg-1
+204,Bromus tectorum,leaf area per leaf dry mass,23.594,m2.kg-1
+205,Bromus tectorum,leaf area per leaf dry mass,22.98,m2.kg-1
+206,Bromus tectorum,leaf area per leaf dry mass,34.77,m2.kg-1
+208,Bromus tectorum,leaf area per leaf dry mass,29.767,m2.kg-1
+209,Bromus tectorum,leaf area per leaf dry mass,26.89,m2.kg-1
+212,Bromus tectorum,leaf area per leaf dry mass,29.23,m2.kg-1
+227,Lactuca serriola,leaf area per leaf dry mass,36.85135,m2.kg-1
+229,Lactuca serriola,leaf area per leaf dry mass,18.07146099,m2.kg-1
+241,Lactuca serriola,leaf area per leaf dry mass,46.07496,m2.kg-1
+243,Lactuca serriola,leaf area per leaf dry mass,37.55236,m2.kg-1
+246,Lactuca serriola,leaf area per leaf dry mass,43.86241,m2.kg-1
+251,Lactuca serriola,leaf area per leaf dry mass,43.87755,m2.kg-1
+254,Lactuca serriola,leaf area per leaf dry mass,28.3373,m2.kg-1
+259,Lactuca serriola,leaf area per leaf dry mass,49.19491,m2.kg-1
+260,Lactuca serriola,leaf area per leaf dry mass,39.91409,m2.kg-1
+267,Lactuca serriola,leaf area per leaf dry mass,34.19726,m2.kg-1
+278,Lactuca serriola,leaf area per leaf dry mass,45.96114,m2.kg-1
+279,Lactuca serriola,leaf area per leaf dry mass,18.07146099,m2.kg-1
+305,Lactuca serriola,leaf area per leaf dry mass,36.28037,m2.kg-1
+310,Lactuca serriola,leaf area per leaf dry mass,44.15815,m2.kg-1
+312,Lactuca serriola,leaf area per leaf dry mass,53.47588,m2.kg-1
+321,Lactuca serriola,leaf area per leaf dry mass,35.54839,m2.kg-1
+322,Lactuca serriola,leaf area per leaf dry mass,43.46073,m2.kg-1
+334,Lactuca serriola,leaf area per leaf dry mass,37.17523,m2.kg-1
+336,Lactuca serriola,leaf area per leaf dry mass,35.38779,m2.kg-1
+337,Lactuca serriola,leaf area per leaf dry mass,49.5344,m2.kg-1
+345,Lactuca serriola,leaf area per leaf dry mass,38.82646,m2.kg-1
+352,Lactuca serriola,leaf area per leaf dry mass,23.13022509,m2.kg-1
+364,Lactuca serriola,leaf area per leaf dry mass,35.44375,m2.kg-1
+366,Lactuca serriola,leaf area per leaf dry mass,39.43754,m2.kg-1
+369,Lactuca serriola,leaf area per leaf dry mass,29.87623,m2.kg-1
+376,Lactuca serriola,leaf area per leaf dry mass,42.21165,m2.kg-1
+386,Lactuca serriola,leaf area per leaf dry mass,17.512231,m2.kg-1
+387,Lactuca serriola,leaf area per leaf dry mass,55.08171,m2.kg-1
+393,Lactuca serriola,leaf area per leaf dry mass,36.4245,m2.kg-1
+394,Lactuca serriola,leaf area per leaf dry mass,25.26406,m2.kg-1
+395,Lactuca serriola,leaf area per leaf dry mass,0.317132338,m2.kg-1
+401,Lactuca serriola,leaf area per leaf dry mass,31.85941,m2.kg-1
+408,Lactuca serriola,leaf area per leaf dry mass,35.43063,m2.kg-1
+413,Lactuca serriola,leaf area per leaf dry mass,35.37561,m2.kg-1
+418,Lactuca serriola,leaf area per leaf dry mass,36.28581,m2.kg-1
+422,Lactuca serriola,leaf area per leaf dry mass,54.36407,m2.kg-1
+423,Lactuca serriola,leaf area per leaf dry mass,39.63327,m2.kg-1
+432,Lactuca serriola,leaf area per leaf dry mass,45.14439,m2.kg-1
+455,Lactuca serriola,leaf area per leaf dry mass,40.08605,m2.kg-1
+458,Lactuca serriola,leaf area per leaf dry mass,15.1,m2.kg-1
+460,Lactuca serriola,leaf area per leaf dry mass,17.09256,m2.kg-1
+462,Lactuca serriola,leaf area per leaf dry mass,15.1,m2.kg-1
+463,Lactuca serriola,leaf area per leaf dry mass,53.70795,m2.kg-1
+488,Lactuca serriola,leaf area per leaf dry mass,47.44348,m2.kg-1
+501,Poa bulbosa,leaf area per leaf dry mass,21.09,m2.kg-1
+505,Poa bulbosa,leaf area per leaf dry mass,0.228418079,m2.kg-1
+514,Poa bulbosa,leaf area per leaf dry mass,20.85694,m2.kg-1
+515,Poa bulbosa,leaf area per leaf dry mass,21.09,m2.kg-1
+516,Poa bulbosa,leaf area per leaf dry mass,21.09,m2.kg-1
+517,Poa bulbosa,leaf area per leaf dry mass,16.55,m2.kg-1
+525,Poa bulbosa,leaf area per leaf dry mass,25.56,m2.kg-1
+534,Poa pratensis,leaf area per leaf dry mass,27.16,m2.kg-1
+536,Poa pratensis,leaf area per leaf dry mass,24.46,m2.kg-1
+537,Poa pratensis,leaf area per leaf dry mass,17.4,m2.kg-1
+539,Poa pratensis,leaf area per leaf dry mass,14.3571,m2.kg-1
+544,Poa pratensis,leaf area per leaf dry mass,19.4,m2.kg-1
+548,Poa pratensis,leaf area per leaf dry mass,19.8,m2.kg-1
+554,Poa pratensis,leaf area per leaf dry mass,21.13,m2.kg-1
+556,Poa pratensis,leaf area per leaf dry mass,18.5,m2.kg-1
+558,Poa pratensis,leaf area per leaf dry mass,21.7364,m2.kg-1
+560,Poa pratensis,leaf area per leaf dry mass,15.1833,m2.kg-1
+564,Poa pratensis,leaf area per leaf dry mass,23.9568,m2.kg-1
+568,Poa pratensis,leaf area per leaf dry mass,17.1241,m2.kg-1
+571,Poa pratensis,leaf area per leaf dry mass,21.86367,m2.kg-1
+573,Poa pratensis,leaf area per leaf dry mass,19.7333,m2.kg-1
+576,Poa pratensis,leaf area per leaf dry mass,9.4875,m2.kg-1
+578,Poa pratensis,leaf area per leaf dry mass,24.58,m2.kg-1
+586,Poa pratensis,leaf area per leaf dry mass,31.4,m2.kg-1
+587,Poa pratensis,leaf area per leaf dry mass,14.85729945,m2.kg-1
+589,Poa pratensis,leaf area per leaf dry mass,29.7667,m2.kg-1
+590,Poa pratensis,leaf area per leaf dry mass,24.58,m2.kg-1
+591,Poa pratensis,leaf area per leaf dry mass,15.3,m2.kg-1
+593,Poa pratensis,leaf area per leaf dry mass,14.42,m2.kg-1
+597,Poa pratensis,leaf area per leaf dry mass,19.7,m2.kg-1
+600,Poa pratensis,leaf area per leaf dry mass,18.5,m2.kg-1
+616,Poa pratensis,leaf area per leaf dry mass,15.5818,m2.kg-1
+617,Poa pratensis,leaf area per leaf dry mass,13.3583,m2.kg-1
+618,Poa pratensis,leaf area per leaf dry mass,20.6667,m2.kg-1
+621,Poa pratensis,leaf area per leaf dry mass,15.375,m2.kg-1
+622,Poa pratensis,leaf area per leaf dry mass,24.57,m2.kg-1
+627,Poa pratensis,leaf area per leaf dry mass,8.77778,m2.kg-1
+628,Poa pratensis,leaf area per leaf dry mass,19.7,m2.kg-1
+629,Poa pratensis,leaf area per leaf dry mass,30.54,m2.kg-1
+644,Poa pratensis,leaf area per leaf dry mass,19.575,m2.kg-1
+646,Poa pratensis,leaf area per leaf dry mass,24.97,m2.kg-1
+651,Poa pratensis,leaf area per leaf dry mass,18.8,m2.kg-1
+658,Poa pratensis,leaf area per leaf dry mass,18.3667,m2.kg-1
+659,Poa pratensis,leaf area per leaf dry mass,23.3,m2.kg-1
+660,Poa pratensis,leaf area per leaf dry mass,16.1643,m2.kg-1
+661,Poa pratensis,leaf area per leaf dry mass,26.8833,m2.kg-1
+663,Poa pratensis,leaf area per leaf dry mass,22.4417,m2.kg-1
+664,Poa pratensis,leaf area per leaf dry mass,18.6375,m2.kg-1
+666,Poa pratensis,leaf area per leaf dry mass,23.66,m2.kg-1
+667,Poa pratensis,leaf area per leaf dry mass,17.6875,m2.kg-1
+668,Poa pratensis,leaf area per leaf dry mass,14.85729945,m2.kg-1
+669,Poa pratensis,leaf area per leaf dry mass,6.91,m2.kg-1
+670,Poa pratensis,leaf area per leaf dry mass,36.6,m2.kg-1
+674,Poa pratensis,leaf area per leaf dry mass,8.11,m2.kg-1
+675,Poa pratensis,leaf area per leaf dry mass,13.6636,m2.kg-1
+676,Poa pratensis,leaf area per leaf dry mass,24.2167,m2.kg-1
+678,Poa pratensis,leaf area per leaf dry mass,29.13,m2.kg-1
+679,Poa pratensis,leaf area per leaf dry mass,15.3,m2.kg-1
+682,Poa pratensis,leaf area per leaf dry mass,19.3429,m2.kg-1
+683,Poa pratensis,leaf area per leaf dry mass,22.25,m2.kg-1
+684,Poa pratensis,leaf area per leaf dry mass,18.5833,m2.kg-1
+686,Poa pratensis,leaf area per leaf dry mass,21.13,m2.kg-1
+687,Poa pratensis,leaf area per leaf dry mass,25.0533,m2.kg-1
+689,Poa pratensis,leaf area per leaf dry mass,31.48,m2.kg-1
+692,Poa pratensis,leaf area per leaf dry mass,19.65,m2.kg-1
+694,Poa pratensis,leaf area per leaf dry mass,19.096,m2.kg-1
+696,Poa pratensis,leaf area per leaf dry mass,13.5674,m2.kg-1
+698,Poa pratensis,leaf area per leaf dry mass,18.4667,m2.kg-1
+699,Poa pratensis,leaf area per leaf dry mass,26.93,m2.kg-1
+704,Poa pratensis,leaf area per leaf dry mass,11.64930949,m2.kg-1
+706,Poa pratensis,leaf area per leaf dry mass,24.18,m2.kg-1
+709,Poa pratensis,leaf area per leaf dry mass,17.3,m2.kg-1
+710,Poa pratensis,leaf area per leaf dry mass,58.5,m2.kg-1
+712,Poa pratensis,leaf area per leaf dry mass,18.6467,m2.kg-1
+716,Poa pratensis,leaf area per leaf dry mass,12.42,m2.kg-1
+717,Poa pratensis,leaf area per leaf dry mass,6.91,m2.kg-1
+718,Poa pratensis,leaf area per leaf dry mass,9.9,m2.kg-1
+719,Poa pratensis,leaf area per leaf dry mass,17.3,m2.kg-1
+720,Poa pratensis,leaf area per leaf dry mass,16.4692,m2.kg-1
+725,Poa pratensis,leaf area per leaf dry mass,19.5867,m2.kg-1
+726,Poa pratensis,leaf area per leaf dry mass,28,m2.kg-1
+731,Poa pratensis,leaf area per leaf dry mass,7.14,m2.kg-1
+735,Poa pratensis,leaf area per leaf dry mass,29.325,m2.kg-1
+749,Poa pratensis,leaf area per leaf dry mass,6.4125,m2.kg-1
+750,Poa pratensis,leaf area per leaf dry mass,14.6,m2.kg-1
+751,Poa pratensis,leaf area per leaf dry mass,24.57,m2.kg-1
+752,Poa pratensis,leaf area per leaf dry mass,27.01,m2.kg-1
+755,Poa pratensis,leaf area per leaf dry mass,25.38,m2.kg-1
+756,Poa pratensis,leaf area per leaf dry mass,25.025,m2.kg-1
+757,Poa pratensis,leaf area per leaf dry mass,12.1556,m2.kg-1
+758,Poa pratensis,leaf area per leaf dry mass,25.45,m2.kg-1
+767,Poa pratensis,leaf area per leaf dry mass,18.5,m2.kg-1
+770,Poa pratensis,leaf area per leaf dry mass,18.5182,m2.kg-1
+771,Poa pratensis,leaf area per leaf dry mass,11.2116944,m2.kg-1
+775,Poa pratensis,leaf area per leaf dry mass,31.48,m2.kg-1
+779,Poa pratensis,leaf area per leaf dry mass,27.16,m2.kg-1
+784,Poa pratensis,leaf area per leaf dry mass,19.2667,m2.kg-1
+787,Poa pratensis,leaf area per leaf dry mass,31.4,m2.kg-1
+792,Poa pratensis,leaf area per leaf dry mass,19.4182,m2.kg-1
+793,Poa pratensis,leaf area per leaf dry mass,11.7857,m2.kg-1
+799,Poa pratensis,leaf area per leaf dry mass,16.8889,m2.kg-1
+800,Poa pratensis,leaf area per leaf dry mass,22.9667,m2.kg-1
+802,Poa pratensis,leaf area per leaf dry mass,13.225,m2.kg-1
+803,Poa pratensis,leaf area per leaf dry mass,22.0143,m2.kg-1
+808,Poa pratensis,leaf area per leaf dry mass,24.57,m2.kg-1
+815,Poa pratensis,leaf area per leaf dry mass,12.84,m2.kg-1
+816,Poa pratensis,leaf area per leaf dry mass,36.325,m2.kg-1
+817,Poa pratensis,leaf area per leaf dry mass,32.3,m2.kg-1
+818,Poa pratensis,leaf area per leaf dry mass,19.096,m2.kg-1
+822,Poa pratensis,leaf area per leaf dry mass,19.4,m2.kg-1
+828,Poa pratensis,leaf area per leaf dry mass,33.75,m2.kg-1
+834,Poa pratensis,leaf area per leaf dry mass,19.7364,m2.kg-1
+843,Poa pratensis,leaf area per leaf dry mass,12.15,m2.kg-1
+844,Poa pratensis,leaf area per leaf dry mass,19.7,m2.kg-1
+847,Poa pratensis,leaf area per leaf dry mass,19.8222,m2.kg-1
+848,Poa pratensis,leaf area per leaf dry mass,21.9444,m2.kg-1
+852,Poa pratensis,leaf area per leaf dry mass,13.4,m2.kg-1
+855,Poa pratensis,leaf area per leaf dry mass,27.7,m2.kg-1
+856,Poa pratensis,leaf area per leaf dry mass,28,m2.kg-1
+858,Poa pratensis,leaf area per leaf dry mass,31.15,m2.kg-1
+862,Poa pratensis,leaf area per leaf dry mass,24.1857,m2.kg-1
+863,Poa pratensis,leaf area per leaf dry mass,28.37,m2.kg-1
+864,Poa pratensis,leaf area per leaf dry mass,16.75,m2.kg-1
+868,Poa pratensis,leaf area per leaf dry mass,19.7,m2.kg-1
+873,Poa pratensis,leaf area per leaf dry mass,27.36,m2.kg-1
+875,Poa pratensis,leaf area per leaf dry mass,20.204,m2.kg-1
+877,Poa pratensis,leaf area per leaf dry mass,16.3,m2.kg-1
+878,Poa pratensis,leaf area per leaf dry mass,8.4,m2.kg-1
+901,Tragopogon dubius,leaf area per leaf dry mass,25.3,m2.kg-1
+908,Tragopogon dubius,leaf area per leaf dry mass,27.03,m2.kg-1
+924,Tragopogon dubius,leaf area per leaf dry mass,27.03,m2.kg-1
+967,Tragopogon dubius,leaf area per leaf dry mass,29.91,m2.kg-1
+979,Tragopogon dubius,leaf area per leaf dry mass,17.63,m2.kg-1
+100,Bromus tectorum,leaf area,179.6,mm2
+106,Bromus tectorum,leaf area,126,mm2
+109,Bromus tectorum,leaf area,79.05,mm2
+110,Bromus tectorum,leaf area,27.3,mm2
+129,Bromus tectorum,leaf area,56.2,mm2
+138,Bromus tectorum,leaf area,102.4,mm2
+142,Bromus tectorum,leaf area,113.75,mm2
+153,Bromus tectorum,leaf area,98.7,mm2
+159,Bromus tectorum,leaf area,58.05,mm2
+166,Bromus tectorum,leaf area,146.9,mm2
+169,Bromus tectorum,leaf area,191.5,mm2
+182,Bromus tectorum,leaf area,724,mm2
+183,Bromus tectorum,leaf area,139,mm2
+187,Bromus tectorum,leaf area,720.8313,mm2
+191,Bromus tectorum,leaf area,125.9,mm2
+194,Bromus tectorum,leaf area,220.25,mm2
+197,Bromus tectorum,leaf area,163.55,mm2
+202,Bromus tectorum,leaf area,187.9,mm2
+211,Bromus tectorum,leaf area,65.55,mm2
+215,Bromus tectorum,leaf area,90.1,mm2
+224,Lactuca serriola,leaf area,3046.54,mm2
+235,Lactuca serriola,leaf area,315.68,mm2
+253,Lactuca serriola,leaf area,4934.13,mm2
+262,Lactuca serriola,leaf area,2607.33,mm2
+265,Lactuca serriola,leaf area,5468.23,mm2
+270,Lactuca serriola,leaf area,2166.44,mm2
+274,Lactuca serriola,leaf area,2325.51,mm2
+284,Lactuca serriola,leaf area,5482.92,mm2
+286,Lactuca serriola,leaf area,7935.79,mm2
+288,Lactuca serriola,leaf area,4044.58,mm2
+300,Lactuca serriola,leaf area,5272.78,mm2
+302,Lactuca serriola,leaf area,6552.37,mm2
+308,Lactuca serriola,leaf area,221.55,mm2
+316,Lactuca serriola,leaf area,2870.28,mm2
+317,Lactuca serriola,leaf area,2258.35,mm2
+326,Lactuca serriola,leaf area,9581.35,mm2
+329,Lactuca serriola,leaf area,6363.63,mm2
+333,Lactuca serriola,leaf area,5099.43,mm2
+344,Lactuca serriola,leaf area,5047.44,mm2
+347,Lactuca serriola,leaf area,6539.49,mm2
+348,Lactuca serriola,leaf area,5993,mm2
+350,Lactuca serriola,leaf area,11115.5,mm2
+354,Lactuca serriola,leaf area,4160.89,mm2
+363,Lactuca serriola,leaf area,3864.29,mm2
+373,Lactuca serriola,leaf area,10131.29,mm2
+377,Lactuca serriola,leaf area,3968.23,mm2
+382,Lactuca serriola,leaf area,4811.38,mm2
+396,Lactuca serriola,leaf area,327.27,mm2
+404,Lactuca serriola,leaf area,404.79,mm2
+406,Lactuca serriola,leaf area,5993,mm2
+415,Lactuca serriola,leaf area,3701.84,mm2
+428,Lactuca serriola,leaf area,2334.79,mm2
+436,Lactuca serriola,leaf area,11323.09,mm2
+440,Lactuca serriola,leaf area,210.26,mm2
+443,Lactuca serriola,leaf area,7779.47,mm2
+444,Lactuca serriola,leaf area,5871.32,mm2
+448,Lactuca serriola,leaf area,8178.55,mm2
+449,Lactuca serriola,leaf area,4680.87,mm2
+452,Lactuca serriola,leaf area,4253.25,mm2
+467,Lactuca serriola,leaf area,2182.4,mm2
+474,Lactuca serriola,leaf area,4724.38,mm2
+483,Lactuca serriola,leaf area,222.67,mm2
+489,Lactuca serriola,leaf area,3640.58,mm2
+529,Poa bulbosa,leaf area,16.08,mm2
+531,Poa bulbosa,leaf area,15.9162,mm2
+552,Poa pratensis,leaf area,966.8507,mm2
+721,Poa pratensis,leaf area,872,mm2
+753,Poa pratensis,leaf area,1522,mm2
+783,Poa pratensis,leaf area,681,mm2
+945,Tragopogon dubius,leaf area,321.5,mm2
+45,Artemisia tridentata,flower color,Yellow,NA
+218,Crepis acuminata,flower color,Yellow,NA
+491,Poa bulbosa,flower color,Yellow,NA
+826,Poa pratensis,flower color,Yellow,NA
+884,Pseudoroegneria spicata,flower color,Yellow,NA
+892,Symphoricarpos oreophilus,flower color,White,NA
+972,Tragopogon dubius,flower color,Yellow,NA
+569,Poa pratensis,diameter at breast height (1.3 m),12,cm
+611,Poa pratensis,diameter at breast height (1.3 m),36,cm
+860,Poa pratensis,diameter at breast height (1.3 m),30,cm
+870,Poa pratensis,diameter at breast height (1.3 m),14,cm

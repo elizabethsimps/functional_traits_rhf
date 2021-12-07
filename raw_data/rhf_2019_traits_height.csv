@@ -43,14 +43,14 @@ Date,Recorder_1,Recorder_2,Plot_id,Sp_num,Species,height_cm,phenology,in_out_of_
 2019-05-14,Elizabeth Simpson,Ian Fraser,1122,19-1c,Lomatium ambiguum,10.6,F,out
 2019-05-14,Elizabeth Simpson,Ian Fraser,1122,19-1d,Lomatium ambiguum,17,F,out
 2019-05-14,Elizabeth Simpson,Ian Fraser,1122,19-1e,Lomatium ambiguum,13.3,F,out
-2019-05-14,Elizabeth Simpson,Ian Fraser,1122,19-2a,Astragalus alpinus,12,F,out
-2019-05-14,Elizabeth Simpson,Ian Fraser,1122,19-2b,Astragalus alpinus,11.5,F,out
-2019-05-14,Elizabeth Simpson,Ian Fraser,1122,19-2c,Astragalus alpinus,10.3,F,out
-2019-05-14,Elizabeth Simpson,Ian Fraser,1122,19-2d,Astragalus alpinus,13,F,out
-2019-05-14,Elizabeth Simpson,Ian Fraser,1122,19-2e,Astragalus alpinus,12,F,out
-2019-05-14,Elizabeth Simpson,Ian Fraser,1122,19-3a,Castilleja linearfolia,18.5,F,out
-2019-05-14,Elizabeth Simpson,Ian Fraser,1122,19-3b,Castilleja linearfolia,14,F,out
-2019-05-14,Elizabeth Simpson,Ian Fraser,1122,19-3c,Castilleja linearfolia,11.3,F,out
+2019-05-14,Elizabeth Simpson,Ian Fraser,1122,19-2a,Astragalus cibarius,12,F,out
+2019-05-14,Elizabeth Simpson,Ian Fraser,1122,19-2b,Astragalus cibarius,11.5,F,out
+2019-05-14,Elizabeth Simpson,Ian Fraser,1122,19-2c,Astragalus cibarius,10.3,F,out
+2019-05-14,Elizabeth Simpson,Ian Fraser,1122,19-2d,Astragalus cibarius,13,F,out
+2019-05-14,Elizabeth Simpson,Ian Fraser,1122,19-2e,Astragalus cibarius,12,F,out
+2019-05-14,Elizabeth Simpson,Ian Fraser,1122,19-3a,Castilleja linariifolia,18.5,F,out
+2019-05-14,Elizabeth Simpson,Ian Fraser,1122,19-3b,Castilleja linariifolia,14,F,out
+2019-05-14,Elizabeth Simpson,Ian Fraser,1122,19-3c,Castilleja linariifolia,11.3,F,out
 2019-05-15,Elizabeth Simpson,,2111,19-1a,Mertensia oblongifolia,23,F,in
 2019-05-15,Elizabeth Simpson,,2111,19-1b,Mertensia oblongifolia,30.5,F,out
 2019-05-15,Elizabeth Simpson,,2111,19-1c,Mertensia oblongifolia,26.8,F,out
@@ -111,11 +111,11 @@ Date,Recorder_1,Recorder_2,Plot_id,Sp_num,Species,height_cm,phenology,in_out_of_
 2019-05-16,Elizabeth Simpson,,2133,19-4c,Poa secunda,23.5,S,in
 2019-05-16,Elizabeth Simpson,,2133,19-4d,Poa secunda,18.3,S,out
 2019-05-16,Elizabeth Simpson,,2133,19-4e,Poa secunda,19,S,out
-2019-05-16,Elizabeth Simpson,,2122,19-1a,Astragalus alpinus,11.2,F-S,out
-2019-05-16,Elizabeth Simpson,,2122,19-1b,Astragalus alpinus,14.5,F-S,out
-2019-05-16,Elizabeth Simpson,,2122,19-1c,Astragalus alpinus,14.7,F-S,out
-2019-05-16,Elizabeth Simpson,,2122,19-1d,Astragalus alpinus,10.7,F-S,out
-2019-05-16,Elizabeth Simpson,,2122,19-1e,Astragalus alpinus,8.5,F-S,out
+2019-05-16,Elizabeth Simpson,,2122,19-1a,Astragalus cibarius,11.2,F-S,out
+2019-05-16,Elizabeth Simpson,,2122,19-1b,Astragalus cibarius,14.5,F-S,out
+2019-05-16,Elizabeth Simpson,,2122,19-1c,Astragalus cibarius,14.7,F-S,out
+2019-05-16,Elizabeth Simpson,,2122,19-1d,Astragalus cibarius,10.7,F-S,out
+2019-05-16,Elizabeth Simpson,,2122,19-1e,Astragalus cibarius,8.5,F-S,out
 2019-05-16,Elizabeth Simpson,,2211,19-1a,Balsamorhiza sagittata,32.5,B-F,in
 2019-05-16,Elizabeth Simpson,,2211,19-1b,Balsamorhiza sagittata,30,F,out
 2019-05-16,Elizabeth Simpson,,2211,19-1c,Balsamorhiza sagittata,42.5,F,out
@@ -156,11 +156,11 @@ Date,Recorder_1,Recorder_2,Plot_id,Sp_num,Species,height_cm,phenology,in_out_of_
 2019-05-16,Elizabeth Simpson,,3312,19-6c,Senecio integerrimus,32,F,out
 2019-05-16,Elizabeth Simpson,,3312,19-6d,Senecio integerrimus,23,F,out
 2019-05-16,Elizabeth Simpson,,3312,19-6e,Senecio integerrimus,27.5,F,out
-2019-05-29,Elizabeth Simpson,,3333,19-1a,tiny white 5 petaled star flower-chickweed,5.5,F,in
-2019-05-29,Elizabeth Simpson,,3333,19-1b,tiny white 5 petaled star flower-chickweed,4.8,F,in
-2019-05-29,Elizabeth Simpson,,3333,19-1c,tiny white 5 petaled star flower-chickweed,5.8,F,in
-2019-05-29,Elizabeth Simpson,,3333,19-1d,tiny white 5 petaled star flower-chickweed,4,F,in
-2019-05-29,Elizabeth Simpson,,3333,19-1e,tiny white 5 petaled star flower-chickweed,6.3,F,in
+2019-05-29,Elizabeth Simpson,,3333,19-1a,Arenaria serpyllifolia,5.5,F,in
+2019-05-29,Elizabeth Simpson,,3333,19-1b,Arenaria serpyllifolia,4.8,F,in
+2019-05-29,Elizabeth Simpson,,3333,19-1c,Arenaria serpyllifolia,5.8,F,in
+2019-05-29,Elizabeth Simpson,,3333,19-1d,Arenaria serpyllifolia,4,F,in
+2019-05-29,Elizabeth Simpson,,3333,19-1e,Arenaria serpyllifolia,6.3,F,in
 2019-05-29,Elizabeth Simpson,,3333,19-2a,Bromus tectorum,8,S,out
 2019-05-29,Elizabeth Simpson,,3333,19-2b,Bromus tectorum,17,S,out
 2019-05-29,Elizabeth Simpson,,3333,19-2c,Bromus tectorum,6.8,S,out
@@ -171,11 +171,11 @@ Date,Recorder_1,Recorder_2,Plot_id,Sp_num,Species,height_cm,phenology,in_out_of_
 2019-05-29,Elizabeth Simpson,,3333,19-3c,Erodium cicutarium,2,F,out
 2019-05-29,Elizabeth Simpson,,3333,19-3d,Erodium cicutarium,3.4,F,out
 2019-05-29,Elizabeth Simpson,,3333,19-3e,Erodium cicutarium,3,F,out
-2019-05-29,Elizabeth Simpson,,3333,19-1a,Delphinium nuttallianum,28,B-F,in
-2019-05-29,Elizabeth Simpson,,3333,19-1b,Delphinium nuttallianum,28.5,B-F,out
-2019-05-29,Elizabeth Simpson,,3333,19-1c,Delphinium nuttallianum,27,B-F,out
-2019-05-29,Elizabeth Simpson,,3333,19-1d,Delphinium nuttallianum,23.4,B-F,out
-2019-05-29,Elizabeth Simpson,,3333,19-1e,Delphinium nuttallianum,24.8,B-F,out
+2019-05-29,Elizabeth Simpson,,3333,19-1a,Delphinium nuttalianum,28,B-F,in
+2019-05-29,Elizabeth Simpson,,3333,19-1b,Delphinium nuttalianum,28.5,B-F,out
+2019-05-29,Elizabeth Simpson,,3333,19-1c,Delphinium nuttalianum,27,B-F,out
+2019-05-29,Elizabeth Simpson,,3333,19-1d,Delphinium nuttalianum,23.4,B-F,out
+2019-05-29,Elizabeth Simpson,,3333,19-1e,Delphinium nuttalianum,24.8,B-F,out
 2019-05-29,Elizabeth Simpson,,3333,19-2a,Hydrophyllum capitatum,7.5,F,in
 2019-05-29,Elizabeth Simpson,,3333,19-2b,Hydrophyllum capitatum,13,F,in
 2019-05-29,Elizabeth Simpson,,3333,19-2c,Hydrophyllum capitatum,15,F,in
@@ -186,11 +186,11 @@ Date,Recorder_1,Recorder_2,Plot_id,Sp_num,Species,height_cm,phenology,in_out_of_
 2019-06-05,Elizabeth Simpson,,2311,19-1c,Clematis occidentalis,87,F,in
 2019-06-05,Elizabeth Simpson,,2311,19-1d,Clematis occidentalis,80,F,out
 2019-06-05,Elizabeth Simpson,,2311,19-1e,Clematis occidentalis,86,F,out
-2019-06-05,Elizabeth Simpson,,2311,19-2a,Mitella stauropetala,10,F,in
-2019-06-05,Elizabeth Simpson,,2311,19-2b,Mitella stauropetala,9,F,in
-2019-06-05,Elizabeth Simpson,,2311,19-2c,Mitella stauropetala,8.4,F,in
-2019-06-05,Elizabeth Simpson,,2311,19-2d,Mitella stauropetala,6.2,F,in
-2019-06-05,Elizabeth Simpson,,2311,19-2e,Mitella stauropetala,6,F,in
+2019-06-05,Elizabeth Simpson,,2311,19-2a,Ozomelis stauropetala,10,F,in
+2019-06-05,Elizabeth Simpson,,2311,19-2b,Ozomelis stauropetala,9,F,in
+2019-06-05,Elizabeth Simpson,,2311,19-2c,Ozomelis stauropetala,8.4,F,in
+2019-06-05,Elizabeth Simpson,,2311,19-2d,Ozomelis stauropetala,6.2,F,in
+2019-06-05,Elizabeth Simpson,,2311,19-2e,Ozomelis stauropetala,6,F,in
 2019-06-05,Elizabeth Simpson,,2311,19-3a,Cystopteris fragilis,18,spores forming,out
 2019-06-05,Elizabeth Simpson,,2311,19-3b,Cystopteris fragilis,18.5,spores forming,out
 2019-06-05,Elizabeth Simpson,,2311,19-3c,Cystopteris fragilis,19,spores forming,out
@@ -231,26 +231,26 @@ Date,Recorder_1,Recorder_2,Plot_id,Sp_num,Species,height_cm,phenology,in_out_of_
 2019-06-06,Elizabeth Simpson,,1311,19-1c,Draba sp.,37,B-F,out
 2019-06-06,Elizabeth Simpson,,1311,19-1d,Draba sp.,52,B-F,in
 2019-06-06,Elizabeth Simpson,,1311,19-1e,Draba sp.,40.3,B-F,out
-2019-06-06,Elizabeth Simpson,,1311,19-2a,Elymus spicata,54,S,in
-2019-06-06,Elizabeth Simpson,,1311,19-2b,Elymus spicata,54,S,in
-2019-06-06,Elizabeth Simpson,,1311,19-2c,Elymus spicata,56.5,S,out
-2019-06-06,Elizabeth Simpson,,1311,19-2d,Elymus spicata,59,S,out
-2019-06-06,Elizabeth Simpson,,1311,19-2e,Elymus spicata,50.1,S,out
+2019-06-06,Elizabeth Simpson,,1311,19-2a,Pseudoroegneria spicata,54,S,in
+2019-06-06,Elizabeth Simpson,,1311,19-2b,Pseudoroegneria spicata,54,S,in
+2019-06-06,Elizabeth Simpson,,1311,19-2c,Pseudoroegneria spicata,56.5,S,out
+2019-06-06,Elizabeth Simpson,,1311,19-2d,Pseudoroegneria spicata,59,S,out
+2019-06-06,Elizabeth Simpson,,1311,19-2e,Pseudoroegneria spicata,50.1,S,out
 2019-06-06,Elizabeth Simpson,,1311,19-3a,Hackelia patens,38.2,F,out
 2019-06-06,Elizabeth Simpson,,1311,19-3b,Hackelia patens,57,F,out
 2019-06-06,Elizabeth Simpson,,1311,19-3c,Hackelia patens,33,F,out
 2019-06-06,Elizabeth Simpson,,1311,19-3d,Hackelia patens,39,F,out
 2019-06-06,Elizabeth Simpson,,1311,19-3e,Hackelia patens,46,F,out
-2019-06-06,Elizabeth Simpson,,1311,19-4a,Penstemon compactus,10.5,F,in
-2019-06-06,Elizabeth Simpson,,1311,19-4b,Penstemon compactus,12,F,out
-2019-06-06,Elizabeth Simpson,,1311,19-4c,Penstemon compactus,21,F,out
-2019-06-06,Elizabeth Simpson,,1311,19-4d,Penstemon compactus,19,F,out
-2019-06-06,Elizabeth Simpson,,1311,19-4e,Penstemon compactus,19.5,F,out
-2019-06-06,Elizabeth Simpson,,1311,19-5a,Mahonia repens,13.5,F-S,in
-2019-06-06,Elizabeth Simpson,,1311,19-5b,Mahonia repens,9.5,F-S,in
-2019-06-06,Elizabeth Simpson,,1311,19-5c,Mahonia repens,8.5,F-S,out
-2019-06-06,Elizabeth Simpson,,1311,19-5d,Mahonia repens,17.5,F-S,out
-2019-06-06,Elizabeth Simpson,,1311,19-5e,Mahonia repens,17,F-S,out
+2019-06-06,Elizabeth Simpson,,1311,19-4a,Penstemon humilis,10.5,F,in
+2019-06-06,Elizabeth Simpson,,1311,19-4b,Penstemon humilis,12,F,out
+2019-06-06,Elizabeth Simpson,,1311,19-4c,Penstemon humilis,21,F,out
+2019-06-06,Elizabeth Simpson,,1311,19-4d,Penstemon humilis,19,F,out
+2019-06-06,Elizabeth Simpson,,1311,19-4e,Penstemon humilis,19.5,F,out
+2019-06-06,Elizabeth Simpson,,1311,19-5a,Berberis repens,13.5,F-S,in
+2019-06-06,Elizabeth Simpson,,1311,19-5b,Berberis repens,9.5,F-S,in
+2019-06-06,Elizabeth Simpson,,1311,19-5c,Berberis repens,8.5,F-S,out
+2019-06-06,Elizabeth Simpson,,1311,19-5d,Berberis repens,17.5,F-S,out
+2019-06-06,Elizabeth Simpson,,1311,19-5e,Berberis repens,17,F-S,out
 2019-06-06,Elizabeth Simpson,,3111,19-1a,Taraxacum officinale,41.8,F,out
 2019-06-06,Elizabeth Simpson,,3111,19-1b,Taraxacum officinale,26,F,out
 2019-06-06,Elizabeth Simpson,,3111,19-1c,Taraxacum officinale,38,F,out
@@ -291,11 +291,11 @@ Date,Recorder_1,Recorder_2,Plot_id,Sp_num,Species,height_cm,phenology,in_out_of_
 2019-06-07,Elizabeth Simpson,,1133,19-5c,Claytonia perfoliata,14,F,out
 2019-06-07,Elizabeth Simpson,,1133,19-5d,Claytonia perfoliata,8.5,F,out
 2019-06-07,Elizabeth Simpson,,1133,19-5e,Claytonia perfoliata,4,F,in
-2019-06-07,Elizabeth Simpson,,1131,19-1a,Artemesia ludoviciana,27.8,B,in
-2019-06-07,Elizabeth Simpson,,1131,19-1b,Artemesia ludoviciana,31.5,B,out
-2019-06-07,Elizabeth Simpson,,1131,19-1c,Artemesia ludoviciana,33.6,B,out
-2019-06-07,Elizabeth Simpson,,1131,19-1d,Artemesia ludoviciana,32,B,out
-2019-06-07,Elizabeth Simpson,,1131,19-1e,Artemesia ludoviciana,27,B,out
+2019-06-07,Elizabeth Simpson,,1131,19-1a,Artemisia ludoviciana,27.8,B,in
+2019-06-07,Elizabeth Simpson,,1131,19-1b,Artemisia ludoviciana,31.5,B,out
+2019-06-07,Elizabeth Simpson,,1131,19-1c,Artemisia ludoviciana,33.6,B,out
+2019-06-07,Elizabeth Simpson,,1131,19-1d,Artemisia ludoviciana,32,B,out
+2019-06-07,Elizabeth Simpson,,1131,19-1e,Artemisia ludoviciana,27,B,out
 2019-06-10,Elizabeth Simpson,,2211,19-3a,Melica bulbosa,28.7,S,in
 2019-06-10,Elizabeth Simpson,,2211,19-3b,Melica bulbosa,47,S,out
 2019-06-10,Elizabeth Simpson,,2211,19-3c,Melica bulbosa,40.9,S,out
@@ -311,11 +311,11 @@ Date,Recorder_1,Recorder_2,Plot_id,Sp_num,Species,height_cm,phenology,in_out_of_
 2019-06-10,Elizabeth Simpson,,2211,19-5c,Collomia linearis,8.5,F,in
 2019-06-10,Elizabeth Simpson,,2211,19-5d,Collomia linearis,17.1,F,out
 2019-06-10,Elizabeth Simpson,,2211,19-5e,Collomia linearis,17.9,F,out
-2019-06-10,Elizabeth Simpson,,2211,19-6a,Agoseris glauca,10.4,F-S,in
-2019-06-10,Elizabeth Simpson,,2211,19-6b,Agoseris glauca,8,F-S,out
-2019-06-10,Elizabeth Simpson,,2211,19-6c,Agoseris glauca,5,F-S,out
-2019-06-10,Elizabeth Simpson,,2211,19-6d,Agoseris glauca,10.2,F-S,out
-2019-06-10,Elizabeth Simpson,,2211,19-6e,Agoseris glauca,15.5,F-S,out
+2019-06-10,Elizabeth Simpson,,2211,19-6a,Agoseris heterophylla,10.4,F-S,in
+2019-06-10,Elizabeth Simpson,,2211,19-6b,Agoseris heterophylla,8,F-S,out
+2019-06-10,Elizabeth Simpson,,2211,19-6c,Agoseris heterophylla,5,F-S,out
+2019-06-10,Elizabeth Simpson,,2211,19-6d,Agoseris heterophylla,10.2,F-S,out
+2019-06-10,Elizabeth Simpson,,2211,19-6e,Agoseris heterophylla,15.5,F-S,out
 2019-06-11,Elizabeth Simpson,,2133,19-4a,Oenothera caespitosa,11,F,in
 2019-06-11,Elizabeth Simpson,,2133,19-4b,Oenothera caespitosa,9.8,F,out
 2019-06-11,Elizabeth Simpson,,2133,19-4c,Oenothera caespitosa,10.5,F,out
@@ -361,11 +361,11 @@ Date,Recorder_1,Recorder_2,Plot_id,Sp_num,Species,height_cm,phenology,in_out_of_
 2019-06-12,Elizabeth Simpson,,3133,19-2c,Crepis acuminata,50.3,B,out
 2019-06-12,Elizabeth Simpson,,3133,19-2d,Crepis acuminata,36.4,B,out
 2019-06-12,Elizabeth Simpson,,3133,19-2e,Crepis acuminata,41,B,out
-2019-06-13,Elizabeth Simpson,,3122,19-3a,Agoseris glauca,22.2,F,in
-2019-06-13,Elizabeth Simpson,,3122,19-3b,Agoseris glauca,12,F,in
-2019-06-13,Elizabeth Simpson,,3122,19-3c,Agoseris glauca,12.5,F,out
-2019-06-13,Elizabeth Simpson,,3122,19-3d,Agoseris glauca,15,F,out
-2019-06-13,Elizabeth Simpson,,3122,19-3e,Agoseris glauca,16,F,out
+2019-06-13,Elizabeth Simpson,,3122,19-3a,Agoseris parviflora,22.2,F,in
+2019-06-13,Elizabeth Simpson,,3122,19-3b,Agoseris parviflora,12,F,in
+2019-06-13,Elizabeth Simpson,,3122,19-3c,Agoseris parviflora,12.5,F,out
+2019-06-13,Elizabeth Simpson,,3122,19-3d,Agoseris parviflora,15,F,out
+2019-06-13,Elizabeth Simpson,,3122,19-3e,Agoseris parviflora,16,F,out
 2019-06-13,Elizabeth Simpson,,3111,19-3a,Galium aparine,27.9,F,in
 2019-06-13,Elizabeth Simpson,,3111,19-3b,Galium aparine,23.8,F,in
 2019-06-13,Elizabeth Simpson,,3111,19-3c,Galium aparine,18,F,in
@@ -381,21 +381,21 @@ Date,Recorder_1,Recorder_2,Plot_id,Sp_num,Species,height_cm,phenology,in_out_of_
 2019-06-13,Elizabeth Simpson,,3111,19-5c,Epilobium angustifolium,56.5,B,out
 2019-06-13,Elizabeth Simpson,,3111,19-5d,Epilobium angustifolium,79,B,out
 2019-06-13,Elizabeth Simpson,,3111,19-5e,Epilobium angustifolium,81,B,out
-2019-06-17,Elizabeth Simpson,,2311,19-4a,Carex sp.,27,S,in
-2019-06-17,Elizabeth Simpson,,2311,19-4b,Carex sp.,30.5,S,in
-2019-06-17,Elizabeth Simpson,,2311,19-4c,Carex sp.,30,S,out
-2019-06-17,Elizabeth Simpson,,2311,19-4d,Carex sp.,31,S,out
-2019-06-17,Elizabeth Simpson,,2311,19-4e,Carex sp.,36.5,S,out
+2019-06-17,Elizabeth Simpson,,2311,19-4a,Carex geyeri,27,S,in
+2019-06-17,Elizabeth Simpson,,2311,19-4b,Carex geyeri,30.5,S,in
+2019-06-17,Elizabeth Simpson,,2311,19-4c,Carex geyeri,30,S,out
+2019-06-17,Elizabeth Simpson,,2311,19-4d,Carex geyeri,31,S,out
+2019-06-17,Elizabeth Simpson,,2311,19-4e,Carex geyeri,36.5,S,out
 2019-06-17,Elizabeth Simpson,,2333,19-4a,Osmorhiza occidentalis,32,F,in
 2019-06-17,Elizabeth Simpson,,2333,19-4b,Osmorhiza occidentalis,37,F,out
 2019-06-17,Elizabeth Simpson,,2333,19-4c,Osmorhiza occidentalis,23,F,out
 2019-06-17,Elizabeth Simpson,,2333,19-4d,Osmorhiza occidentalis,20,F,out
 2019-06-17,Elizabeth Simpson,,2333,19-4e,Osmorhiza occidentalis,20.5,F,out
-2019-06-26,Elizabeth Simpson,Ian Fraser,1111,19-5a,Erigeron sp.,19,B-F,in
-2019-06-26,Elizabeth Simpson,Ian Fraser,1111,19-5b,Erigeron sp.,43,B-F,in
-2019-06-26,Elizabeth Simpson,Ian Fraser,1111,19-5c,Erigeron sp.,35.2,B-F,out
-2019-06-26,Elizabeth Simpson,Ian Fraser,1111,19-5d,Erigeron sp.,35,B-F,out
-2019-06-26,Elizabeth Simpson,Ian Fraser,1111,19-5e,Erigeron sp.,40.5,B-F,out
+2019-06-26,Elizabeth Simpson,Ian Fraser,1111,19-5a,Erigeron speciosus,19,B-F,in
+2019-06-26,Elizabeth Simpson,Ian Fraser,1111,19-5b,Erigeron speciosus,43,B-F,in
+2019-06-26,Elizabeth Simpson,Ian Fraser,1111,19-5c,Erigeron speciosus,35.2,B-F,out
+2019-06-26,Elizabeth Simpson,Ian Fraser,1111,19-5d,Erigeron speciosus,35,B-F,out
+2019-06-26,Elizabeth Simpson,Ian Fraser,1111,19-5e,Erigeron speciosus,40.5,B-F,out
 2019-06-26,Elizabeth Simpson,Ian Fraser,1111,19-6a,Linum lewisii,63,F,out
 2019-06-26,Elizabeth Simpson,Ian Fraser,1111,19-6b,Linum lewisii,69.9,F,out
 2019-06-26,Elizabeth Simpson,Ian Fraser,1111,19-6c,Linum lewisii,65.5,F,out
@@ -500,11 +500,11 @@ Date,Recorder_1,Recorder_2,Plot_id,Sp_num,Species,height_cm,phenology,in_out_of_
 2019-07-18,Elizabeth Simpson,,1123,19-4b,Juniperus osteosperma,850,S,out
 2019-07-18,Elizabeth Simpson,,1123,19-4c,Juniperus osteosperma,1020,S,out
 2019-07-18,Elizabeth Simpson,,1123,19-4d,Juniperus osteosperma,1170,S,out
-2019-07-23,Elizabeth Simpson,,3311,19-3a,Ephedra viridis,40,F,in
-2019-07-23,Elizabeth Simpson,,3311,19-3b,Ephedra viridis,22,F,in
-2019-07-23,Elizabeth Simpson,,3311,19-3c,Ephedra viridis,35.8,F,out
-2019-07-23,Elizabeth Simpson,,3311,19-3d,Ephedra viridis,24.5,F,out
-2019-07-23,Elizabeth Simpson,,3311,19-3e,Ephedra viridis,48,F,out
+2019-07-23,Elizabeth Simpson,,3311,19-3a,Astragalus convallarius,40,F,in
+2019-07-23,Elizabeth Simpson,,3311,19-3b,Astragalus convallarius,22,F,in
+2019-07-23,Elizabeth Simpson,,3311,19-3c,Astragalus convallarius,35.8,F,out
+2019-07-23,Elizabeth Simpson,,3311,19-3d,Astragalus convallarius,24.5,F,out
+2019-07-23,Elizabeth Simpson,,3311,19-3e,Astragalus convallarius,48,F,out
 2019-07-23,Elizabeth Simpson,,3311,19-4a,Eucephalus elegans,47,B,in
 2019-07-23,Elizabeth Simpson,,3311,19-4b,Eucephalus elegans,42.5,B,out
 2019-07-23,Elizabeth Simpson,,3311,19-4c,Eucephalus elegans,45.3,B,out
@@ -515,11 +515,11 @@ Date,Recorder_1,Recorder_2,Plot_id,Sp_num,Species,height_cm,phenology,in_out_of_
 2019-07-23,Elizabeth Simpson,,3311,19-6c,Prunus virginiana,180,S,out
 2019-07-23,Elizabeth Simpson,,3311,19-6d,Prunus virginiana,420,S,out
 2019-07-23,Elizabeth Simpson,,3311,19-6e,Prunus virginiana,170,S,out
-2019-07-23,Elizabeth Simpson,,3311,19-7a,Amelancier alnifolia,290,S,out
-2019-07-23,Elizabeth Simpson,,3311,19-7b,Amelancier alnifolia,220,S,out
-2019-07-23,Elizabeth Simpson,,3311,19-7c,Amelancier alnifolia,250,S,out
-2019-07-23,Elizabeth Simpson,,3311,19-7d,Amelancier alnifolia,200,S,out
-2019-07-23,Elizabeth Simpson,,3311,19-7e,Amelancier alnifolia,120,S,out
+2019-07-23,Elizabeth Simpson,,3311,19-7a,Amelanchier alnifolia,290,S,out
+2019-07-23,Elizabeth Simpson,,3311,19-7b,Amelanchier alnifolia,220,S,out
+2019-07-23,Elizabeth Simpson,,3311,19-7c,Amelanchier alnifolia,250,S,out
+2019-07-23,Elizabeth Simpson,,3311,19-7d,Amelanchier alnifolia,200,S,out
+2019-07-23,Elizabeth Simpson,,3311,19-7e,Amelanchier alnifolia,120,S,out
 2019-07-23,Elizabeth Simpson,,3313,19-1a,Petradoria pumila,22.5,F,in
 2019-07-23,Elizabeth Simpson,,3313,19-1b,Petradoria pumila,24,F,out
 2019-07-23,Elizabeth Simpson,,3313,19-1c,Petradoria pumila,21.7,F,out
@@ -535,26 +535,26 @@ Date,Recorder_1,Recorder_2,Plot_id,Sp_num,Species,height_cm,phenology,in_out_of_
 2019-07-23,Elizabeth Simpson,,3323,19-1c,Frasera speciosa,36,F-S,out
 2019-07-23,Elizabeth Simpson,,3323,19-1d,Frasera speciosa,38,F-S,out
 2019-07-23,Elizabeth Simpson,,3323,19-1e,Frasera speciosa,34,F-S,out
-2019-07-23,Elizabeth Simpson,,3232,19-1a,Pascopyrum smithii,27.7,S,in
-2019-07-23,Elizabeth Simpson,,3232,19-1b,Pascopyrum smithii,27,S,in
-2019-07-23,Elizabeth Simpson,,3232,19-1c,Pascopyrum smithii,50,S,out
-2019-07-23,Elizabeth Simpson,,3232,19-1d,Pascopyrum smithii,47,S,out
-2019-07-23,Elizabeth Simpson,,3232,19-1e,Pascopyrum smithii,48.3,S,out
-2019-07-23,Elizabeth Simpson,,3221,19-1a,Aster engelmanii,76,B-F,out
-2019-07-23,Elizabeth Simpson,,3221,19-1b,Aster engelmanii,98,B-F,out
-2019-07-23,Elizabeth Simpson,,3221,19-1c,Aster engelmanii,135,B-F,out
-2019-07-23,Elizabeth Simpson,,3221,19-1d,Aster engelmanii,83,B-F,out
-2019-07-23,Elizabeth Simpson,,3221,19-1e,Aster engelmanii,101,B-F,out
-2019-07-23,Elizabeth Simpson,,3221,19-2a,Populous tremuloides,780,NF/S,out
-2019-07-23,Elizabeth Simpson,,3221,19-2b,Populous tremuloides,2110,NF/S,out
-2019-07-23,Elizabeth Simpson,,3221,19-2c,Populous tremuloides,890,NF/S,out
-2019-07-23,Elizabeth Simpson,,3221,19-2d,Populous tremuloides,2330,NF/S,out
-2019-07-23,Elizabeth Simpson,,3221,19-2e,Populous tremuloides,820,NF/S,out
-2019-07-23,Elizabeth Simpson,,3221,19-3a,Sheperdia canadensis,245,NF/S,out
-2019-07-23,Elizabeth Simpson,,3221,19-3b,Sheperdia canadensis,420,NF/S,out
-2019-07-23,Elizabeth Simpson,,3221,19-3c,Sheperdia canadensis,440,NF/S,out
-2019-07-23,Elizabeth Simpson,,3221,19-3d,Sheperdia canadensis,420,NF/S,out
-2019-07-23,Elizabeth Simpson,,3221,19-3e,Sheperdia canadensis,260,NF/S,out
+2019-07-23,Elizabeth Simpson,,3232,19-1a,Elymus smithii,27.7,S,in
+2019-07-23,Elizabeth Simpson,,3232,19-1b,Elymus smithii,27,S,in
+2019-07-23,Elizabeth Simpson,,3232,19-1c,Elymus smithii,50,S,out
+2019-07-23,Elizabeth Simpson,,3232,19-1d,Elymus smithii,47,S,out
+2019-07-23,Elizabeth Simpson,,3232,19-1e,Elymus smithii,48.3,S,out
+2019-07-23,Elizabeth Simpson,,3221,19-1a,Eucephalus engelmannii,76,B-F,out
+2019-07-23,Elizabeth Simpson,,3221,19-1b,Eucephalus engelmannii,98,B-F,out
+2019-07-23,Elizabeth Simpson,,3221,19-1c,Eucephalus engelmannii,135,B-F,out
+2019-07-23,Elizabeth Simpson,,3221,19-1d,Eucephalus engelmannii,83,B-F,out
+2019-07-23,Elizabeth Simpson,,3221,19-1e,Eucephalus engelmannii,101,B-F,out
+2019-07-23,Elizabeth Simpson,,3221,19-2a,Populus tremuloides,780,NF/S,out
+2019-07-23,Elizabeth Simpson,,3221,19-2b,Populus tremuloides,2110,NF/S,out
+2019-07-23,Elizabeth Simpson,,3221,19-2c,Populus tremuloides,890,NF/S,out
+2019-07-23,Elizabeth Simpson,,3221,19-2d,Populus tremuloides,2330,NF/S,out
+2019-07-23,Elizabeth Simpson,,3221,19-2e,Populus tremuloides,820,NF/S,out
+2019-07-23,Elizabeth Simpson,,3221,19-3a,Shepherdia canadensis,245,NF/S,out
+2019-07-23,Elizabeth Simpson,,3221,19-3b,Shepherdia canadensis,420,NF/S,out
+2019-07-23,Elizabeth Simpson,,3221,19-3c,Shepherdia canadensis,440,NF/S,out
+2019-07-23,Elizabeth Simpson,,3221,19-3d,Shepherdia canadensis,420,NF/S,out
+2019-07-23,Elizabeth Simpson,,3221,19-3e,Shepherdia canadensis,260,NF/S,out
 2019-07-23,Elizabeth Simpson,,3221,19-4a,Elymus glaucus,67,S,out
 2019-07-23,Elizabeth Simpson,,3221,19-4b,Elymus glaucus,118,S,out
 2019-07-23,Elizabeth Simpson,,3221,19-4c,Elymus glaucus,129,S,out
@@ -563,11 +563,11 @@ Date,Recorder_1,Recorder_2,Plot_id,Sp_num,Species,height_cm,phenology,in_out_of_
 2019-07-23,Elizabeth Simpson,,3221,19-5c,Rubus parviflorus,108,F-S,out
 2019-07-23,Elizabeth Simpson,,3221,19-5d,Rubus parviflorus,105,F-S,out
 2019-07-23,Elizabeth Simpson,,3221,19-5e,Rubus parviflorus,83,F-S,out
-2019-07-25,Elizabeth Simpson,,2211,19-7a,Agoseris sp.,11,S,out
-2019-07-25,Elizabeth Simpson,,2211,19-7b,Agoseris sp.,11.5,S,in
-2019-07-25,Elizabeth Simpson,,2211,19-7c,Agoseris sp.,12.5,S,in
-2019-07-25,Elizabeth Simpson,,2211,19-7d,Agoseris sp.,16.2,S,out
-2019-07-25,Elizabeth Simpson,,2211,19-7e,Agoseris sp.,20.8,S,out
+2019-07-25,Elizabeth Simpson,,2211,19-7a,Agoseris grandiflora,11,S,out
+2019-07-25,Elizabeth Simpson,,2211,19-7b,Agoseris grandiflora,11.5,S,in
+2019-07-25,Elizabeth Simpson,,2211,19-7c,Agoseris grandiflora,12.5,S,in
+2019-07-25,Elizabeth Simpson,,2211,19-7d,Agoseris grandiflora,16.2,S,out
+2019-07-25,Elizabeth Simpson,,2211,19-7e,Agoseris grandiflora,20.8,S,out
 2019-07-25,Elizabeth Simpson,,2222,19-2a,Koeleria macrantha,28,S,out
 2019-07-25,Elizabeth Simpson,,2222,19-2b,Koeleria macrantha,33,S,out
 2019-07-25,Elizabeth Simpson,,2222,19-2c,Koeleria macrantha,25.1,S,out
@@ -588,11 +588,11 @@ Date,Recorder_1,Recorder_2,Plot_id,Sp_num,Species,height_cm,phenology,in_out_of_
 2019-07-25,Elizabeth Simpson,,2311,19-6c,Leucopoa kingii,23,S,out
 2019-07-25,Elizabeth Simpson,,2311,19-6d,Leucopoa kingii,41,S,out
 2019-07-25,Elizabeth Simpson,,2311,19-6e,Leucopoa kingii,40.3,S,out
-2019-07-25,Elizabeth Simpson,,2311,19-7a,Eriogonum caespitosa,3.8,NF/S,out
-2019-07-25,Elizabeth Simpson,,2311,19-7b,Eriogonum caespitosa,5.5,NF/S,out
-2019-07-25,Elizabeth Simpson,,2311,19-7c,Eriogonum caespitosa,5,NF/S,out
-2019-07-25,Elizabeth Simpson,,2311,19-7d,Eriogonum caespitosa,6,NF/S,out
-2019-07-25,Elizabeth Simpson,,2311,19-7e,Eriogonum caespitosa,4.4,NF/S,out
+2019-07-25,Elizabeth Simpson,,2311,19-7a,Antennaria microphylla,3.8,NF/S,out
+2019-07-25,Elizabeth Simpson,,2311,19-7b,Antennaria microphylla,5.5,NF/S,out
+2019-07-25,Elizabeth Simpson,,2311,19-7c,Antennaria microphylla,5,NF/S,out
+2019-07-25,Elizabeth Simpson,,2311,19-7d,Antennaria microphylla,6,NF/S,out
+2019-07-25,Elizabeth Simpson,,2311,19-7e,Antennaria microphylla,4.4,NF/S,out
 2019-07-25,Elizabeth Simpson,,2311,19-8a,Acer glabrum,240,S,out
 2019-07-25,Elizabeth Simpson,,2311,19-8b,Acer glabrum,90,S,out
 2019-07-25,Elizabeth Simpson,,2311,19-8c,Acer glabrum,150,S,out
@@ -613,8 +613,8 @@ Date,Recorder_1,Recorder_2,Plot_id,Sp_num,Species,height_cm,phenology,in_out_of_
 2019-07-25,Elizabeth Simpson,,1331,19-2c,Betula occidentalis,530,NF/S,in
 2019-07-25,Elizabeth Simpson,,1331,19-2d,Betula occidentalis,650,NF/S,out
 2019-07-25,Elizabeth Simpson,,1331,19-2e,Betula occidentalis,1120,NF/S,out
-2019-07-25,Elizabeth Simpson,,1311,19-1a,Medicago lulupina,82,F,out
-2019-07-25,Elizabeth Simpson,,1311,19-1b,Medicago lulupina,78,F,out
-2019-07-25,Elizabeth Simpson,,1311,19-1c,Medicago lulupina,74,F,out
-2019-07-25,Elizabeth Simpson,,1311,19-1d,Medicago lulupina,43.4,F,out
-2019-07-25,Elizabeth Simpson,,1311,19-1e,Medicago lulupina,82.7,F,out
+2019-07-25,Elizabeth Simpson,,1311,19-1a,Medicago lupulina,82,F,out
+2019-07-25,Elizabeth Simpson,,1311,19-1b,Medicago lupulina,78,F,out
+2019-07-25,Elizabeth Simpson,,1311,19-1c,Medicago lupulina,74,F,out
+2019-07-25,Elizabeth Simpson,,1311,19-1d,Medicago lupulina,43.4,F,out
+2019-07-25,Elizabeth Simpson,,1311,19-1e,Medicago lupulina,82.7,F,out

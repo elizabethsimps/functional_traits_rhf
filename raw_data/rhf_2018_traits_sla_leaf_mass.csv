@@ -21,8 +21,8 @@ Date_collected,Collector_1,Collector_2,N_leaves,Species,Bag_label,Date_weighed,W
 2018-06-13,Elizabeth Simpson,,5,Chrysothamnus viscidiflorus,1111-4e,2018-11-05,Hillary Woolf,0.035,0,,1111-4a-e.jpeg,1111-4e
 2018-06-13,Elizabeth Simpson,,5,Achillea millefolium,1111-5a,2018-11-05,Hillary Woolf,0.189,0,petioles attached,1111-5a-b.jpeg,1111-5a
 2018-06-13,Elizabeth Simpson,,5,Achillea millefolium,1111-5b,2018-11-05,Hillary Woolf,0.264,0,petioles attached,1111-5a-b.jpeg,1111-5b
-2018-06-13,Elizabeth Simpson,,5,Mainthemum stellatum,1111-6a,2018-11-05,Hillary Woolf,0.551,0,,1111-6a-b.jpeg,1111-6a
-2018-06-13,Elizabeth Simpson,,5,Mainthemum stellatum,1111-6b,2018-11-05,Hillary Woolf,0.347,0,,1111-6a-b.jpeg,1111-6b
+2018-06-13,Elizabeth Simpson,,5,Maianthemum stellatum,1111-6a,2018-11-05,Hillary Woolf,0.551,0,,1111-6a-b.jpeg,1111-6a
+2018-06-13,Elizabeth Simpson,,5,Maianthemum stellatum,1111-6b,2018-11-05,Hillary Woolf,0.347,0,,1111-6a-b.jpeg,1111-6b
 2018-06-13,Elizabeth Simpson,,5,Lithophragma parviflorum,1111-7a,2018-11-05,Hillary Woolf,0.022,0,petioles attached,1111-7a.jpeg,1111-7a
 2018-06-13,Elizabeth Simpson,,5,Claytonia perfoliata,1111-8a,2018-11-05,Hillary Woolf,0.015,0,,1111-8a.jpeg,1111-8a
 2018-06-13,Elizabeth Simpson,,5,Collinsia parviflora,1111-9a,2018-11-05,Hillary Woolf,0.006,0,,1111-9a.jpeg,1111-9a
@@ -32,8 +32,8 @@ Date_collected,Collector_1,Collector_2,N_leaves,Species,Bag_label,Date_weighed,W
 2018-06-13,Elizabeth Simpson,,5,Lactuca serriola,1111-11b,2018-11-05,Hillary Woolf,0.06,0,,1111-11a-c.jpeg,1111-11b
 2018-06-13,Elizabeth Simpson,,5,Lactuca serriola,1111-11c,2018-11-05,Hillary Woolf,0.049,0,,1111-11a-c.jpeg,1111-11c
 2018-06-13,Elizabeth Simpson,,5,Tragopogon dubius,1111-12a,2018-11-05,Hillary Woolf,0.383,0,,1111-12a.jpeg,1111-12a
-2018-06-13,Elizabeth Simpson,,5,Ranunculus ranunculinus,1111-13a,2018-11-05,Hillary Woolf,0.014,0,,1111-13a-b.jpeg,1111-13a
-2018-06-13,Elizabeth Simpson,,5,Ranunculus ranunculinus,1111-13b,2018-11-05,Hillary Woolf,0.022,0,,1111-13a-b.jpeg,1111-13b
+2018-06-13,Elizabeth Simpson,,5,Nemophila breviflora,1111-13a,2018-11-05,Hillary Woolf,0.014,0,,1111-13a-b.jpeg,1111-13a
+2018-06-13,Elizabeth Simpson,,5,Nemophila breviflora,1111-13b,2018-11-05,Hillary Woolf,0.022,0,,1111-13a-b.jpeg,1111-13b
 2018-06-13,Elizabeth Simpson,,5,Galium aparine,1111-14a,2018-11-05,Hillary Woolf,0.001,0,,1111-14a-b.jpeg,1111-14a
 2018-06-13,Elizabeth Simpson,,5,Galium aparine,1111-14b,2018-11-05,Hillary Woolf,0.001,0,,1111-14a-b.jpeg,1111-14b
 2018-06-13,Elizabeth Simpson,,3,Taraxacum officinale,1111-15a,2018-11-05,Hillary Woolf,0.298,0,only 3 leaves per individual – petioles attached,1111-15a.jpeg,1111-15a
@@ -49,7 +49,7 @@ Date_collected,Collector_1,Collector_2,N_leaves,Species,Bag_label,Date_weighed,W
 2018-06-13,Elizabeth Simpson,,5,Symphoricarpos oreophilus,1111-21c,2018-11-05,Hillary Woolf,0.133,0,vegetative shoot leaves,1111-21a-e.jpeg,1111-21c
 2018-06-13,Elizabeth Simpson,,5,Symphoricarpos oreophilus,1111-21d,2018-11-05,Hillary Woolf,0.116,0,vegetative shoot leaves,1111-21a-e.jpeg,1111-21d
 2018-06-13,Elizabeth Simpson,,5,Symphoricarpos oreophilus,1111-21e,2018-11-05,Hillary Woolf,0.084,0,vegetative shoot leaves,1111-21a-e.jpeg,1111-21e
-2018-06-13,Elizabeth Simpson,,5,Mahonia repens,1111-22a,2018-11-05,Hillary Woolf,0.612,0,,1111-22a.jpeg,1111-22a
+2018-06-13,Elizabeth Simpson,,5,Berberis repens,1111-22a,2018-11-05,Hillary Woolf,0.612,0,,1111-22a.jpeg,1111-22a
 2018-06-13,Elizabeth Simpson,,5,Crepis acuminata,1122-1a,2018-11-05,Hillary Woolf,1.512,0.555,,1122-1aA.jpeg_1122-1aB.jpeg_1122-1a-pet.jpeg,1122-1a
 2018-06-13,Elizabeth Simpson,,5,Crepis acuminata,1122-1b,2018-11-05,Hillary Woolf,1.111,0.37,,1122-1bA.jpeg_1122-1bB.jpeg_1122-1b-pet.jpeg,1122-1b
 2018-06-13,Elizabeth Simpson,,5,Crepis acuminata,1122-1c,2018-11-05,Hillary Woolf,0.668,0.332,,1122-1bA.jpeg_1122-1cB-pet.jpeg,1122-1c
@@ -115,11 +115,11 @@ Date_collected,Collector_1,Collector_2,N_leaves,Species,Bag_label,Date_weighed,W
 2018-06-14,Elizabeth Simpson,,5,Alyssum desertorum,1311-1c,2018-11-07,Hillary Woolf,0.007,0,,1311-1a-e.jpeg,1311-1c
 2018-06-14,Elizabeth Simpson,,5,Alyssum desertorum,1311-1d,2018-11-07,Hillary Woolf,0.001,0,,1311-1a-e.jpeg,1311-1d
 2018-06-14,Elizabeth Simpson,,5,Alyssum desertorum,1311-1e,2018-11-07,Hillary Woolf,0.002,0,,1311-1a-e.jpeg,1311-1e
-2018-06-14,Elizabeth Simpson,,5,Mahonia repens,1311-2a,2018-11-07,Hillary Woolf,0.559,0,,1311-2a-e.jpeg,1311-2a
-2018-06-14,Elizabeth Simpson,,5,Mahonia repens,1311-2b,2018-11-07,Hillary Woolf,0.564,0,,1311-2a-e.jpeg,1311-2b
-2018-06-14,Elizabeth Simpson,,5,Mahonia repens,1311-2c,2018-11-07,Hillary Woolf,0.595,0,,1311-2a-e.jpeg,1311-2c
-2018-06-14,Elizabeth Simpson,,5,Mahonia repens,1311-2d,2018-11-07,Hillary Woolf,0.312,0,,1311-2a-e.jpeg,1311-2d
-2018-06-14,Elizabeth Simpson,,5,Mahonia repens,1311-2e,2018-11-07,Hillary Woolf,0.657,0,,1311-2a-e.jpeg,1311-2e
+2018-06-14,Elizabeth Simpson,,5,Berberis repens,1311-2a,2018-11-07,Hillary Woolf,0.559,0,,1311-2a-e.jpeg,1311-2a
+2018-06-14,Elizabeth Simpson,,5,Berberis repens,1311-2b,2018-11-07,Hillary Woolf,0.564,0,,1311-2a-e.jpeg,1311-2b
+2018-06-14,Elizabeth Simpson,,5,Berberis repens,1311-2c,2018-11-07,Hillary Woolf,0.595,0,,1311-2a-e.jpeg,1311-2c
+2018-06-14,Elizabeth Simpson,,5,Berberis repens,1311-2d,2018-11-07,Hillary Woolf,0.312,0,,1311-2a-e.jpeg,1311-2d
+2018-06-14,Elizabeth Simpson,,5,Berberis repens,1311-2e,2018-11-07,Hillary Woolf,0.657,0,,1311-2a-e.jpeg,1311-2e
 2018-06-14,Elizabeth Simpson,,5,Pseudoroegneria spicata,1311-3a,2018-11-07,Hillary Woolf,0.224,0,,1311-3a.jpeg,1311-3a
 2018-06-14,Elizabeth Simpson,,5,Pseudoroegneria spicata,1311-3b,2018-11-07,Hillary Woolf,0.219,0,,1311-3b.jpeg,1311-3b
 2018-06-14,Elizabeth Simpson,,5,Pseudoroegneria spicata,1311-3c,2018-11-07,Hillary Woolf,0.188,0,,1311-3c.jpeg,1311-3c
@@ -138,11 +138,11 @@ Date_collected,Collector_1,Collector_2,N_leaves,Species,Bag_label,Date_weighed,W
 2018-06-19,Elizabeth Simpson,,5,Crepis acuminata,1222-2c,2018-11-12,Hillary Woolf,0.93,0.334,,1222-2c.jpeg,1222-2c
 2018-06-19,Elizabeth Simpson,,5,Crepis acuminata,1222-2d,2018-11-12,Hillary Woolf,1.261,0.195,,1222-2dA.jpeg_1222-2dB.jpeg,1222-2d
 2018-06-19,Elizabeth Simpson,,5,Crepis acuminata,1222-2e,2018-11-12,Hillary Woolf,1.336,0.397,,1222-2eA.jpeg_1222-2eB.jpeg,1222-2e
-2018-06-19,Elizabeth Simpson,,5,Circium undulatum,1222-8a,2018-11-12,Hillary Woolf,0.994,0,,1222-8a.jpeg,1222-8a
-2018-06-19,Elizabeth Simpson,,5,Circium undulatum,1222-8b,2018-11-12,Hillary Woolf,0.869,0,,1222-8b-c.jpeg,1222-8b
-2018-06-19,Elizabeth Simpson,,5,Circium undulatum,1222-8c,2018-11-12,Hillary Woolf,0.714,0,,1222-8b-c.jpeg,1222-8c
-2018-06-19,Elizabeth Simpson,,5,Circium undulatum,1222-8d,2018-11-12,Hillary Woolf,1.617,0.401,,1222-8d-e.jpeg,1222-8d
-2018-06-19,Elizabeth Simpson,,5,Circium undulatum,1222-8e,2018-11-12,Hillary Woolf,0.822,0.029,,1222-8d-e.jpeg,1222-8e
+2018-06-19,Elizabeth Simpson,,5,Cirsium pulcherrimum,1222-8a,2018-11-12,Hillary Woolf,0.994,0,,1222-8a.jpeg,1222-8a
+2018-06-19,Elizabeth Simpson,,5,Cirsium pulcherrimum,1222-8b,2018-11-12,Hillary Woolf,0.869,0,,1222-8b-c.jpeg,1222-8b
+2018-06-19,Elizabeth Simpson,,5,Cirsium pulcherrimum,1222-8c,2018-11-12,Hillary Woolf,0.714,0,,1222-8b-c.jpeg,1222-8c
+2018-06-19,Elizabeth Simpson,,5,Cirsium pulcherrimum,1222-8d,2018-11-12,Hillary Woolf,1.617,0.401,,1222-8d-e.jpeg,1222-8d
+2018-06-19,Elizabeth Simpson,,5,Cirsium pulcherrimum,1222-8e,2018-11-12,Hillary Woolf,0.822,0.029,,1222-8d-e.jpeg,1222-8e
 2018-06-19,Elizabeth Simpson,,5,Lactuca serriola,1222-9a,2018-11-12,Hillary Woolf,0.234,0,,1222-9a-c.jpeg,1222-9a
 2018-06-19,Elizabeth Simpson,,5,Lactuca serriola,1222-9b,2018-11-12,Hillary Woolf,0.155,0,,1222-9a-c.jpeg,1222-9b
 2018-06-19,Elizabeth Simpson,,5,Lactuca serriola,1222-9c,2018-11-12,Hillary Woolf,0.193,0,,1222-9a-c.jpeg,1222-9c
@@ -280,19 +280,19 @@ Date_collected,Collector_1,Collector_2,N_leaves,Species,Bag_label,Date_weighed,W
 2018-06-25,Elizabeth Simpson,,5,Arctium minus,1322-3c-D,2018-10-22,Hillary Woolf,0.714,0,i3 – 6 bags,1322-3cD.jpeg,1322-3c-D
 2018-06-25,Elizabeth Simpson,,5,Arctium minus,1322-3c-E,2018-10-22,Hillary Woolf,0.785,0,i3 – 6 bags,1322-3cE.jpeg,1322-3c-E
 2018-06-25,Elizabeth Simpson,,5,Arctium minus,1322-3c-petioles,2018-10-22,Hillary Woolf,2.821,0,i3 – 6 bags,1322-3c-pet.jpeg,1322-3c-petioles
-2018-06-25,Elizabeth Simpson,,5,Circium arvense,1322-6a,2018-10-22,Hillary Woolf,1.523,0,,1322-6a.jpeg,1322-6a
-2018-06-25,Elizabeth Simpson,,5,Circium arvense,1322-6b,2018-10-22,Hillary Woolf,1.129,0,,1322-6b.jpeg,1322-6b
-2018-06-25,Elizabeth Simpson,,5,Circium arvense,1322-6c,2018-10-22,Hillary Woolf,1.211,0,,1322-6c.jpeg,1322-6c
-2018-06-25,Elizabeth Simpson,,5,Circium arvense,1322-6d,2018-10-22,Hillary Woolf,1.302,0,,1322-6d.jpeg,1322-6d
-2018-06-25,Elizabeth Simpson,,5,Circium arvense,1322-6e,2018-10-22,Hillary Woolf,1.176,0,,1322-6e.jpeg,1322-6e
+2018-06-25,Elizabeth Simpson,,5,Cirsium arvense,1322-6a,2018-10-22,Hillary Woolf,1.523,0,,1322-6a.jpeg,1322-6a
+2018-06-25,Elizabeth Simpson,,5,Cirsium arvense,1322-6b,2018-10-22,Hillary Woolf,1.129,0,,1322-6b.jpeg,1322-6b
+2018-06-25,Elizabeth Simpson,,5,Cirsium arvense,1322-6c,2018-10-22,Hillary Woolf,1.211,0,,1322-6c.jpeg,1322-6c
+2018-06-25,Elizabeth Simpson,,5,Cirsium arvense,1322-6d,2018-10-22,Hillary Woolf,1.302,0,,1322-6d.jpeg,1322-6d
+2018-06-25,Elizabeth Simpson,,5,Cirsium arvense,1322-6e,2018-10-22,Hillary Woolf,1.176,0,,1322-6e.jpeg,1322-6e
 2018-06-25,Elizabeth Simpson,,5,Verbascum thapsus,1322-7a,2018-10-22,Hillary Woolf,2.719,0,,1322-7aA.jpeg_1322-7aB.jpeg,1322-7a
 2018-06-25,Elizabeth Simpson,,5,Verbascum thapsus,1322-7b,2018-10-22,Hillary Woolf,4.018,0,,1322-7bA.jpeg_1322-7bB.jpeg,1322-7b
 2018-06-25,Elizabeth Simpson,,5,Verbascum thapsus,1322-7c,2018-10-22,Hillary Woolf,1.259,0,,1322-7c.jpeg,1322-7c
-2018-06-25,Elizabeth Simpson,,5,Aconitum columbianum,1322-8a,2018-10-29,Hillary Woolf,0.183,0.035,,1322-8a-b.jpeg,1322-8a
-2018-06-25,Elizabeth Simpson,,5,Aconitum columbianum,1322-8b,2018-10-29,Hillary Woolf,0.146,0.03,,1322-8a-b.jpeg,1322-8b
-2018-06-25,Elizabeth Simpson,,5,Aconitum columbianum,1322-8c,2018-10-29,Hillary Woolf,0.164,0.022,,1322-8c-d.jpeg,1322-8c
-2018-06-25,Elizabeth Simpson,,5,Aconitum columbianum,1322-8d,2018-10-29,Hillary Woolf,0.294,0.044,,1322-8c-d.jpeg,1322-8d
-2018-06-25,Elizabeth Simpson,,5,Aconitum columbianum,1322-8e,2018-10-29,Hillary Woolf,0.24,0.041,,1322-8e.jpeg,1322-8e
+2018-06-25,Elizabeth Simpson,,5,Leonurus cardiaca,1322-8a,2018-10-29,Hillary Woolf,0.183,0.035,,1322-8a-b.jpeg,1322-8a
+2018-06-25,Elizabeth Simpson,,5,Leonurus cardiaca,1322-8b,2018-10-29,Hillary Woolf,0.146,0.03,,1322-8a-b.jpeg,1322-8b
+2018-06-25,Elizabeth Simpson,,5,Leonurus cardiaca,1322-8c,2018-10-29,Hillary Woolf,0.164,0.022,,1322-8c-d.jpeg,1322-8c
+2018-06-25,Elizabeth Simpson,,5,Leonurus cardiaca,1322-8d,2018-10-29,Hillary Woolf,0.294,0.044,,1322-8c-d.jpeg,1322-8d
+2018-06-25,Elizabeth Simpson,,5,Leonurus cardiaca,1322-8e,2018-10-29,Hillary Woolf,0.24,0.041,,1322-8e.jpeg,1322-8e
 2018-06-25,Elizabeth Simpson,,5,Lactuca serriola,1322-9a,2018-10-29,Hillary Woolf,0.587,0,,1322-9a.jpeg,1322-9a
 2018-06-25,Elizabeth Simpson,,5,Lactuca serriola,1322-9b,2018-10-29,Hillary Woolf,0.139,0,,1322-9b.jpeg,1322-9b
 2018-06-25,Elizabeth Simpson,,5,Lactuca serriola,1322-9c,2018-10-29,Hillary Woolf,1.227,0,,1322-9c.jpeg,1322-9c
@@ -311,21 +311,21 @@ Date_collected,Collector_1,Collector_2,N_leaves,Species,Bag_label,Date_weighed,W
 2018-06-25,Elizabeth Simpson,,5,Humulus lupulus,1322-12c,2018-10-22,Hillary Woolf,3.001,0.619,,1322-12cA.jpeg_1322-12cB.jpeg_1322-12cC.jpeg,1322-12c
 2018-06-25,Elizabeth Simpson,,5,Humulus lupulus,1322-12d,2018-10-22,Hillary Woolf,2.269,0.248,,1322-12dA.jpeg_1322-12dB.jpeg,1322-12d
 2018-06-25,Elizabeth Simpson,,5,Humulus lupulus,1322-12e,2018-10-22,Hillary Woolf,1.938,0.261,,1322-12eA.jpeg_1322-12eB.jpeg,1322-12e
-2018-06-26,Elizabeth Simpson,,5,Physocarpous malvaceus,1333-1a,2018-10-10,Hillary Woolf,0.474,0.034,,1333-1a-b.jpeg,1333-1a
-2018-06-26,Elizabeth Simpson,,5,Physocarpous malvaceus,1333-1b,2018-10-10,Hillary Woolf,0.5,0,no petioles in bag,1333-1a-b.jpeg,1333-1b
-2018-06-26,Elizabeth Simpson,,5,Physocarpous malvaceus,1333-1c,2018-10-10,Hillary Woolf,0.357,0.027,,1333-1c-d.jpeg,1333-1c
-2018-06-26,Elizabeth Simpson,,5,Physocarpous malvaceus,1333-1d,2018-10-10,Hillary Woolf,0.522,0.036,,1333-1c-d.jpeg,1333-1d
-2018-06-26,Elizabeth Simpson,,5,Physocarpous malvaceus,1333-1e,2018-10-10,Hillary Woolf,0.749,0.057,,1333-1e.jpeg,1333-1e
-2018-06-26,Elizabeth Simpson,,5,Mainthemum racemosum,1333-2a,2018-10-10,Hillary Woolf,1.15,0,,1333-2aA.jpeg_1333-2aB.jpeg,1333-2a
-2018-06-26,Elizabeth Simpson,,5,Mainthemum racemosum,1333-2b,2018-10-10,Hillary Woolf,0.672,0,,1333-2b.jpeg,1333-2b
-2018-06-26,Elizabeth Simpson,,5,Mainthemum racemosum,1333-2c,2018-10-10,Hillary Woolf,0.728,0,,1333-2c.jpeg,1333-2c
-2018-06-26,Elizabeth Simpson,,5,Mainthemum racemosum,1333-2d,2018-10-10,Hillary Woolf,0.778,0,,1333-2d.jpeg,1333-2d
-2018-06-26,Elizabeth Simpson,,5,Mainthemum racemosum,1333-2e,2018-10-10,Hillary Woolf,0.725,0,,1333-2e.jpeg,1333-2e
-2018-06-26,Elizabeth Simpson,,5,Mahonia repens,1333-3a,2018-10-10,Hillary Woolf,0.411,0,,1333-3a-c.jpeg,1333-3a
-2018-06-26,Elizabeth Simpson,,5,Mahonia repens,1333-3b,2018-10-10,Hillary Woolf,0.365,0,,1333-3a-c.jpeg,1333-3b
-2018-06-26,Elizabeth Simpson,,5,Mahonia repens,1333-3c,2018-10-10,Hillary Woolf,0.506,0,,1333-3a-c.jpeg,1333-3c
-2018-06-26,Elizabeth Simpson,,5,Mahonia repens,1333-3d,2018-10-10,Hillary Woolf,0.33,0,,1333-3d-e.jpeg,1333-3d
-2018-06-26,Elizabeth Simpson,,5,Mahonia repens,1333-3e,2018-10-10,Hillary Woolf,0.393,0,,1333-3d-e.jpeg,1333-3e
+2018-06-26,Elizabeth Simpson,,5,Physocarpus malvaceus,1333-1a,2018-10-10,Hillary Woolf,0.474,0.034,,1333-1a-b.jpeg,1333-1a
+2018-06-26,Elizabeth Simpson,,5,Physocarpus malvaceus,1333-1b,2018-10-10,Hillary Woolf,0.5,0,no petioles in bag,1333-1a-b.jpeg,1333-1b
+2018-06-26,Elizabeth Simpson,,5,Physocarpus malvaceus,1333-1c,2018-10-10,Hillary Woolf,0.357,0.027,,1333-1c-d.jpeg,1333-1c
+2018-06-26,Elizabeth Simpson,,5,Physocarpus malvaceus,1333-1d,2018-10-10,Hillary Woolf,0.522,0.036,,1333-1c-d.jpeg,1333-1d
+2018-06-26,Elizabeth Simpson,,5,Physocarpus malvaceus,1333-1e,2018-10-10,Hillary Woolf,0.749,0.057,,1333-1e.jpeg,1333-1e
+2018-06-26,Elizabeth Simpson,,5,Maianthemum racemosum,1333-2a,2018-10-10,Hillary Woolf,1.15,0,,1333-2aA.jpeg_1333-2aB.jpeg,1333-2a
+2018-06-26,Elizabeth Simpson,,5,Maianthemum racemosum,1333-2b,2018-10-10,Hillary Woolf,0.672,0,,1333-2b.jpeg,1333-2b
+2018-06-26,Elizabeth Simpson,,5,Maianthemum racemosum,1333-2c,2018-10-10,Hillary Woolf,0.728,0,,1333-2c.jpeg,1333-2c
+2018-06-26,Elizabeth Simpson,,5,Maianthemum racemosum,1333-2d,2018-10-10,Hillary Woolf,0.778,0,,1333-2d.jpeg,1333-2d
+2018-06-26,Elizabeth Simpson,,5,Maianthemum racemosum,1333-2e,2018-10-10,Hillary Woolf,0.725,0,,1333-2e.jpeg,1333-2e
+2018-06-26,Elizabeth Simpson,,5,Berberis repens,1333-3a,2018-10-10,Hillary Woolf,0.411,0,,1333-3a-c.jpeg,1333-3a
+2018-06-26,Elizabeth Simpson,,5,Berberis repens,1333-3b,2018-10-10,Hillary Woolf,0.365,0,,1333-3a-c.jpeg,1333-3b
+2018-06-26,Elizabeth Simpson,,5,Berberis repens,1333-3c,2018-10-10,Hillary Woolf,0.506,0,,1333-3a-c.jpeg,1333-3c
+2018-06-26,Elizabeth Simpson,,5,Berberis repens,1333-3d,2018-10-10,Hillary Woolf,0.33,0,,1333-3d-e.jpeg,1333-3d
+2018-06-26,Elizabeth Simpson,,5,Berberis repens,1333-3e,2018-10-10,Hillary Woolf,0.393,0,,1333-3d-e.jpeg,1333-3e
 2018-06-26,Elizabeth Simpson,,5,Sedum debile,1333-4a-L5,2018-10-10,Hillary Woolf,0.006,0,,1333-4a-e10.jpeg,1333-4a-L5
 2018-06-26,Elizabeth Simpson,,5,Sedum debile,1333-4a-R5,2018-10-10,Hillary Woolf,0.003,0,,1333-4a-e10.jpeg,1333-4a-R5
 2018-06-26,Elizabeth Simpson,,5,Sedum debile,1333-4b-L5,2018-10-10,Hillary Woolf,0.005,0,,1333-4a-e10.jpeg,1333-4b-L5
@@ -335,11 +335,11 @@ Date_collected,Collector_1,Collector_2,N_leaves,Species,Bag_label,Date_weighed,W
 2018-06-26,Elizabeth Simpson,,5,Sedum debile,1333-4d-L5,2018-10-10,Hillary Woolf,0.005,0,,1333-4a-e10.jpeg,1333-4d-L5
 2018-06-26,Elizabeth Simpson,,5,Sedum debile,1333-4d-R5,2018-10-10,Hillary Woolf,0.005,0,,1333-4a-e10.jpeg,1333-4d-R5
 2018-06-26,Elizabeth Simpson,,5,Sedum debile,1333-4e-R5,2018-10-10,Hillary Woolf,0.005,0,,1333-4a-e10.jpeg,1333-4e-R5
-2018-06-26,Elizabeth Simpson,,5,Paxistima myrsinitis,1333-5a,2018-10-10,Hillary Woolf,0.076,0,,1333-5a-e.jpeg,1333-5a
-2018-06-26,Elizabeth Simpson,,5,Paxistima myrsinitis,1333-5b,2018-10-10,Hillary Woolf,0.101,0,,1333-5a-e.jpeg,1333-5b
-2018-06-26,Elizabeth Simpson,,5,Paxistima myrsinitis,1333-5c,2018-10-10,Hillary Woolf,0.065,0,,1333-5a-e.jpeg,1333-5c
-2018-06-26,Elizabeth Simpson,,5,Paxistima myrsinitis,1333-5d,2018-10-10,Hillary Woolf,0.113,0,,1333-5a-e.jpeg,1333-5d
-2018-06-26,Elizabeth Simpson,,5,Paxistima myrsinitis,1333-5e,2018-10-10,Hillary Woolf,0.079,0,,1333-5a-e.jpeg,1333-5e
+2018-06-26,Elizabeth Simpson,,5,Paxistima myrsinites,1333-5a,2018-10-10,Hillary Woolf,0.076,0,,1333-5a-e.jpeg,1333-5a
+2018-06-26,Elizabeth Simpson,,5,Paxistima myrsinites,1333-5b,2018-10-10,Hillary Woolf,0.101,0,,1333-5a-e.jpeg,1333-5b
+2018-06-26,Elizabeth Simpson,,5,Paxistima myrsinites,1333-5c,2018-10-10,Hillary Woolf,0.065,0,,1333-5a-e.jpeg,1333-5c
+2018-06-26,Elizabeth Simpson,,5,Paxistima myrsinites,1333-5d,2018-10-10,Hillary Woolf,0.113,0,,1333-5a-e.jpeg,1333-5d
+2018-06-26,Elizabeth Simpson,,5,Paxistima myrsinites,1333-5e,2018-10-10,Hillary Woolf,0.079,0,,1333-5a-e.jpeg,1333-5e
 2018-06-26,Elizabeth Simpson,,5,Arnica cordifolia,1333-6a,2018-10-10,Hillary Woolf,0.393,0.125,,1333-6a.jpeg,1333-6a
 2018-06-26,Elizabeth Simpson,,5,Arnica cordifolia,1333-6b,2018-10-10,Hillary Woolf,0.524,0.159,,1333-6b.jpeg,1333-6b
 2018-06-26,Elizabeth Simpson,,5,Arnica cordifolia,1333-6c,2018-10-10,Hillary Woolf,0.318,0.091,,1333-6c.jpeg,1333-6c
@@ -365,11 +365,11 @@ Date_collected,Collector_1,Collector_2,N_leaves,Species,Bag_label,Date_weighed,W
 2018-06-26,Elizabeth Simpson,,5,Cystopteris fragilis,1333-12c,2018-10-10,Hillary Woolf,0.194,0.012,,1333-12c.jpeg,1333-12c
 2018-06-26,Elizabeth Simpson,,5,Cystopteris fragilis,1333-12d,2018-10-10,Hillary Woolf,0.228,0.029,,1333-12d.jpeg,1333-12d
 2018-06-26,Elizabeth Simpson,,5,Cystopteris fragilis,1333-12e,2018-10-10,Hillary Woolf,0.195,0.029,,1333-12e.jpeg,1333-12e
-2018-06-26,Elizabeth Simpson,,5,Mitella stauropetala,1333-13a,2018-10-10,Hillary Woolf,0.287,0.123,,1333-13a-b.jpeg,1333-13a
-2018-06-26,Elizabeth Simpson,,5,Mitella stauropetala,1333-13b,2018-10-10,Hillary Woolf,0.257,0.109,,1333-13a-b.jpeg,1333-13b
-2018-06-26,Elizabeth Simpson,,5,Mitella stauropetala,1333-13c,2018-10-10,Hillary Woolf,0.179,0.062,,1333-13c-d.jpeg,1333-13c
-2018-06-26,Elizabeth Simpson,,5,Mitella stauropetala,1333-13d,2018-10-10,Hillary Woolf,0.28,0.101,,1333-13c-d.jpeg,1333-13d
-2018-06-26,Elizabeth Simpson,,5,Mitella stauropetala,1333-13e,2018-10-10,Hillary Woolf,0.235,0.099,,1333-13e.jpeg,1333-13e
+2018-06-26,Elizabeth Simpson,,5,Ozomelis stauropetala,1333-13a,2018-10-10,Hillary Woolf,0.287,0.123,,1333-13a-b.jpeg,1333-13a
+2018-06-26,Elizabeth Simpson,,5,Ozomelis stauropetala,1333-13b,2018-10-10,Hillary Woolf,0.257,0.109,,1333-13a-b.jpeg,1333-13b
+2018-06-26,Elizabeth Simpson,,5,Ozomelis stauropetala,1333-13c,2018-10-10,Hillary Woolf,0.179,0.062,,1333-13c-d.jpeg,1333-13c
+2018-06-26,Elizabeth Simpson,,5,Ozomelis stauropetala,1333-13d,2018-10-10,Hillary Woolf,0.28,0.101,,1333-13c-d.jpeg,1333-13d
+2018-06-26,Elizabeth Simpson,,5,Ozomelis stauropetala,1333-13e,2018-10-10,Hillary Woolf,0.235,0.099,,1333-13e.jpeg,1333-13e
 2018-07-10,Elizabeth Simpson,,10,Artemisia tridentata,3311-1a,2018-10-17,Hillary Woolf,0.097,0,,3311-1a-e.jpeg,3311-1a
 2018-07-10,Elizabeth Simpson,,10,Artemisia tridentata,3311-1b,2018-10-17,Hillary Woolf,0.119,0,,3311-1a-e.jpeg,3311-1b
 2018-07-10,Elizabeth Simpson,,10,Artemisia tridentata,3311-1c,2018-10-17,Hillary Woolf,0.096,0,,3311-1a-e.jpeg,3311-1c
@@ -392,11 +392,11 @@ Date_collected,Collector_1,Collector_2,N_leaves,Species,Bag_label,Date_weighed,W
 2018-07-10,Elizabeth Simpson,,5,Achillea millefolium,3311-5c,2018-10-12,Hillary Woolf,0.564,0.073,,3311-5c-d.jpeg,3311-5c
 2018-07-10,Elizabeth Simpson,,5,Achillea millefolium,3311-5d,2018-10-12,Hillary Woolf,0.277,0.018,,3311-5c-d.jpeg,3311-5d
 2018-07-10,Elizabeth Simpson,,5,Achillea millefolium,3311-5e,2018-10-12,Hillary Woolf,0.612,0.083,,3311-5e.jpeg,3311-5e
-2018-07-10,Elizabeth Simpson,,5,Verbascum thapsus,3311-7a,2018-10-17,Hillary Woolf,0.478,0,,3311-7a.jpeg,3311-7a
-2018-07-10,Elizabeth Simpson,,5,Verbascum thapsus,3311-7b,2018-10-17,Hillary Woolf,0.461,0,,3311-7b-c.jpeg,3311-7b
-2018-07-10,Elizabeth Simpson,,5,Verbascum thapsus,3311-7c,2018-10-17,Hillary Woolf,0.775,0,,3311-7b-c.jpeg,3311-7c
-2018-07-10,Elizabeth Simpson,,5,Verbascum thapsus,3311-7d,2018-10-17,Hillary Woolf,0.842,0,,3311-7d-e.jpeg,3311-7d
-2018-07-10,Elizabeth Simpson,,5,Verbascum thapsus,3311-7e,2018-10-17,Hillary Woolf,0.51,0,,3311-7d-e.jpeg,3311-7e
+2018-07-10,Elizabeth Simpson,,5,Senecio sphaerocephalus,3311-7a,2018-10-17,Hillary Woolf,0.478,0,,3311-7a.jpeg,3311-7a
+2018-07-10,Elizabeth Simpson,,5,Senecio sphaerocephalus,3311-7b,2018-10-17,Hillary Woolf,0.461,0,,3311-7b-c.jpeg,3311-7b
+2018-07-10,Elizabeth Simpson,,5,Senecio sphaerocephalus,3311-7c,2018-10-17,Hillary Woolf,0.775,0,,3311-7b-c.jpeg,3311-7c
+2018-07-10,Elizabeth Simpson,,5,Senecio sphaerocephalus,3311-7d,2018-10-17,Hillary Woolf,0.842,0,,3311-7d-e.jpeg,3311-7d
+2018-07-10,Elizabeth Simpson,,5,Senecio sphaerocephalus,3311-7e,2018-10-17,Hillary Woolf,0.51,0,,3311-7d-e.jpeg,3311-7e
 2018-07-10,Elizabeth Simpson,,5,Eucephalus elegans,3311-10a,2018-10-17,Hillary Woolf,0.097,0,,3311-10a-e.jpeg,3311-10a
 2018-07-10,Elizabeth Simpson,,5,Eucephalus elegans,3311-10b,2018-10-17,Hillary Woolf,0.073,0,,3311-10a-e.jpeg,3311-10b
 2018-07-10,Elizabeth Simpson,,5,Eucephalus elegans,3311-10c,2018-10-17,Hillary Woolf,0.053,0,,3311-10a-e.jpeg,3311-10c
@@ -452,16 +452,16 @@ Date_collected,Collector_1,Collector_2,N_leaves,Species,Bag_label,Date_weighed,W
 2018-07-12,Elizabeth Simpson,,5,Agastache urticifolia,3111-2c,2018-10-08,Hillary Woolf,0.224,0.013,,3111-2a-c.jpeg,3111-2c
 2018-07-12,Elizabeth Simpson,,5,Agastache urticifolia,3111-2d,2018-10-08,Hillary Woolf,0.444,0.034,,3111-2d-e.jpeg,3111-2d
 2018-07-12,Elizabeth Simpson,,5,Agastache urticifolia,3111-2e,2018-10-08,Hillary Woolf,0.273,0.006,,3111-2d-e.jpeg,3111-2e
-2018-07-12,Elizabeth Simpson,,5,Mahonia repens,3111-3a,2018-10-08,Hillary Woolf,0.497,0,,3111-3a-d.jpeg,3111-3a
-2018-07-12,Elizabeth Simpson,,5,Mahonia repens,3111-3b,2018-10-08,Hillary Woolf,0.354,0,,3111-3a-d.jpeg,3111-3b
-2018-07-12,Elizabeth Simpson,,5,Mahonia repens,3111-3c,2018-10-08,Hillary Woolf,0.471,0,,3111-3a-d.jpeg,3111-3c
-2018-07-12,Elizabeth Simpson,,5,Mahonia repens,3111-3d,2018-10-08,Hillary Woolf,0.647,0,,3111-3a-d.jpeg,3111-3d
-2018-07-12,Elizabeth Simpson,,5,Mahonia repens,3111-3e,2018-10-08,Hillary Woolf,0.456,0,,3111-3e.jpeg,3111-3e
-2018-07-12,Elizabeth Simpson,,5,Lathyrus pauciflorus,3111-4a,2018-10-08,Hillary Woolf,0.542,0.098,,3111-4a.jpeg,3111-4a
-2018-07-12,Elizabeth Simpson,,5,Lathyrus pauciflorus,3111-4b,2018-10-08,Hillary Woolf,0.509,0.109,,3111-4b.jpeg,3111-4b
-2018-07-12,Elizabeth Simpson,,5,Lathyrus pauciflorus,3111-4c,2018-10-08,Hillary Woolf,0.499,0.095,,missing,3111-4c
-2018-07-12,Elizabeth Simpson,,5,Lathyrus pauciflorus,3111-4d,2018-10-08,Hillary Woolf,0.406,0.067,,3111-4d.jpeg,3111-4d
-2018-07-12,Elizabeth Simpson,,5,Lathyrus pauciflorus,3111-4e,2018-10-08,Hillary Woolf,0.618,0.076,,3111-4e.jpeg,3111-4e
+2018-07-12,Elizabeth Simpson,,5,Berberis repens,3111-3a,2018-10-08,Hillary Woolf,0.497,0,,3111-3a-d.jpeg,3111-3a
+2018-07-12,Elizabeth Simpson,,5,Berberis repens,3111-3b,2018-10-08,Hillary Woolf,0.354,0,,3111-3a-d.jpeg,3111-3b
+2018-07-12,Elizabeth Simpson,,5,Berberis repens,3111-3c,2018-10-08,Hillary Woolf,0.471,0,,3111-3a-d.jpeg,3111-3c
+2018-07-12,Elizabeth Simpson,,5,Berberis repens,3111-3d,2018-10-08,Hillary Woolf,0.647,0,,3111-3a-d.jpeg,3111-3d
+2018-07-12,Elizabeth Simpson,,5,Berberis repens,3111-3e,2018-10-08,Hillary Woolf,0.456,0,,3111-3e.jpeg,3111-3e
+2018-07-12,Elizabeth Simpson,,5,Vicia mericana,3111-4a,2018-10-08,Hillary Woolf,0.542,0.098,,3111-4a.jpeg,3111-4a
+2018-07-12,Elizabeth Simpson,,5,Vicia americana,3111-4b,2018-10-08,Hillary Woolf,0.509,0.109,,3111-4b.jpeg,3111-4b
+2018-07-12,Elizabeth Simpson,,5,Vicia americana,3111-4c,2018-10-08,Hillary Woolf,0.499,0.095,,missing,3111-4c
+2018-07-12,Elizabeth Simpson,,5,Vicia americana,3111-4d,2018-10-08,Hillary Woolf,0.406,0.067,,3111-4d.jpeg,3111-4d
+2018-07-12,Elizabeth Simpson,,5,Vicia americana,3111-4e,2018-10-08,Hillary Woolf,0.618,0.076,,3111-4e.jpeg,3111-4e
 2018-07-12,Elizabeth Simpson,,5,Elymus glaucus,3111-5a,2018-10-08,Hillary Woolf,0.284,0,,missing,3111-5a
 2018-07-12,Elizabeth Simpson,,5,Elymus glaucus,3111-5b,2018-10-08,Hillary Woolf,0.285,0,,missing,3111-5b
 2018-07-12,Elizabeth Simpson,,5,Elymus glaucus,3111-5c,2018-10-08,Hillary Woolf,0.341,0,,3111-5c-d.jpeg,3111-5c
@@ -482,11 +482,11 @@ Date_collected,Collector_1,Collector_2,N_leaves,Species,Bag_label,Date_weighed,W
 2018-07-12,Elizabeth Simpson,,5,Osmorhiza occidentalis,3111-8c,2018-10-08,Hillary Woolf,0.519,0.061,,3111-8c.jpeg,3111-8c
 2018-07-12,Elizabeth Simpson,,5,Osmorhiza occidentalis,3111-8d,2018-10-08,Hillary Woolf,0.151,0.011,,3111-8d.jpeg,3111-8d
 2018-07-12,Elizabeth Simpson,,5,Osmorhiza occidentalis,3111-8e,2018-10-08,Hillary Woolf,0.756,0.12,,3111-8e.jpeg_3111-8e-pet.jpeg,3111-8e
-2018-07-12,Elizabeth Simpson,,5,Epilobium adenocaulon,3111-10a,2018-10-08,Hillary Woolf,0.918,0,,3111-10a-b.jpeg,3111-10a
-2018-07-12,Elizabeth Simpson,,5,Epilobium adenocaulon,3111-10b,2018-10-08,Hillary Woolf,0.522,0,,3111-10a-b.jpeg,3111-10b
-2018-07-12,Elizabeth Simpson,,5,Epilobium adenocaulon,3111-10c,2018-10-08,Hillary Woolf,0.328,0,,3111-10c-d.jpeg,3111-10c
-2018-07-12,Elizabeth Simpson,,5,Epilobium adenocaulon,3111-10d,2018-10-08,Hillary Woolf,0.394,0,,3111-10c-d.jpeg,3111-10d
-2018-07-12,Elizabeth Simpson,,5,Epilobium adenocaulon,3111-10e,2018-10-08,Hillary Woolf,0.763,0,,3111-10e.jpeg,3111-10e
+2018-07-12,Elizabeth Simpson,,5,Epilobium angustifolium,3111-10a,2018-10-08,Hillary Woolf,0.918,0,,3111-10a-b.jpeg,3111-10a
+2018-07-12,Elizabeth Simpson,,5,Epilobium angustifolium,3111-10b,2018-10-08,Hillary Woolf,0.522,0,,3111-10a-b.jpeg,3111-10b
+2018-07-12,Elizabeth Simpson,,5,Epilobium angustifolium,3111-10c,2018-10-08,Hillary Woolf,0.328,0,,3111-10c-d.jpeg,3111-10c
+2018-07-12,Elizabeth Simpson,,5,Epilobium angustifolium,3111-10d,2018-10-08,Hillary Woolf,0.394,0,,3111-10c-d.jpeg,3111-10d
+2018-07-12,Elizabeth Simpson,,5,Epilobium angustifolium,3111-10e,2018-10-08,Hillary Woolf,0.763,0,,3111-10e.jpeg,3111-10e
 2018-07-13,Elizabeth Simpson,,5,Eriogonum heracleoides,3133-1a,2018-10-29,Hillary Woolf,0.155,0,,3133-1a-c.jpeg,3133-1a
 2018-07-13,Elizabeth Simpson,,5,Eriogonum heracleoides,3133-1b,2018-10-29,Hillary Woolf,0.12,0,,3133-1a-c.jpeg,3133-1b
 2018-07-13,Elizabeth Simpson,,5,Eriogonum heracleoides,3133-1c,2018-10-29,Hillary Woolf,0.142,0,,3133-1a-c.jpeg,3133-1c
@@ -561,31 +561,31 @@ Date_collected,Collector_1,Collector_2,N_leaves,Species,Bag_label,Date_weighed,W
 2018-07-19,Elizabeth Simpson,,5,Clematis occidentalis,2311-1c,2018-10-24,Hillary Woolf,0.646,0.126,leaflets are all different shapes,2311-1c.jpeg_2311-1c-pet.jpeg,2311-1c
 2018-07-19,Elizabeth Simpson,,5,Clematis occidentalis,2311-1d,2018-10-24,Hillary Woolf,1.243,0.191,leaflets are all different shapes,2311-1dA.jpeg_2311-1dB-pet.jpeg,2311-1d
 2018-07-19,Elizabeth Simpson,,5,Clematis occidentalis,2311-1e,2018-10-24,Hillary Woolf,0.771,0.168,leaflets are all different shapes,2311-1e.jpeg,2311-1e
-2018-07-19,Elizabeth Simpson,,10,Paxistima myrsinitis,2311-2a,2018-10-24,Hillary Woolf,0.169,0,,2311-2a-e_10leaves_e9.jpeg,2311-2a
-2018-07-19,Elizabeth Simpson,,10,Paxistima myrsinitis,2311-2b,2018-10-24,Hillary Woolf,0.127,0,,2311-2a-e_10leaves_e9.jpeg,2311-2b
-2018-07-19,Elizabeth Simpson,,10,Paxistima myrsinitis,2311-2c,2018-10-24,Hillary Woolf,0.169,0,,2311-2a-e_10leaves_e9.jpeg,2311-2c
-2018-07-19,Elizabeth Simpson,,10,Paxistima myrsinitis,2311-2d,2018-10-24,Hillary Woolf,0.276,0,,2311-2a-e_10leaves_e9.jpeg,2311-2d
-2018-07-19,Elizabeth Simpson,,9,Paxistima myrsinitis,2311-2e,2018-10-24,Hillary Woolf,0.129,0,only 9 leaves correct,2311-2a-e_10leaves_e9.jpeg,2311-2e
-2018-07-19,Elizabeth Simpson,,5,Mitella stauropetala,2311-3a,2018-10-24,Hillary Woolf,0.197,0.087,,2311-3a-c.jpeg,2311-3a
-2018-07-19,Elizabeth Simpson,,5,Mitella stauropetala,2311-3b,2018-10-24,Hillary Woolf,0.236,0.09,,2311-3a-c.jpeg,2311-3b
-2018-07-19,Elizabeth Simpson,,5,Mitella stauropetala,2311-3c,2018-10-24,Hillary Woolf,0.294,0.129,,2311-3a-c.jpeg,2311-3c
-2018-07-19,Elizabeth Simpson,,5,Mitella stauropetala,2311-3d,2018-10-24,Hillary Woolf,0.257,0.066,,2311-3d-e.jpeg,2311-3d
-2018-07-19,Elizabeth Simpson,,5,Mitella stauropetala,2311-3e,2018-10-24,Hillary Woolf,0.254,0.78,,2311-3d-e.jpeg,2311-3e
-2018-07-19,Elizabeth Simpson,,5,Mainthemum racemosum,2311-4a,2018-10-24,Hillary Woolf,0.417,0,,2311-4a.jpeg,2311-4a
-2018-07-19,Elizabeth Simpson,,5,Mainthemum racemosum,2311-4b,2018-10-24,Hillary Woolf,0.697,0,,2311-4b.jpeg,2311-4b
-2018-07-19,Elizabeth Simpson,,5,Mainthemum racemosum,2311-4c,2018-10-24,Hillary Woolf,0.542,0,,2311-4c.jpeg,2311-4c
-2018-07-19,Elizabeth Simpson,,5,Mainthemum racemosum,2311-4d,2018-10-24,Hillary Woolf,0.922,0,,2311-4d.jpeg,2311-4d
-2018-07-19,Elizabeth Simpson,,5,Mainthemum racemosum,2311-4e,2018-10-24,Hillary Woolf,0.818,0,,2311-4e.jpeg,2311-4e
-2018-07-19,Elizabeth Simpson,,5,Physocarpous malvaceus,2311-5a,2018-10-24,Hillary Woolf,0.287,0.017,,2311-5a-b.jpeg,2311-5a
-2018-07-19,Elizabeth Simpson,,5,Physocarpous malvaceus,2311-5b,2018-10-24,Hillary Woolf,0.309,0.021,,2311-5a-b.jpeg,2311-5b
-2018-07-19,Elizabeth Simpson,,5,Physocarpous malvaceus,2311-5c,2018-10-24,Hillary Woolf,0.618,0.036,,2311-5c.jpeg,2311-5c
-2018-07-19,Elizabeth Simpson,,5,Physocarpous malvaceus,2311-5d,2018-10-24,Hillary Woolf,0.449,0.028,,2311-5d-e.jpeg,2311-5d
-2018-07-19,Elizabeth Simpson,,5,Physocarpous malvaceus,2311-5e,2018-10-24,Hillary Woolf,0.548,0.035,,2311-5d-e.jpeg,2311-5e
-2018-07-19,Elizabeth Simpson,,5,Mahonia repens,2311-6a,2018-10-24,Hillary Woolf,0.302,0,,2311-6a-e.jpeg,2311-6a
-2018-07-19,Elizabeth Simpson,,5,Mahonia repens,2311-6b,2018-10-24,Hillary Woolf,0.318,0,,2311-6a-e.jpeg,2311-6b
-2018-07-19,Elizabeth Simpson,,5,Mahonia repens,2311-6c,2018-10-24,Hillary Woolf,0.3,0,,2311-6a-e.jpeg,2311-6c
-2018-07-19,Elizabeth Simpson,,5,Mahonia repens,2311-6d,2018-10-24,Hillary Woolf,0.27,0,,2311-6a-e.jpeg,2311-6d
-2018-07-19,Elizabeth Simpson,,5,Mahonia repens,2311-6e,2018-10-24,Hillary Woolf,0.223,0,,2311-6a-e.jpeg,2311-6e
+2018-07-19,Elizabeth Simpson,,10,Paxistima myrsinites,2311-2a,2018-10-24,Hillary Woolf,0.169,0,,2311-2a-e_10leaves_e9.jpeg,2311-2a
+2018-07-19,Elizabeth Simpson,,10,Paxistima myrsinites,2311-2b,2018-10-24,Hillary Woolf,0.127,0,,2311-2a-e_10leaves_e9.jpeg,2311-2b
+2018-07-19,Elizabeth Simpson,,10,Paxistima myrsinites,2311-2c,2018-10-24,Hillary Woolf,0.169,0,,2311-2a-e_10leaves_e9.jpeg,2311-2c
+2018-07-19,Elizabeth Simpson,,10,Paxistima myrsinites,2311-2d,2018-10-24,Hillary Woolf,0.276,0,,2311-2a-e_10leaves_e9.jpeg,2311-2d
+2018-07-19,Elizabeth Simpson,,9,Paxistima myrsinites,2311-2e,2018-10-24,Hillary Woolf,0.129,0,only 9 leaves correct,2311-2a-e_10leaves_e9.jpeg,2311-2e
+2018-07-19,Elizabeth Simpson,,5,Ozomelis stauropetala,2311-3a,2018-10-24,Hillary Woolf,0.197,0.087,,2311-3a-c.jpeg,2311-3a
+2018-07-19,Elizabeth Simpson,,5,Ozomelis stauropetala,2311-3b,2018-10-24,Hillary Woolf,0.236,0.09,,2311-3a-c.jpeg,2311-3b
+2018-07-19,Elizabeth Simpson,,5,Ozomelis stauropetala,2311-3c,2018-10-24,Hillary Woolf,0.294,0.129,,2311-3a-c.jpeg,2311-3c
+2018-07-19,Elizabeth Simpson,,5,Ozomelis stauropetala,2311-3d,2018-10-24,Hillary Woolf,0.257,0.066,,2311-3d-e.jpeg,2311-3d
+2018-07-19,Elizabeth Simpson,,5,Ozomelis stauropetala,2311-3e,2018-10-24,Hillary Woolf,0.254,0.78,,2311-3d-e.jpeg,2311-3e
+2018-07-19,Elizabeth Simpson,,5,Maianthemum racemosum,2311-4a,2018-10-24,Hillary Woolf,0.417,0,,2311-4a.jpeg,2311-4a
+2018-07-19,Elizabeth Simpson,,5,Maianthemum racemosum,2311-4b,2018-10-24,Hillary Woolf,0.697,0,,2311-4b.jpeg,2311-4b
+2018-07-19,Elizabeth Simpson,,5,Maianthemum racemosum,2311-4c,2018-10-24,Hillary Woolf,0.542,0,,2311-4c.jpeg,2311-4c
+2018-07-19,Elizabeth Simpson,,5,Maianthemum racemosum,2311-4d,2018-10-24,Hillary Woolf,0.922,0,,2311-4d.jpeg,2311-4d
+2018-07-19,Elizabeth Simpson,,5,Maianthemum racemosum,2311-4e,2018-10-24,Hillary Woolf,0.818,0,,2311-4e.jpeg,2311-4e
+2018-07-19,Elizabeth Simpson,,5,Physocarpus malvaceus,2311-5a,2018-10-24,Hillary Woolf,0.287,0.017,,2311-5a-b.jpeg,2311-5a
+2018-07-19,Elizabeth Simpson,,5,Physocarpus malvaceus,2311-5b,2018-10-24,Hillary Woolf,0.309,0.021,,2311-5a-b.jpeg,2311-5b
+2018-07-19,Elizabeth Simpson,,5,Physocarpus malvaceus,2311-5c,2018-10-24,Hillary Woolf,0.618,0.036,,2311-5c.jpeg,2311-5c
+2018-07-19,Elizabeth Simpson,,5,Physocarpus malvaceus,2311-5d,2018-10-24,Hillary Woolf,0.449,0.028,,2311-5d-e.jpeg,2311-5d
+2018-07-19,Elizabeth Simpson,,5,Physocarpus malvaceus,2311-5e,2018-10-24,Hillary Woolf,0.548,0.035,,2311-5d-e.jpeg,2311-5e
+2018-07-19,Elizabeth Simpson,,5,Berberis repens,2311-6a,2018-10-24,Hillary Woolf,0.302,0,,2311-6a-e.jpeg,2311-6a
+2018-07-19,Elizabeth Simpson,,5,Berberis repens,2311-6b,2018-10-24,Hillary Woolf,0.318,0,,2311-6a-e.jpeg,2311-6b
+2018-07-19,Elizabeth Simpson,,5,Berberis repens,2311-6c,2018-10-24,Hillary Woolf,0.3,0,,2311-6a-e.jpeg,2311-6c
+2018-07-19,Elizabeth Simpson,,5,Berberis repens,2311-6d,2018-10-24,Hillary Woolf,0.27,0,,2311-6a-e.jpeg,2311-6d
+2018-07-19,Elizabeth Simpson,,5,Berberis repens,2311-6e,2018-10-24,Hillary Woolf,0.223,0,,2311-6a-e.jpeg,2311-6e
 2018-07-19,Elizabeth Simpson,,5,Prosartes trachycarpa,2311-14a,2018-10-24,Hillary Woolf,0.269,0,,2311-14a-c.jpeg,2311-14a
 2018-07-19,Elizabeth Simpson,,5,Prosartes trachycarpa,2311-14b,2018-10-24,Hillary Woolf,0.202,0,,2311-14a-c.jpeg,2311-14b
 2018-07-19,Elizabeth Simpson,,5,Prosartes trachycarpa,2311-14c,2018-10-24,Hillary Woolf,0.228,0,,2311-14a-c.jpeg,2311-14c
@@ -616,31 +616,31 @@ Date_collected,Collector_1,Collector_2,N_leaves,Species,Bag_label,Date_weighed,W
 2018-07-23,Elizabeth Simpson,,5,Eriogonum heracleoides,2222-2c,2018-10-26,Hillary Woolf,0.08,0,,2222-2a-e.jpeg,2222-2c
 2018-07-23,Elizabeth Simpson,,5,Eriogonum heracleoides,2222-2d,2018-10-26,Hillary Woolf,0.148,0,,2222-2a-e.jpeg,2222-2d
 2018-07-23,Elizabeth Simpson,,5,Eriogonum heracleoides,2222-2e,2018-10-26,Hillary Woolf,0.112,0,,2222-2a-e.jpeg,2222-2e
-2018-07-23,Elizabeth Simpson,,5,Mahonia repens,2222-3a,2018-10-26,Hillary Woolf,0.841,0,,2222-3a-c.jpeg,2222-3a
-2018-07-23,Elizabeth Simpson,,5,Mahonia repens,2222-3b,2018-10-26,Hillary Woolf,0.488,0,,2222-3a-c.jpeg,2222-3b
-2018-07-23,Elizabeth Simpson,,5,Mahonia repens,2222-3c,2018-10-26,Hillary Woolf,0.853,0,,2222-3a-c.jpeg,2222-3c
-2018-07-23,Elizabeth Simpson,,5,Mahonia repens,2222-3d,2018-10-26,Hillary Woolf,0.747,0,,2222-3d-e.jpeg,2222-3d
-2018-07-23,Elizabeth Simpson,,5,Mahonia repens,2222-3e,2018-10-26,Hillary Woolf,0.54,0,,2222-3d-e.jpeg,2222-3e
+2018-07-23,Elizabeth Simpson,,5,Berberis repens,2222-3a,2018-10-26,Hillary Woolf,0.841,0,,2222-3a-c.jpeg,2222-3a
+2018-07-23,Elizabeth Simpson,,5,Berberis repens,2222-3b,2018-10-26,Hillary Woolf,0.488,0,,2222-3a-c.jpeg,2222-3b
+2018-07-23,Elizabeth Simpson,,5,Berberis repens,2222-3c,2018-10-26,Hillary Woolf,0.853,0,,2222-3a-c.jpeg,2222-3c
+2018-07-23,Elizabeth Simpson,,5,Berberis repens,2222-3d,2018-10-26,Hillary Woolf,0.747,0,,2222-3d-e.jpeg,2222-3d
+2018-07-23,Elizabeth Simpson,,5,Berberis repens,2222-3e,2018-10-26,Hillary Woolf,0.54,0,,2222-3d-e.jpeg,2222-3e
 2018-07-23,Elizabeth Simpson,,5,Rosa woodsii,2222-8a,2018-10-26,Hillary Woolf,0.373,0.052,,2222-8a.jpeg,2222-8a
 2018-07-23,Elizabeth Simpson,,5,Rosa woodsii,2222-8b,2018-10-26,Hillary Woolf,0.249,0.037,,2222-8b.jpeg,2222-8b
 2018-07-23,Elizabeth Simpson,,5,Rosa woodsii,2222-8c,2018-10-26,Hillary Woolf,0.478,0.068,,2222-8c.jpeg,2222-8c
 2018-07-23,Elizabeth Simpson,,5,Rosa woodsii,2222-8d,2018-10-29,Hillary Woolf,0.328,0.053,,2222-8d.jpeg,2222-8d
 2018-07-23,Elizabeth Simpson,,5,Rosa woodsii,2222-8e,2018-10-26,Hillary Woolf,0.368,0.058,,2222-8e.jpeg,2222-8e
-2018-07-23,Elizabeth Simpson,,5,Eucephalus elegans,2222-9a,2018-10-26,Hillary Woolf,0.107,0,,2222-9a-e.jpeg,2222-9a
-2018-07-23,Elizabeth Simpson,,5,Eucephalus elegans,2222-9b,2018-10-26,Hillary Woolf,0.124,0,,2222-9a-e.jpeg,2222-9b
-2018-07-23,Elizabeth Simpson,,5,Eucephalus elegans,2222-9c,2018-10-26,Hillary Woolf,0.085,0,,2222-9a-e.jpeg,2222-9c
-2018-07-23,Elizabeth Simpson,,5,Eucephalus elegans,2222-9d,2018-10-26,Hillary Woolf,0.105,0,,2222-9a-e.jpeg,2222-9d
-2018-07-23,Elizabeth Simpson,,5,Eucephalus elegans,2222-9e,2018-10-26,Hillary Woolf,0.054,0,,2222-9a-e.jpeg,2222-9e
+2018-07-23,Elizabeth Simpson,,5,Symphyotrichum spathulatum,2222-9a,2018-10-26,Hillary Woolf,0.107,0,,2222-9a-e.jpeg,2222-9a
+2018-07-23,Elizabeth Simpson,,5,Symphyotrichum spathulatum,2222-9b,2018-10-26,Hillary Woolf,0.124,0,,2222-9a-e.jpeg,2222-9b
+2018-07-23,Elizabeth Simpson,,5,Symphyotrichum spathulatum,2222-9c,2018-10-26,Hillary Woolf,0.085,0,,2222-9a-e.jpeg,2222-9c
+2018-07-23,Elizabeth Simpson,,5,Symphyotrichum spathulatum,2222-9d,2018-10-26,Hillary Woolf,0.105,0,,2222-9a-e.jpeg,2222-9d
+2018-07-23,Elizabeth Simpson,,5,Symphyotrichum spathulatum,2222-9e,2018-10-26,Hillary Woolf,0.054,0,,2222-9a-e.jpeg,2222-9e
 2018-07-24,Elizabeth Simpson,,5,Tragopogon dubius,2233-7a,2018-10-31,Hillary Woolf,0.254,0,,missing,2233-7a
 2018-07-24,Elizabeth Simpson,,5,Tragopogon dubius,2233-7b,2018-10-31,Hillary Woolf,0.117,0,,missing,2233-7b
 2018-07-24,Elizabeth Simpson,,5,Tragopogon dubius,2233-7c,2018-10-31,Hillary Woolf,0.08,0,,missing,2233-7c
 2018-07-24,Elizabeth Simpson,,5,Tragopogon dubius,2233-7d,2018-10-31,Hillary Woolf,0.104,0,,missing,2233-7d
 2018-07-24,Elizabeth Simpson,,5,Tragopogon dubius,2233-7e,2018-10-31,Hillary Woolf,0.106,0,,missing,2233-7e
-2018-07-25,Elizabeth Simpson,Emily James,5,Physocarpous malvaceus,3222-1a,2018-10-31,Hillary Woolf,0.652,0.05,,missing,3222-1a
-2018-07-25,Elizabeth Simpson,Emily James,5,Physocarpous malvaceus,3222-1b,2018-10-31,Hillary Woolf,0.432,0.036,,missing,3222-1b
-2018-07-25,Elizabeth Simpson,Emily James,5,Physocarpous malvaceus,3222-1c,2018-10-31,Hillary Woolf,0.594,0.035,,missing,3222-1c
-2018-07-25,Elizabeth Simpson,Emily James,5,Physocarpous malvaceus,3222-1d,2018-10-31,Hillary Woolf,0.473,0.027,,missing,3222-1d
-2018-07-25,Elizabeth Simpson,Emily James,5,Physocarpous malvaceus,3222-1e,2018-10-31,Hillary Woolf,0.648,0.04,,missing,3222-1e
+2018-07-25,Elizabeth Simpson,Emily James,5,Physocarpus malvaceus,3222-1a,2018-10-31,Hillary Woolf,0.652,0.05,,missing,3222-1a
+2018-07-25,Elizabeth Simpson,Emily James,5,Physocarpus malvaceus,3222-1b,2018-10-31,Hillary Woolf,0.432,0.036,,missing,3222-1b
+2018-07-25,Elizabeth Simpson,Emily James,5,Physocarpus malvaceus,3222-1c,2018-10-31,Hillary Woolf,0.594,0.035,,missing,3222-1c
+2018-07-25,Elizabeth Simpson,Emily James,5,Physocarpus malvaceus,3222-1d,2018-10-31,Hillary Woolf,0.473,0.027,,missing,3222-1d
+2018-07-25,Elizabeth Simpson,Emily James,5,Physocarpus malvaceus,3222-1e,2018-10-31,Hillary Woolf,0.648,0.04,,missing,3222-1e
 2018-07-25,Elizabeth Simpson,Emily James,5,Populus tremuloides,3222-2a,2018-10-31,Hillary Woolf,0.82,0.071,,missing,3222-2a
 2018-07-25,Elizabeth Simpson,Emily James,5,Populus tremuloides,3222-2b,2018-10-31,Hillary Woolf,0.981,0.088,,missing,3222-2b
 2018-07-25,Elizabeth Simpson,Emily James,5,Populus tremuloides,3222-2c,2018-10-31,Hillary Woolf,0.678,0.069,,missing,3222-2c
@@ -655,11 +655,11 @@ Date_collected,Collector_1,Collector_2,N_leaves,Species,Bag_label,Date_weighed,W
 2018-07-25,Elizabeth Simpson,Emily James,5,Vicia americana,3222-4c,2018-10-31,Hillary Woolf,0.386,0.05,lots of leaflets – separated from rachis,missing,3222-4c
 2018-07-25,Elizabeth Simpson,Emily James,5,Vicia americana,3222-4d,2018-10-31,Hillary Woolf,0.664,0.104,lots of leaflets – separated from rachis,missing,3222-4d
 2018-07-25,Elizabeth Simpson,Emily James,5,Vicia americana,3222-4e,2018-10-31,Hillary Woolf,1.002,0.159,lots of leaflets – separated from rachis,missing,3222-4e
-2018-07-25,Elizabeth Simpson,Emily James,5,Aster engelmannii,3222-5a,2018-10-29,Hillary Woolf,0.383,0,,missing,3222-5a
-2018-07-25,Elizabeth Simpson,Emily James,5,Aster engelmannii,3222-5b,2018-10-29,Hillary Woolf,0.441,0,,missing,3222-5b
-2018-07-25,Elizabeth Simpson,Emily James,5,Aster engelmannii,3222-5c,2018-10-29,Hillary Woolf,0.243,0,,missing,3222-5c
-2018-07-25,Elizabeth Simpson,Emily James,5,Aster engelmannii,3222-5d,2018-10-29,Hillary Woolf,0.518,0,,missing,3222-5d
-2018-07-25,Elizabeth Simpson,Emily James,5,Aster engelmannii,3222-5e,2018-10-29,Hillary Woolf,0.381,0,,missing,3222-5e
+2018-07-25,Elizabeth Simpson,Emily James,5,Eucephalus engelmannii,3222-5a,2018-10-29,Hillary Woolf,0.383,0,,missing,3222-5a
+2018-07-25,Elizabeth Simpson,Emily James,5,Eucephalus engelmannii,3222-5b,2018-10-29,Hillary Woolf,0.441,0,,missing,3222-5b
+2018-07-25,Elizabeth Simpson,Emily James,5,Eucephalus engelmannii,3222-5c,2018-10-29,Hillary Woolf,0.243,0,,missing,3222-5c
+2018-07-25,Elizabeth Simpson,Emily James,5,Eucephalus engelmannii,3222-5d,2018-10-29,Hillary Woolf,0.518,0,,missing,3222-5d
+2018-07-25,Elizabeth Simpson,Emily James,5,Eucephalus engelmannii,3222-5e,2018-10-29,Hillary Woolf,0.381,0,,missing,3222-5e
 2018-07-25,Elizabeth Simpson,Emily James,5,Senecio serra,3222-6a,2018-10-29,Hillary Woolf,0.549,0,,missing,3222-6a
 2018-07-25,Elizabeth Simpson,Emily James,5,Senecio serra,3222-6b,2018-10-29,Hillary Woolf,0.285,0,,missing,3222-6b
 2018-07-25,Elizabeth Simpson,Emily James,5,Senecio serra,3222-6c,2018-10-29,Hillary Woolf,0.319,0,,missing,3222-6c
