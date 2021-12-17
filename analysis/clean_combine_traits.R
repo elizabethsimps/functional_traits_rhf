@@ -16,18 +16,15 @@ pix2mm <- function(pixels, DPI){
 
 ### lOAD LEAF & HEIGHT DATA ###
 # Leaf area - old scanner - 300 dpi
-LA.os <- rbind(read.delim("./analysis_code/stalkless-take2/rhf_old_scan_plus-sd-mult-1_3/statistics.txt"),
-               read.delim("./analysis_code/stalkless-take2/rhf_old_scan_plus-sd-div-2/statistics.txt"),
-               read.delim("./analysis_code/stalkless-take2/rhf_old_scan_plus-sd/statistics.txt"),
-               read.delim("./analysis_code/stalkless-take2/rhf_old_scan_just-mean/statistics.txt"))
+LA.os <- rbind(read.delim("./analysis/stalkless-EGS/rhf_old_scan_just-mean/statistics.txt"),
+               read.delim("./analysis/stalkless-EGS/rhf_old_scan_plus-sd/statistics.txt"),
+               read.delim("./analysis/stalkless-EGS/rhf_old_scan_plus-sd-div-2/statistics.txt"),
+               read.delim("./analysis/stalkless-EGS/rhf_old_scan_plus-sd-mult-1_3/statistics.txt"))
 
 # Leaf area - new scanner - 600 dpi
-LA.ns <- rbind(read.delim("./analysis_code/stalkless-take2/rhf_new_scan_plus-sd-mult-1_3/statistics.txt"),
-               read.delim("./analysis_code/stalkless-take2/rhf_new_scan_plus-sd-div-2/statistics.txt"),
-               read.delim("./analysis_code/stalkless-take2/rhf_new_scan_minus-sd-div-3_5/statistics.txt"),
-               read.delim("./analysis_code/stalkless-take2/rhf_new_scan_minus-sd-div-2/statistics.txt"),
-               read.delim("./analysis_code/stalkless-take2/rhf_new_scan_minus-sd/statistics.txt"),
-               read.delim("./analysis_code/stalkless-take2/rhf_new_scan_just-mean/statistics.txt"))
+LA.ns <- rbind(read.delim("./analysis/stalkless-EGS/rhf_new_scan_just-mean/statistics.txt"),
+               read.delim("./analysis/stalkless-EGS/rhf_new_scan_plus-sd-div-2/statistics.txt"),
+               read.delim("./analysis/stalkless-EGS/rhf_new_scan_plus-sd-mult-1_3/statistics.txt"))
 
 # Leaf mass
 mass18 <- read.csv("./raw_data/rhf_2018_traits_sla_leaf_mass.csv", as.is=TRUE)
@@ -38,7 +35,9 @@ ht18 <- read.csv("./raw_data/rhf_2018_traits_height.csv", as.is=TRUE)
 ht19 <- read.csv("./raw_data/rhf_2019_traits_height.csv", as.is=TRUE)
 
 # Collection notes
-col.notes <- read.csv("./raw_data/SLA-collection-notes.csv", as.is=TRUE)
+col.notes <- read.csv("./raw_data/trait-collection-notes.csv", as.is=TRUE)
+# Filter collection notes to only those that processed the leaves and petioles properly
+col.notes.Y <- col.notes[col.notes$process.leaves.pets=="Y",]
 
 ##############################
 ### LEAVES - SLA, LA, LDMC ###
@@ -51,7 +50,7 @@ LA.os$sa.mm <- pix2mm(LA.os$surface.area, 300)
 LA.ns$sa.mm <- pix2mm(LA.ns$surface.area, 600)
 
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
-# CONVERT ANY OTHER OF THESE THAT YOU DECIDE TO USE TO mm #
+# CONVERT ANY OTHER COLUMNS THAT YOU DECIDE TO USE TO mm #
 
 # combine them
 area.stat <- rbind(LA.os, LA.ns)
@@ -130,21 +129,23 @@ for(i in seq_len(nrow(sla.indv))){
 
 # DECISION - Filter to only be the best collection for each species
 # need to remove letter off the end of each indv id to aggregate to species
+sla.indv$col.id <- NA
 for (i in seq_len(nrow(sla.indv))){
-    sla.indv$sp.ID[i] <- substr(sla.indv$indv[i], start=1,stop=nchar(sla.indv$indv[i])-1)
+    sla.indv$col.id[i] <- substr(sla.indv$indv[i], start=1,stop=nchar(sla.indv$indv[i])-1)
 }
+
 # subset species by chosen best collection from the collection notes
-sla.indv <- sla.indv[sla.indv$sp.ID %in% col.notes$best_collection,]
+sla.indv.bc <- sla.indv[sla.indv$col.id %in% col.notes$leaf_col_analyze,]
 
 # Summarize leaf traits (mean and variation) for each species based on number of observations for each species
-sla.mean <- as.data.frame(with(sla.indv, tapply(i_sla, species, mean)))
-la.mean <- as.data.frame(with(sla.indv, tapply(i_sa, species, mean)))
-ldmc.mean <- as.data.frame(with(sla.indv, tapply(i_mass, species, mean)))
-sla.sd <- as.data.frame(with(sla.indv, tapply(i_sla, species, sd)))
-la.sd <- as.data.frame(with(sla.indv, tapply(i_sa, species, sd)))
-ldmc.sd <- as.data.frame(with(sla.indv, tapply(i_mass, species, sd)))
-total.N <- as.data.frame(with(sla.indv, tapply(N_leaves, species, sum)))
-mean.N <- as.data.frame(with(sla.indv, tapply(N_leaves, species, mean)))
+sla.mean <- as.data.frame(with(sla.indv.bc, tapply(i_sla, species, mean)))
+la.mean <- as.data.frame(with(sla.indv.bc, tapply(i_sa, species, mean)))
+ldmc.mean <- as.data.frame(with(sla.indv.bc, tapply(i_mass, species, mean)))
+sla.sd <- as.data.frame(with(sla.indv.bc, tapply(i_sla, species, sd)))
+la.sd <- as.data.frame(with(sla.indv.bc, tapply(i_sa, species, sd)))
+ldmc.sd <- as.data.frame(with(sla.indv.bc, tapply(i_mass, species, sd)))
+total.N <- as.data.frame(with(sla.indv.bc, tapply(N_leaves, species, sum)))
+mean.N <- as.data.frame(with(sla.indv.bc, tapply(N_leaves, species, mean)))
 
 leaf.traits <- cbind(sla.mean, la.mean, ldmc.mean, sla.sd, la.sd, ldmc.sd, total.N, mean.N)
 colnames(leaf.traits) <- c("sla.m", "la.m", "ldmc.m", "sla.sd", "la.sd", "ldmc.sd", "N.total", "N.m")
@@ -200,9 +201,9 @@ all.height <- rbind(expanded.ht18, ht19)
 ht.max <- as.data.frame(with(all.height, tapply(height, Species, max)))
 ht.mean <- as.data.frame(with(all.height, tapply(height, Species, mean)))
 ht.sd <- as.data.frame(with(all.height, tapply(height, Species, sd)))
-ht.N <- count(all.height, "Species")
+ht.N <- count(all.height, all.height$Species)
 
-ht.traits <- cbind(ht.max, ht.mean, ht.sd, ht.N$freq)
+ht.traits <- cbind(ht.max, ht.mean, ht.sd, ht.N[,2])
 colnames(ht.traits) <-c("ht.max", "ht.m", "ht.sd", "ht.N")
 
 ht.traits$ht.se <- NA
@@ -212,7 +213,7 @@ for(i in seq_len(nrow(ht.traits))){
 }
 
 ht.traits <- ht.traits[,c(1:2,5)] # remove sd and N info
-ht.traits <- na.omit(ht.traits) # removes 8 species for 132 species total
+ht.traits <- na.omit(ht.traits) # removes 7 species for 131 species total
 
 #############################################
 ### PUT ALL THE LEAF & HT traits together ###

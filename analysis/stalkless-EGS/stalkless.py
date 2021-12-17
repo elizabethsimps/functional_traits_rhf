@@ -210,7 +210,7 @@ def saveFile(image, fileName, suffix="", checkName=True):
     
 #Thresholding
 def thresholdImage(image, nObjects=0, maxObjects=0):
-    threshold = np.mean(image) - np.std(image)
+    threshold=np.mean(image) + np.std(image)/2
     thresh_image = image >= threshold
     label_objects, nb_labels = ndimage.label(thresh_image)
     sizes = np.bincount(label_objects.ravel())
