@@ -6,7 +6,6 @@ setwd("~/Documents/projects/functional_traits_rhf")
 ################# NOTES #######################################
 ### Temperature data - convert from .hobo file to .csv in HoboWare
 ### Use cleaning script to format the data for all years and plots
-### Be aware that tempearture and texture data are not always collected at the same plots
 
 ################ LOAD PACKAGES ##################
 library(tidyverse)
@@ -72,11 +71,12 @@ temp.s <- subset(temp,
                                             tz = "MST"))
 
 ############## A big overview plot ############
-qplot(x=datetime, y=temp, 
+# 2017-2018 Daily Air Temperature at RHF sites
+big.plot <- qplot(x=datetime, y=temp, 
       data=temp.s,
-      main="2017-2018 Daily Air Temperature at RHF sites",
-      color=as.factor(plot)) +
-      geom_point(shape=1)
+      color=as.factor(plot),
+      geom=c("line"))
+big.plot
 
 ###############################################
 ############# Bring data together #############

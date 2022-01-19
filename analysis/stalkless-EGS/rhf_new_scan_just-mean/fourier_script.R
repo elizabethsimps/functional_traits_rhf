@@ -23,3 +23,4 @@ hcontrib(fourier)
 
 #Outer edge lengths
 outer.edge <- sapply(images@coo, function(x) sum(sqrt((x[-1,1]-x[-nrow(x),1])^2 + (x[-1,2]-x[-nrow(x),2])^2)))
+
