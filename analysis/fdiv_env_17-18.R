@@ -7,6 +7,7 @@ library(soiltexture)
 library(lubridate)
 library(readxl)
 library(weathermetrics)
+library(tidyverse)
 
 #############
 # FUNCTIONS #
@@ -147,11 +148,9 @@ write.csv(text, "./clean_data/soil-texture-18.csv")
 
 # dataframe of terrain and texture to use in analysis - 76 plots
 env <- merge(topo, text, by.x="plot_id", by.y="plot_id")
+write.csv(env, "./clean_data/texture-terrain-18.csv")
 
 # dataframe of terrain, texture, and temperature to use in analysis - 25 plots
 env.t <- merge(env, all.temp, by.x="plot_id", by.y="plot")
+write.csv(env.t, "./clean_data/temp-texture-terrain-18.csv")
 
-rownames(env) <- env$plot_id
-env <- env[,-1]
-rownames(env.t) <- env.t$plot_id
-env.t <- env.t[,-1]
