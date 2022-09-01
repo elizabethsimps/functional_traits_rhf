@@ -2,7 +2,7 @@
 # Elizabeth Simpson
 # 2022-08-08
 
-source("~/Documents/projects/functional_traits_rhf/analysis/fdiv_assemblage-env_analysis.R")
+source("~/Documents/projects/functional_traits_rhf/analysis/fdiv-env-analysis_core18.R")
 
 # Load life history data
 cat.tr <- read.csv("./raw_data/cat_traits_rhf.csv", as.is=TRUE)
@@ -18,10 +18,10 @@ anubi <- cat.tr$species[cat.tr$life_history=="annual"]
 # Sort out the 2018 cover data from the 25 core plots with temperature data into these life hist. cats.
 wood <- core.18.over[core.18.over$Species %in% p.wood,]
 herb <- core.18.over[core.18.over$Species %in% p.herb,]
-anbi <- core.18.over[core.18.over$Species %in% annual,]
+anbi <- core.18.over[core.18.over$Species %in% anubi,]
 
-# Make community matricies for each of these and remove communities that have zero abundance across all species types
-# Remove communties that have zero abundance across all species 
+# Make community matrices for each of these and remove communities that have zero abundance across all species types
+# Remove communities that have zero abundance across all species 
 wood.comm <- calc.comm(wood)
 wood.comm <- wood.comm[,colnames(wood.comm) %in% rownames(traits)]
 wood.comm <- wood.comm[rowSums(wood.comm)>0,]
@@ -37,132 +37,161 @@ anbi.comm <- anbi.comm[rowSums(anbi.comm)>0,]
 ###################################
 # Make comparative community object & calculate diversity metrics from that
 # NOTE: *only* look at CWM of traits and FDis from this
-wood.div <- div.calc(tree18.core, wood.comm, traits, env18.core)
-herb.div <- div.calc(tree18.core, herb.comm, traits, env18.core)
-anbi.div <- div.calc(tree18.core, anbi.comm, traits, env18.core)
+wood.div <- div.calc(tree18.core, wood.comm, traits, env18.core) # 17 plots
+herb.div <- div.calc(tree18.core, herb.comm, traits, env18.core) # 25 plots
+anbi.div <- div.calc(tree18.core, anbi.comm, traits, env18.core) # 21 plots
 
-######## FOR WOODY PERRENIALS ############
-wood.sla <- with(wood.div, lm(log(CWM.SLA)~mean+sd+max+min+SAND+CLAY+SILT))
-vif(wood.sla)
-# There are aliased coefficients in the model
+### SPLIT OUT FIGURE # models from main text to look at woody perennials, herbaceous perennials, and annuals/biennials
 
-### CWM of SLA - WPs
-wood.sla.cor <- env.corr(wood.div, log(wood.div$CWM.SLA)) 
-xtable(wood.sla.cor, digits=3) # for supplement
-wood.sla <- with(wood.div, lm(log(CWM.SLA)~min+SILT))
-xtable(wood.sla, digits=3) # for supplement
-# plotting
-wood.sla.1 <- with(wood.div, lm(log(CWM.SLA)~1))
+### SLA
+sla.wood <- with(wood.div, lm(log(CWM.SLA)~mean+SAND)) # intercept
+sla.herb <- with(herb.div, lm(log(CWM.SLA)~mean+SAND)) # mean
+sla.anbi <- with(anbi.div, lm(log(CWM.SLA)~mean+SAND)) # intercept
 
-### CWM of LA - WPs
-wood.la.cor <- env.corr(wood.div, log(wood.div$CWM.LA))
-xtable(wood.la.cor, digits=3)
-wood.la <- with(wood.div, lm(log(CWM.LA)~mean+SILT)) 
-xtable(wood.la, digits=3)
-# plotting
-wood.la.mn <- with(wood.div, lm(log(CWM.LA)~mean)) # mean sig. but not the intercept
+# SLA plotting
+sla.wood.1 <- with(wood.div, lm(log(CWM.SLA)~1))
+sla.herb.mn <- with(herb.div, lm(log(CWM.SLA)~mean))
+sla.anbi.1 <- with(anbi.div, lm(log(CWM.SLA)~1))
 
-### CWM of mean HT - WPs
-wood.mnH.cor <- env.corr(wood.div, wood.div$CWM.mn.ht)
-xtable(wood.mnH.cor, digits=3)
-wood.mnH <- with(wood.div, lm(CWM.mn.ht~max*CLAY)) # clay and max interaction significant
-xtable(wood.mnH, digits=3)
-# plotting
-wood.mnH.c <- with(wood.div, lm(CWM.mn.ht~CLAY)) # slope but not intercept significant
+### LA
+la.wood <- with(wood.div, lm(log(CWM.SLA)~mean+CLAY))
+la.herb <- with(herb.div, lm(log(CWM.SLA)~mean+CLAY))
+la.anbi <- with(anbi.div, lm(log(CWM.SLA)~mean+CLAY))
 
-### CWM of max HT - WPs
-wood.mxH.cor <- env.corr(wood.div, wood.div$CWM.maxht)
-xtable(wood.mxH.cor, digits=3)
-wood.mxH <- with(wood.div, lm(CWM.maxht~max*CLAY)) # clay and max interaction significant
-xtable(wood.mxH, digits=3)
-# plotting
+# LA plotting
+la.wood.1 <- with(wood.div, lm(log(CWM.LA)~1))
+la.herb.mn <- with(herb.div, lm(log(CWM.LA)~mean))
+la.anbi.1 <- with(anbi.div, lm(log(CWM.LA)~1))
 
-### FDis (four traits) - WPs
-wood.fdis <- env.corr(wood.div, wood.div$fdis)
-xtable(wood.fdis, digits=3)
-wood.fdis <- with(wood.div, lm(fdis~mean+CLAY)) # mean and clay significant, but not interaction
-xtable(wood.fdis, digits=3)
-# plotting
-wood.fdis.mn <- with(wood.div, lm(fdis~mean)) # sig
+### CWM of mean HT
+mnH.wood <- with(wood.div, lm(CWM.mn.ht~sd+CLAY))
+mnH.herb <- with(herb.div, lm(CWM.mn.ht~sd+CLAY))
+mnH.anbi <- with(anbi.div, lm(CWM.mn.ht~sd+CLAY))
 
-######## FOR HERBACEOUS PERRENIALS ############
-### CWM of SLA - HPs
-herb.sla.cor <- env.corr(herb.div, log(herb.div$CWM.SLA)) 
-xtable(herb.sla.cor, digits=3) # for supplement
-herb.sla <- with(herb.div, lm(log(CWM.SLA)~mean+CLAY)) # mean sig.
-xtable(herb.sla, digits=3) # for supplement
-# plotting
-herb.sla.mn <- with(herb.div, lm(log(CWM.SLA)~mean))
+# CWM of mean HT plotting
+mnH.wood.c <- with(wood.div, lm(CWM.mn.ht~CLAY))
+mnH.herb.1 <- with(herb.div, lm(CWM.mn.ht~1))
+mnH.anbi.1 <- with(anbi.div, lm(CWM.mn.ht~1))
 
-### CWM of LA - HPs
-herb.la.cor <- env.corr(herb.div, log(herb.div$CWM.LA))
-xtable(herb.la.cor, digits=3)
-herb.la <- with(herb.div, lm(log(CWM.LA)~mean+SAND)) # mean sig
-xtable(herb.la, digits=3)
-# plotting
-herb.la.mn <- with(herb.div, lm(log(CWM.SLA)~mean))
+### CWM of max HT
+mxH.wood <- with(wood.div, lm(CWM.maxht~sd+CLAY))
+mxH.herb <- with(herb.div, lm(CWM.maxht~sd+CLAY))
+mxH.anbi <- with(anbi.div, lm(CWM.maxht~sd+CLAY))
 
-### CWM of mean HT - HPs
-herb.mnH.cor <- env.corr(herb.div, herb.div$CWM.mn.ht)
-xtable(herb.mnH.cor, digits=3)
-herb.mnH <- with(herb.div, lm(CWM.mn.ht~sd+CLAY)) # no sig.
-xtable(herb.mnH, digits=3)
-# plotting
-herb.mnH <- with(herb.div, lm(CWM.mn.ht~1))
+# CWM of max HT plotting
+mxH.wood.1 <- with(wood.div, lm(CWM.maxht~1))
+mxH.herb.c <- with(herb.div, lm(CWM.maxht~CLAY))
+mxH.anbi.1 <- with(anbi.div, lm(CWM.maxht~1))
 
-### CWM of max HT - HPs
-herb.mxH.cor <- env.corr(herb.div, herb.div$CWM.maxht)
-xtable(herb.mxH.cor, digits=3)
-herb.mxH <- with(herb.div, lm(CWM.maxht~mean+CLAY)) # clay sig.
-xtable(herb.mxH, digits=3)
-# plotting
-herb.mxH.c <- with(herb.div, lm(CWM.maxht~CLAY))
+### FDis - with four traits
+fdis.wood <- with(wood.div, lm(fdis~sd+CLAY))
+fdis.herb <- with(herb.div, lm(fdis~sd+CLAY))
+fdis.anbi <- with(anbi.div, lm(fdis~sd+CLAY))
 
-### FDis (four traits) - HPs
-herb.fdis <- env.corr(herb.div, herb.div$fdis)
-xtable(herb.fdis, digits=3)
-herb.fdis <- with(herb.div, lm(fdis~mean+CLAY)) 
-xtable(herb.fdis, digits=3)
-# plotting
-herb.fdis.mn <- with(herb.div, lm(fdis~mean))
+# for plotting
+fdis.wood.sd <- with(wood.div, lm(fdis~sd))
+fdis.herb.sd <- with(herb.div, lm(fdis~sd))
+fdis.anbi.1 <- with(anbi.div, lm(fdis~1))
 
-######## FOR ANNUALS/BIENNIALS ############
-### CWM of SLA - A/Bs
-anbi.sla.cor <- env.corr(anbi.div, log(anbi.div$CWM.SLA)) 
-xtable(anbi.sla.cor, digits=3) # for supplement
-anbi.sla <- with(anbi.div, lm(log(CWM.SLA)~max+CLAY)) # max. sig.
-xtable(anbi.sla, digits=3) # for supplement
-# plotting
-anbi.sla.mx <- with(anbi.div, lm(log(CWM.SLA)~max))
+# supplementary plot showing the effect of different life history strategies on FTs
+jpeg("./analysis/figures/supp-fdiv-env-core18-life-history.jpeg", width=7, height=10, unit="in",res=300)
+par(mfrow=c(5,3))
+par(mar=c(4,5,0.1,0.5))
+par(oma=c(1.5,1.5,1.5,1.5))
 
-### CWM of LA - A/Bs
-anbi.la.cor <- env.corr(anbi.div, log(anbi.div$CWM.LA))
-xtable(anbi.la.cor, digits=3)
-anbi.la <- with(anbi.div, lm(log(CWM.LA)~max+SILT)) # max. sig.
-xtable(anbi.la, digits=3)
-# plotting
-anbi.sla.mx <- with(anbi.div, lm(log(CWM.LA)~max))
+# LA ~ mean
+with(wood.div, plot(log(CWM.LA)~mean, pch=19, xlab=expression(paste('Mean temperature (',degree,'C)')), ylab=expression(italic("ln")("Leaf area")), cex=1.2, axes=FALSE, col="#009E73", cex.lab=1.05))
+abline(la.wood.1, lwd=2)
+axis(1, cex.lab=1.5)
+axis(2, cex.lab=1.5)
+mtext(expression(bold("(a)")),side=3,line=-2, adj=2.2, cex = 0.85)
 
-### CWM of mean HT - A/Bs
-anbi.mnH.cor <- env.corr(anbi.div, anbi.div$CWM.mn.ht)
-xtable(anbi.mnH.cor, digits=3)
-anbi.mnH <- with(anbi.div, lm(CWM.mn.ht~min+CLAY)) # no sig.
-xtable(anbi.mnH, digits=3)
-# plotting
-anbi.mnH.1 <- with(anbi.div, lm(CWM.mn.ht~1))
+with(herb.div, plot(log(CWM.LA)~mean, pch=19, xlab=expression(paste('Mean temperature (',degree,'C)')), ylab="", cex=1.2, axes=FALSE, col="#009E73", cex.lab=1.05))
+abline(la.herb.mn, lwd=2, lty=2)
+axis(1, cex.lab=1.5)
+axis(2, cex.lab=1.5)
+mtext(expression(bold("(b)") ~~~~~~~~~~~~~~~~~~~~~~~~ R^2 ~ "= 0.62, p-value < 0.001"),side=3,line=-2, adj=2.2, cex = 0.85)
+      
+with(anbi.div, plot(log(CWM.LA)~mean, pch=19, xlab=expression(paste('Mean temperature (',degree,'C)')), ylab="", cex=1.2, axes=FALSE, col="#009E73", cex.lab=1.05))
+abline(la.anbi.1, lwd=2, lty=3)
+axis(1, cex.lab=1.5)
+axis(2, cex.lab=1.5)
+mtext(expression(bold("(c)")),side=3,line=-2, adj=2.2, cex = 0.85)  
 
-### CWM of max HT - A/Bs
-anbi.mxH.cor <- env.corr(anbi.div, anbi.div$CWM.maxht)
-xtable(anbi.mxH.cor, digits=3)
-anbi.mxH <- with(anbi.div, lm(CWM.maxht~min+CLAY)) # no sig.
-xtable(anbi.mxH, digits=3)
-# plotting
-anbi.mnH.1 <- with(anbi.div, lm(CWM.maxht~1))
+# SLA
+with(wood.div, plot(log(CWM.SLA)~mean, pch=19, xlab=expression(paste('Mean temperature (',degree,'C)')), ylab=expression(italic("ln")("Specific leaf area")), cex=1.2, axes=FALSE, col="#009E73", cex.lab=1.05))
+abline(sla.wood.1, lwd=2)
+axis(1, cex.lab=1.5)
+axis(2, cex.lab=1.5)
+mtext(expression(bold("(d)")),side=3,line=-2, adj=2.2, cex = 0.85)
 
-### FDis (four traits) - A/Bs
-anbi.fdis <- env.corr(anbi.div, anbi.div$fdis)
-xtable(anbi.fdis, digits=3)
-anbi.fdis <- with(anbi.div, lm(fdis~max+SILT)) # no sig.
-xtable(anbi.fdis, digits=3)
-# plotting
-anbi.fdis.1 <- with(anbi.div, lm(fdis~1))
+with(herb.div, plot(log(CWM.SLA)~mean, pch=19, xlab=expression(paste('Mean temperature (',degree,'C)')), ylab="", cex=1.2, axes=FALSE, col="#009E73", cex.lab=1.05))
+abline(sla.herb.mn, lwd=2, lty=2)
+axis(1, cex.lab=1.5)
+axis(2, cex.lab=1.5)
+mtext(expression(bold("(e)") ~~~~~~~~~~~~~~~~~~~~~~~~ R^2 ~ "= 0.58, p-value < 0.001"),side=3,line=-2, adj=2.2, cex = 0.85)
+
+with(anbi.div, plot(log(CWM.LA)~mean, pch=19, xlab=expression(paste('Mean temperature (',degree,'C)')), ylab="", cex=1.2, axes=FALSE, col="#009E73", cex.lab=1.05))
+abline(sla.anbi.1, lwd=2, lty=3)
+axis(1, cex.lab=1.5)
+axis(2, cex.lab=1.5)
+mtext(expression(bold("(f)")),side=3,line=-2, adj=2.2, cex = 0.85)
+
+# max ht ~ sd
+with(wood.div, plot(log(CWM.maxht)~CLAY, pch=19, xlab="Clay (%)", ylab="Max. height (cm)", cex=1.2, axes=FALSE, col="#E69F00", cex.lab=1.05))
+abline(mxH.wood.1, lwd=2)
+axis(1, cex.lab=1.5)
+axis(2, cex.lab=1.5)
+mtext(expression(bold("(g)")),side=3,line=-2, adj=2.2, cex = 0.85)
+
+with(herb.div, plot(log(CWM.maxht)~CLAY, pch=19, xlab="Clay (%)", ylab="", cex=1.2, axes=FALSE, col="#E69F00", cex.lab=1.05))
+abline(mx.herb.c, lwd=2, lty=2)
+axis(1, cex.lab=1.5)
+axis(2, cex.lab=1.5)
+mtext(expression(bold("(h)") ~~~~~~~~~~~~~~~~~~~~~~~~ R^2 ~ "= 0.24, p-value = 0.013"),side=3,line=-2, adj=2.2, cex = 0.85)
+
+with(anbi.div, plot(log(CWM.maxht)~CLAY, pch=19, xlab="Clay (%)", ylab="", cex=1.2, axes=FALSE, col="#E69F00", cex.lab=1.05))
+abline(mx.anbi.1, lwd=2, lty=3)
+axis(1, cex.lab=1.5)
+axis(2, cex.lab=1.5)
+mtext(expression(bold("(i)")),side=3,line=-2, adj=2.2, cex = 0.85) 
+
+# Mean height
+with(wood.div, plot(log(CWM.mn.ht)~CLAY, pch=19, xlab="Clay (%)", ylab="Mean height (cm)", cex=1.2, axes=FALSE, col="#E69F00", cex.lab=1.05))
+abline(mnH.wood.c, lwd=2)
+axis(1, cex.lab=1.5)
+axis(2, cex.lab=1.5)
+mtext(expression(bold("(j)") ~~~~~~~~~~~~~~~~~~~~~~~~ R^2 ~ "= 0.23, p-value = 0.049"),side=3,line=-2, adj=2.2, cex = 0.85)
+
+with(herb.div, plot(log(CWM.mn.ht)~CLAY, pch=19, xlab="Clay (%)", ylab="", cex=1.2, axes=FALSE, col="#E69F00", cex.lab=1.05))
+abline(mx.herb.c, lwd=2, lty=2)
+axis(1, cex.lab=1.5)
+axis(2, cex.lab=1.5)
+mtext(expression(bold("(k)")),side=3,line=-2, adj=2.2, cex = 0.85)
+
+with(anbi.div, plot(log(CWM.mn.ht)~CLAY, pch=19, xlab="Clay (%)", ylab="", cex=1.2, axes=FALSE, col="#E69F00", cex.lab=1.05))
+abline(mx.anbi.1, lwd=2, lty=3)
+axis(1, cex.lab=1.5)
+axis(2, cex.lab=1.5)
+mtext(expression(bold("(l)")),side=3,line=-2, adj=2.2, cex = 0.85) 
+
+# functional dispersion ~ sd temperature
+with(wood.div, plot(fdis~sd, pch=19, xlab=expression(paste('SD temperature (',degree,'C)')), ylab="Functional dispersion", cex=1.2, axes=FALSE, col="#009E73", cex.lab=1.05))
+abline(fdis.wood.sd, lwd=2)
+axis(1, cex.lab=1.5)
+axis(2, cex.lab=1.5)
+mtext(expression(bold("(m)") ~~~~~~~~~~~~~~~~~~~~~~~~ R^2 ~ "= 0.23, p-value = 0.049"),side=3,line=-2, adj=2.2, cex = 0.85)
+
+with(herb.div, plot(fdis~sd, pch=19, xlab=expression(paste('SD temperature (',degree,'C)')), ylab="", cex=1.2, axes=FALSE, col="#009E73", cex.lab=1.05))
+abline(fdis.herb.sd, lwd=2, lty=2)
+axis(1, cex.lab=1.5)
+axis(2, cex.lab=1.5)
+mtext(expression(bold("(n)") ~~~~~~~~~~~~~~~~~~~~~~~~ R^2 ~ "= 0.26, p-value = 0.010"),side=3,line=-2, adj=2.2, cex = 0.85)
+
+with(anbi.div, plot(fdis~sd, pch=19, xlab=expression(paste('SD temperature (',degree,'C)')), ylab="", cex=1.2, axes=FALSE, col="#009E73", cex.lab=1.05))
+abline(fdis.anbi.1, lwd=2, lty=2)
+axis(1, cex.lab=1.5)
+axis(2, cex.lab=1.5)
+mtext(expression(bold("(o)")),side=3,line=-2, adj=2.2, cex = 0.85)
+
+dev.off()

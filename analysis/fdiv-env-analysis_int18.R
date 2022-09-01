@@ -292,5 +292,3 @@ axis(2, at=c(0,1,2,3,4,5),cex.axis=0.9)
 mtext(expression(bold("(i)") ~~~~~~~~~~~~~~~~~~~~~~ R^2 ~ "= 0.43, p-value < 0.001"), side=3, line=-1.2, adj=1.3, cex=0.6)
 
 dev.off()
-
-# bonus
