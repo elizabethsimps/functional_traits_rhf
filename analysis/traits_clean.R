@@ -1,6 +1,8 @@
 ### Clean & combine all trait data into one data set ###
 ### Elizabeth Simpson 2021-03-24 ######################
-setwd("~/Documents/projects/functional_traits_rhf")
+
+# Uncomment to set wd
+# setwd("~/Documents/projects/functional_traits_rhf")
 
 library("plyr")
 

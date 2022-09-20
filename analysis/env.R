@@ -1,7 +1,7 @@
-# Environment (microclimate) at core RHF plots: soil temp (2017-18) & texture & terrain
+# Microenvironment at core RHF plots: soil temp (2017-18 and 2018-19), texture, & terrain
 # Elizabeth Simpson # 2019-07-29 | 2021-1-25
-
-setwd("~/Documents/projects/functional_traits_rhf")
+# Set working directory
+# setwd("~/Documents/projects/functional_traits_rhf")
 
 library(soiltexture)
 library(lubridate)
@@ -40,8 +40,8 @@ texture <- function(soil, plot_ID, soil_wt, temp_calib, hydro_calib, temp_40, hy
   return(output)
 }
 
-# To format times in the temperature dataset - from code from MS
-format.times <- function(x){
+# To format times in the temperature dataset - based on code from Michael Stemkovski (MS)
+format.times <- function(x){ 
   #x <- all_data[4,1]
   hour <- as.character(hour(x))
   minute <- as.character(minute(x))
@@ -78,7 +78,7 @@ text <- with(s.text, texture(s.text, plot_ID, soil_wt, temp_calib, hydro_calib, 
 text <- cbind(text, TT.points.in.classes(tri.data = text, class.sys = "USDA.TT", PiC.type="t"))
 colnames(text) <- c("plot_id", "SAND", "CLAY", "SILT", "class")
 
-### Temperature 2017-2018 - modified from code from MS
+### 2017-2018 temperature cleaning - based on code from MS
 temp <- data.frame(datetime = rep(NA,10000*26),
                    temp = rep(NA,10000*26),
                    plot = rep(NA,10000*26))
@@ -109,8 +109,7 @@ f_temp <- data.frame(plot = temp[,3],
 
 f_temp <- na.omit(f_temp)
 
-############
-### 2019 ###
+### 2018 - 2019 temperature cleaning
 temp19 <- data.frame(datetime = rep(NA,10000*24),
                      temp = rep(NA,10000*24),
                      plot = rep(NA,10000*24))
@@ -141,98 +140,54 @@ f_temp19 <- data.frame(plot = temp19[,3],
 
 f_temp19 <- na.omit(f_temp19)
 
-# put all temp data together
+### Combine temp datas for full temperature data range 2017-2019
 f_temp <- rbind(f_temp, f_temp19)
 
-# Summarize date ranges to get time period completely covered by sensors - back to ES code from here on out
-# Then, visually assess first and last date that covers the same range
-# Set up the different date ranges and data frames you're interested in
-
+# Summarize date ranges to get time period completely covered by sensors - all ES code from hereon
 date.range <- as.data.frame(f_temp %>%
                               group_by(plot) %>%
                               summarize(first.m=first(month),first.d=first(day), first.t=first(time), first.y=first(year),last.m=last(month),last.d=last(day), last.t=last(time), last.y=last(year)))
 
-# subset data for 2017 and 2018 matched start and end for looking at how microenvironment varies across topography
+# Subset a full year of temperature data from 2017 -> 2018 matched to look at how microenvironment varies across topography
 f_temp_year <- subset(f_temp,
                 datetime >= as.POSIXct('2017-09-28 00:00:00',
                                         tz = "MST") &
-                   datetime <= as.POSIXct('2018-09-29 00:00:00',
+                   datetime <= as.POSIXct('2018-09-28 00:00:00',
                                           tz = "MST"))
 
-# Annual temp. summary stats - from 16 days shy of 12 months of data
 # Calculate statistics by plot, could also summarize at the monthly level first and then at plot
 year_17.18 <- as.data.frame(group_by(f_temp_year, plot) %>%
                            summarize(mean(temp), sd(temp), max(temp), min(temp)))
 colnames(year_17.18) <- c("plot_id", "mean", "sd", "max", "min")
 
-# Subset date range for analyzing temp and 2018 cover data
-f_temp_cvr18 <- subset(f_temp,
-                      datetime >= as.POSIXct('2017-09-28 00:00:00',
-                                             tz = "MST") &
-                        datetime <= as.POSIXct('2018-06-08 00:00:00',
-                                               tz = "MST"))
-
-# Annual temp. summary stats - from 16 days shy of 12 months of data
-# Calculate statistics by plot, could also summarize at the monthly level first and then at plot
-temp_cvr18 <- as.data.frame(group_by(f_temp_cvr18, plot) %>%
-                              summarize(mean(temp), sd(temp), max(temp), min(temp)))
-colnames(temp_cvr18) <- c("plot_id", "mean", "sd", "max", "min")
-
-# Subset date range for analyzing temp and 2019 cover data - same range as 2017-18 data
-# Many of the temperatures sensors power reset and otherwise didnt' work within this date range leaving only twelve good ones
+# Subset date range for analyzing temp and 2019 cover data as the year prior to when the 2019 cover data was collected
+# Many of the temperatures sensors power reset and otherwise didn't work within this date range leaving only twelve good ones
 good_temp_19 <- c("1111","1122","1233","1311","1322","1333","2211","2222","2311","3133","3211","3333")
 
 f_temp_19 <- f_temp[f_temp$plot %in% good_temp_19,]
 
 f_temp_cvr19 <- subset(f_temp_19,
-                       datetime >= as.POSIXct('2018-09-28 00:00:00',
+                       datetime >= as.POSIXct('2018-06-07 00:00:00',
                                               tz = "MST") &
-                         datetime <= as.POSIXct('2019-06-08 00:00:00',
+                         datetime <= as.POSIXct('2019-06-07 00:00:00',
                                                 tz = "MST"))
 
-# Annual temp. summary stats - from 16 days shy of 12 months of data
 # Calculate statistics by plot, could also summarize at the monthly level first and then at plot
-temp_cvr19 <- as.data.frame(group_by(f_temp_cvr19, plot) %>%
-                              summarize(mean(temp), sd(temp), max(temp), min(temp)))
-colnames(temp_cvr19) <- c("plot_id", "mean", "sd", "max", "min")
-
-# Subset date range for analyzing temp and 2019 cover data - the whole year prior to when the plant data was collected
-# Many of the temperatures sensors power reset and otherwise didnt' work within this date range leaving only twelve good ones
-f_temp_cvr19_year <- subset(f_temp_19,
-                       datetime >= as.POSIXct('2018-06-08 00:00:00',
-                                              tz = "MST") &
-                         datetime <= as.POSIXct('2019-06-08 00:00:00',
-                                                tz = "MST"))
-
-# Annual temp. summary stats - from 16 days shy of 12 months of data
-# Calculate statistics by plot, could also summarize at the monthly level first and then at plot
-temp_cvr19_year <- as.data.frame(group_by(f_temp_cvr19_year, plot) %>%
+temp_cvr19_year <- as.data.frame(group_by(f_temp_cvr19, plot) %>%
                               summarize(mean(temp), sd(temp), max(temp), min(temp)))
 colnames(temp_cvr19_year) <- c("plot_id", "mean", "sd", "max", "min")
 
 ###########################
-# Put all env data together
-# Make a csv for texture, + a dataframe of topo and texture + a dataframe of everything (what you'll use for the analysis)
+# Put all env data together & export clean environmental data sheets
 
-# clean 2018 soil texture
-write.csv(text, "./clean_data/soil-texture-18.csv")
-
-# dataframe of terrain and texture to use in analysis - 76 plots
+# Terrain and texture to use in analysis - 76 plots
 env <- merge(topo, text, by.x="plot_id", by.y="plot_id")
 write.csv(env, "./clean_data/texture-terrain-18.csv")
 
-# dataframe of terrain, texture, and temperature (2017-18) - 25 plots 
+# Terrain, texture, and temperature (2017-18) - 25 plots 
 env.t <- merge(env, year_17.18, by.x="plot_id", by.y="plot_id")
 write.csv(env.t, "./clean_data/temp-year17-18_text_terr.csv")
 
-# dataframe of terrain, texture, and temperature (fall 2017-cover survey 2018) - 25 plots
-env.cvr18 <- merge(env, temp_cvr18, by.x="plot_id", by.y="plot_id")
-write.csv(env.cvr18, "./clean_data/temp-cvr18_text_terr.csv")
-
-# dataframe of terrain, texture, and temperature (fall 2018-cover survey 2019) - 12 plots
-env.cvr19 <- merge(env, temp_cvr19, by.x="plot_id", by.y="plot_id")
-write.csv(env.cvr19, "./clean_data/temp-cvr19_text_terr.csv")
-
-# dataframe of terrain, texture, and temperature (cover survey 2018 - cover survey 2019) - 12 plots
+# Terrain, texture, and temperature (year before 2019 cover survey) - 12 plots
 env.cvr19.year <- merge(env, temp_cvr19_year, by.x="plot_id", by.y="plot_id")
-write.csv(env.cvr19.year, "./clean_data/temp-cvr19-year_text_terr.csv")
+write.csv(env.cvr19.year, "./clean_data/temp-CVR-year18-19_text_terr.csv")
