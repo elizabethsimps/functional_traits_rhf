@@ -1,8 +1,8 @@
-# Assessing variance in functional dispersion and CWM of height and leaf traits across temp and soil microclimates and phylodiversity
+# Assessing variance in functional dispersion and CWM of height and leaf traits across microenvironments
 # Elizabeth Simpson # 2021-03-25
 # Uses code from Will Pearse to get comparative.comm set up
 
-setwd("~/Documents/projects/functional_traits_rhf") # uncomment to set working directory on computer
+setwd("~/Documents/projects/functional_traits_rhf") # uncomment to set working directory
 
 ###############
 ### HEADERS ###
@@ -10,8 +10,10 @@ library(pez)
 library(FD)
 library(lme4)
 library(soiltexture)
-library(car)
 library(xtable)
+library(MuMIn)
+library(RColorBrewer)
+library(magick)
 
 #################
 ### LOAD DATA ###
@@ -47,28 +49,33 @@ calc.comm <- function(cover){
   comm <- comm[,!grepl("sp\\.", colnames(comm))]
   colnames(comm) <- tolower(colnames(comm))
   return(comm)
-}
+} 
 
-# Make comparative community object, calculate diversity metrics, and add environmental data all to the same dataframe
-div.calc <- function(tree, comm, traits, env){
-  c.data <- comparative.comm(tree, comm, traits, env)
+# Calculate diversity metrics and add environmental data all to the same dataframe
+# Focus on functional dispersion and community weighted means but the 3 Villeger et al. 2008 indicies are also in here
+# Keep default arguments that weight each trait by a species' abundance in the community and standardize each trait value
+div.calc <- function(c.data){
   # Calculate functional, phylogenetic, and taxonomic diversity indices
   # Focus on functional dispersion and community weighted means but the 3 Villeger et al. 2008 indicies are also in here
   f.div <- with(c.data, dbFD(data[,c(1:2,4:5)], comm, w.abun=TRUE, stand.x=TRUE, print.pco=TRUE))
   f.distwo <- with(c.data, dbFD(data[,c(1,4)], comm, w.abun=TRUE, stand.x=TRUE, print.pco=TRUE))
-  # Calculate phylogenetic div. and simpson's div.
-  ses.mpd.a <- .ses.mpd(c.data, abundace.weighted=TRUE)
-  ses.mntd.a <- .ses.mntd(c.data, abundance.weighted=TRUE)
-  pd <- .pd(c.data)
-  simps.div<- diversity(c.data$comm, index="simpson")
   # Put together all of the pieces needed
-  div <- with(f.div, cbind(FDis, CWM, nbsp, ses.mpd.a$mpd.obs.z, ses.mntd.a$mntd.obs.z, pd[,1], simps.div))
+  div <- with(f.div, cbind(FDis, CWM))
   div <- with(f.distwo, cbind(div, FDis))
-  colnames(div) <- c("fdis","CWM.SLA", "CWM.LA", "CWM.maxht","CWM.mn.ht", "nsp", "sesmpd","sesmntd", "pd", "simpsdiv", "fdis.two")
+  colnames(div) <- c("fdis","CWM.SLA", "CWM.LA", "CWM.maxht","CWM.mn.ht", "fdis.two")
   return(cbind(div, c.data$env))
 }
 
-# Calculate Pearson's r and p-values between diversity metrics and environmental variables
+# Calculate Pearson's r and p-values between microenvironment and topography
+mt.corr <- function(div, micro){
+  output <- c(with(div, cor.test(micro,aspect))$estimate, with(div, cor.test(micro, elev))$estimate, with(div, cor.test(micro, slope))$estimate) 
+  output <- as.data.frame(rbind(output, c(with(div, cor.test(micro, aspect))$p.value, with(div, cor.test(micro, elev))$p.value, with(div, cor.test(micro, slope))$p.value)))
+  colnames(output) <- c("aspect", "elev", "slope")
+  rownames(output) <- c("pearsons.r", "p.value")
+  return(output)
+}
+
+# Calculate Pearson's r and p-values between diversity metrics and microenvironment
 env.corr <- function(div,met){
   output <- c(with(div, cor.test(met,mean))$estimate, with(div, cor.test(met,sd))$estimate, with(div, cor.test(met,max))$estimate, with(div, cor.test(met,min))$estimate,
               with(div, cor.test(met, SAND))$estimate, with(div, cor.test(met, SILT))$estimate, with(div, cor.test(met, CLAY))$estimate)
@@ -79,328 +86,301 @@ env.corr <- function(div,met){
   return(output)
 }
 
-cor.test.phy <<- function(div,RV){
-  output <- c(with(div, cor.test(RV,sesmntd))$estimate, with(div, cor.test(RV, sesmpd))$estimate, with(div, cor.test(RV, pd))$estimate,
-              with(div, cor.test(RV, nsp))$estimate, with(div, cor.test(RV, simpsdiv))$estimate)
-  output <- as.data.frame(rbind(output, c(with(div, cor.test(RV, sesmntd))$p.value, with(div, cor.test(RV, sesmpd))$p.value, with(div, cor.test(RV, pd))$p.value,
-                                          with(div, cor.test(RV, nsp))$p.value, with(div, cor.test(RV, simpsdiv))$p.value)))
-  colnames(output) <- c("sesmntd","sesmpd","pd","nsp","simpsdiv")
-  rownames(output) <- c("pearsons.r", "p.value")
-  return(output)
-}
 
-########################################################
-# Q1: How does microenvironment vary across topography?
-# Uses temperature data collected from 2017-09-28 at 00:00 to 2018-09-29 at 00:00 at 25 plots.
-# Note: Temperature sensors were serviced in Sept. 2018 and a few time points are missing on the days that that happened.
+#################################################################################################################
+### Q1: How does microenvironment (soil temp. and texture) vary across topography (aspect, elevation, slope)? ###
+# Temperature from 2017-09-28 at 00:00 to 2018-09-29 at 00:00 at 25 plots.
+# Note: Temp. sensors serviced mid-Sept. 2018. A few time points are missing on the days that that happened.
 
-# Since these models can only have a max. of 2 (maybe 3) predictor variables,
-# I used a PCA between all env. variables to guide which relationships between microenvironment and topography to focus on.
-micro.env <- env.micro[,c(7:12,14:17)]
-pca.micro <- prcomp(micro.env, scale=TRUE)
+env18.core <- env.micro[,c(7:12,14:17)]
 
-# Amount of variance associated with each PCA axis
-summary(pca.micro)
+# Because of low replication (25 plots), only have statistical power to do a univariate analysis.
+# So, look at which topo. var. is most correlated with each microenv. var. using Pearson's r
 
-# Looking at the loadings of the variables on each axis
-pca.micro$rotation
+# Temp. corr. with topo.
+mt.corr(env18.core, env18.core$mean)
+mt.corr(env18.core, env18.core$sd)
+mt.corr(env18.core, env18.core$max)
+mt.corr(env18.core, env18.core$min)
 
-# Plotting PCA for supplement
-jpeg("./analysis/figures/supp-PCA-env.jpeg", width=4.5, height=4.5, unit="in",res=300)
-par(mar=c(4,5,2,3))
-biplot(pca.micro, pch=19, col=c("darkslategray4", "black"), cex=c(0.4,0.6), arrow.len=0.03, xlim=c(-0.5,0.5), ylim=c(-0.4,0.4), xlab = "Standardized PC1 (40.4% explained var.)", ylab = "Standardized PC2 (28.1% explained var.)", cex.axis=0.6, cex.lab=0.6)
-dev.off()
+# Texture corr. with topo.
+mt.corr(env18.core, env18.core$SAND)
+mt.corr(env18.core, env18.core$SILT)
+mt.corr(env18.core, env18.core$CLAY)
 
-# Temperature variables across aspect
-mn.a <- with(micro.env, lm(mean~aspect))
-sd.a <- with(micro.env, lm(sd~aspect))
-max.a <- with(micro.env, lm(max~aspect))
-min.1 <- with(micro.env, lm(min~1))
+# Univariate models of how temperature and texture vary across microenvironment
+mn.a <- with(env18.core, lm(mean~aspect))
+summary(mn.a)
+sd.a <- with(env18.core, lm(sd~aspect))
+summary(sd.a)
+max.a <- with(env18.core, lm(max~aspect))
+summary(max.a)
+min.e <- with(env18.core, lm(min~elev))
+summary(min.e) # not sig
 
-# Texture variables across elevation and slope
-sand.e <- with(micro.env, lm(SAND~elev))
-clay.e <- with(micro.env, lm(CLAY~elev))
+# For texture variables, look at elevation
+sand.e <- with(env18.core, lm(SAND~elev))
+summary(sand.e)
+silt.e <- with(env18.core, lm(SILT~elev))
+summary(silt.e) # not sig.
+clay.e <- with(env18.core, lm(CLAY~elev))
+summary(clay.e)
 
-# FIG 2 - Plotting changes in temperature across environment plus the USDA texture triangle for all of the plots 
+# FIG 2 - PLOTTING changes in temp. and texture across microenvironment 
+# plus the USDA soil texture triangle for all of the plots
 jpeg("./analysis/figures/env-core18.jpeg", width=7, height=7, unit="in",res=300)
 par(mfrow=c(2,2))
 par(mar=c(5,5,2,0.5))
 par(oma=c(1,1,1,1))
 
-with(micro.env, plot(mean~aspect, pch=19, xlab="Aspect (S = -1, N = 1)", ylab=expression(paste('Temperature (',degree~'C)')), cex=1.2, axes=FALSE, ylim=c(-10,70), col="#E69F00"))
+with(env18.core, plot(mean~aspect, pch=16, xlab="Aspect (S = -1, N = 1)", ylab=expression(paste('Temperature (',degree~'C)')), cex=1.2, axes=FALSE, ylim=c(-10,70), col="#E69F00"))
 abline(mn.a, lwd=3, col="#E69F00")
-with(micro.env, points(max~aspect, pch=19, cex=1.2, col="#D55E00"))
+with(env18.core, points(max~aspect, pch=16, cex=1.2, col="#D55E00"))
 abline(max.a, lwd=3, col="#D55E00")
-with(micro.env, points(min~aspect, pch=19, cex=1.2, col="#56B4E9"))
-abline(min.1, lwd=3, col="#56B4E9")
+with(env18.core, points(min~aspect, pch=16, cex=1.2, col="#56B4E9"))
 axis(1)
 axis(2, at=c(-10,10,30,50,70))
 mtext(expression(bold("(a)")),side=3,line=0.2, adj=-0.32)
-legend(-0.5,62, expression(~ R^2 ~ "= 0.35, p-value = 0.002"), text.col="#D55E00", box.lty=0, bg="transparent", cex=0.9)
-legend(-1.2,25, expression(~ R^2 ~ "= 0.68, p-value < 0.001"), text.col= "#E69F00", box.lty=0, bg="transparent", cex=0.9)
+legend(-0.5,62, expression(~ R^2 ~ "= 0.35, p-value = 0.002"), text.col="#D55E00", box.lty=0, bg="transparent", cex=0.8)
+legend(-1.2,25, expression(~ R^2 ~ "= 0.68, p-value < 0.001"), text.col= "#E69F00", box.lty=0, bg="transparent", cex=0.8)
 
-with(micro.env, plot(sd~aspect, pch=19, xlab="Aspect (S = -1, N = 1)", ylab=expression(paste('SD - Temperature (',degree~'C)')), cex=1.2, axes=FALSE, col="#E69F00", ylim=c(5,15)))
+with(env18.core, plot(sd~aspect, pch=16, xlab="Aspect (S = -1, N = 1)", ylab=expression(paste('SD - Temperature (',degree~'C)')), cex=1.2, axes=FALSE, col="#E69F00", ylim=c(5,15)))
 abline(sd.a, lwd=3, col="#E69F00")
 axis(1)
 axis(2, at=c(5,10,15))
 mtext(expression(bold("(b)")),side=3,line=0.2, adj=-0.32)
 legend(0.5,14.5, legend=c('Min', 'Mean', 'Max'), pch=16, pt.cex=1.2, cex=0.6, col = c('#56B4E9', '#E69F00', '#D55E00'))
-legend(-1.2,6.5, expression(~ R^2 ~ "= 0.46, p-value < 0.001"), text.col="#E69F00", box.lty=0, bg="transparent", cex=0.9)
+legend(-1.2,6.5, expression(~ R^2 ~ "= 0.46, p-value < 0.001"), text.col="#E69F00", box.lty=0, bg="transparent", cex=0.8)
 
-with(micro.env, plot(SAND~elev, pch=19, xlab="Elevation (m.s.l.)", ylab= "Soil component (%)", cex=1.2, axes=FALSE, col="goldenrod3", xlim=c(1700,2100), ylim=c(0,80)))
+with(env18.core, plot(SILT~elev, pch=16, xlab="Elevation (m.s.l.)", ylab= "Soil component (%)", cex=1.2, axes=FALSE, col="gray", xlim=c(1700,2100), ylim=c(0,80)))
+with(env18.core, points(SAND~elev, pch=16, cex=1.2, col="goldenrod3"))
 abline(sand.e, lwd=3, col="goldenrod3")
-with(micro.env, points(CLAY~elev, pch=19, cex=1.2, col="sienna"))
+with(env18.core, points(CLAY~elev, pch=16, cex=1.2, col="sienna"))
 abline(clay.e, lwd=3, col="sienna")
 axis(1)
 axis(2)
-legend(2010,80, legend=c("Sand", "Clay"), pch=16, pt.cex=1.2, cex=0.6, col = c("goldenrod3", "sienna"))
-legend(1670,65, expression(~ R^2 ~ "= 0.20, p-value = 0.024"), text.col="goldenrod3", box.lty=0, bg="transparent", cex=0.9)
-legend(1812,31, expression(~ R^2 ~ "= 0.23, p-value = 0.016"), text.col="sienna", box.lty=0, bg="transparent", cex=0.9)
+legend(2010,80, legend=c("Sand", "Silt","Clay"), pch=16, pt.cex=1.2, cex=0.6, col = c("goldenrod3","gray", "sienna"))
+legend(1670,70, expression(~ R^2 ~ "= 0.20, p-value = 0.024"), text.col="goldenrod3", box.lty=0, bg="transparent", cex=0.8)
+legend(1835,29, expression(~ R^2 ~ "= 0.23, p-value = 0.016"), text.col="sienna", box.lty=0, bg="transparent", cex=0.8)
 mtext(expression(bold("(c)")),side=3,line=0.2, adj=-0.32)
 
-TT.plot(class.sys = "USDA.TT", tri.data = micro.env, pch=19, cex.axis=0.8, cex.lab=0.8, lwd=0.8, lwd.axis=0.8, lwd.lab=0.8, main="", cex=0.95, new.mar=c(3.7,3.7,0,0))
+TT.plot(class.sys = "USDA.TT", tri.data = env18.core, pch=19, cex.axis=0.8, cex.lab=0.8, lwd=0.8, lwd.axis=0.8, lwd.lab=0.8, main="", cex=0.95, new.mar=c(3.7,3.7,0,0))
 mtext(expression(bold("(d)")),side=3,line=-2, adj=-0.19)
 
 dev.off()
 
-#####################################################
-# Q2: How does function vary across microenvironment?
+####################################################################################################################################################################
+### Q2: Do spatial differences in microenvironment predict variation in the mean and/or variance of functional diversity? ##########################################
+### Sub-Q2: Do species that use a particular life history strategy --- woody perennial, herbaceous perennial, or annual/biennial --- drive these relationships ? ###
 
-### COVER - overhang included
-# All plots surveyed in 2018 - 78 plots
+# VEG. COVER - overhang included - int.18.over includes all plots surveyed in 2018 (78)
+# Subset to the core 25 plots where both temp. and texture were collected and make community matrix
 int.18.over <- calc.over(d.eight)
+core.18.over <- int.18.over[int.18.over$Plot_id %in% env.cvr18$plot_id,]
+comm18.core <- calc.comm(core.18.over)
 
-# Plots with all microenv. data (temp.) collected - 25 plots
-core.18.over <- int.18.over[int.18.over$Plot_id %in% env.cvr18$plot_id,] # plots
-
-# Make community matrix
-core.18.comm <- calc.comm(core.18.over)
-
-### PHYLOGENY (Zanne et. al. 2014) - reformat sp names, create combined data object
+### PHYLOGENY (Zanne et. al. 2014) - reformat sp. names, subset to just the species in the core plots
 tree$tip.label <- tolower(gsub("_", " ", tree$tip.label))
-# Phylogeny for species in core plots
-tree18.core <- congeneric.merge(tree, colnames(core.18.comm), split = " ")
+tree18.core <- congeneric.merge(tree, colnames(comm18.core), split = " ")
 
 ### TRAITS - leaves and plant height
 rownames(traits) <- tolower(traits$species)
 traits <- traits[,c(3:5,9:10)]
 
 ### ENVIRONMENT - Uses temperature data collected from 2017-09-28 at 00:00 to 2018-09-28 at 00:00 at 25 plots.
-env18.core <- env.cvr18[,c(7:12,14:17)]
 rownames(env18.core) <- as.character(env.cvr18$plot_id)
 
-# Make comparative community object and calculate diversity metrics from that
-core18div <- div.calc(tree18.core, core.18.comm, traits, env18.core)
+### Make COMPARATIVE COMMUNITY OBJECT & calculate diversity metrics
+core18cdata <- comparative.comm(tree18.core, comm18.core, traits, env18.core)
+core18div <- div.calc(core18cdata)
 
-####################################################################################
-### How do functional does functional dispersion and the community weighted mean of the traits vary across temperature and texture?
+### MODELS
+# Because of low replication (25 plots), only have statistical power to look at one temp. and texture variable, additively
+# So, look at which temp. var. and which text. var is most correlated with each diversity metric using Pearson's r
+# Addtl. note: There is also covariation within temp. and within texture variables
+# --> another good reason to look at one microenvironment variable within each of these categories
 
-### Set up leaf area with the full model to test for colinearity
-test.la <- with(core18div, lm(log(CWM.LA)~mean+sd+max+min+SAND+CLAY+SILT))
-vif(test.la) # There are aliased coefficeints in the model
+## Correlations btn. fdiv and microenv
+env.corr(core18div, log(core18div$CWM.LA))
+env.corr(core18div, log(core18div$CWM.SLA)) 
+env.corr(core18div, core18div$CWM.maxht)
+env.corr(core18div, core18div$CWM.mn.ht)
+env.corr(core18div, core18div$fdis)
+env.corr(core18div, core18div$fdis.two)
 
 ### CWM of LA
-la.corr <- env.corr(core18div, log(core18div$CWM.LA))
-xtable(la.corr, digits=3)
-
 la <- with(core18div, lm(log(CWM.LA)~mean+CLAY))
+summary(la)
 la.mn <- with(core18div, lm(log(CWM.LA)~mean))
+summary(la.mn)
 anova(la, la.mn) # not significant, plot la.mn
-# plot la.mn
 
 ### CWM of SLA
-sla.corr <- env.corr(core18div, log(core18div$CWM.SLA)) 
-xtable(sla.corr, digits=3)
-
 sla <- with(core18div, lm(log(CWM.SLA)~mean+CLAY))
+summary(sla)
 sla.mn <- with(core18div, lm(log(CWM.SLA)~mean))
+summary(sla.mn)
 anova(sla, sla.mn) # not significant, plot sla.mn
 
 ### CWM of max HT
-mxH.corr <- env.corr(core18div, core18div$CWM.maxht)
-
-xtable(mxH.corr, digits=3)
-mxH <- with(core18div, lm(CWM.maxht~max+CLAY)) 
-# for plotting
-mxH.mx <- with(core18div, lm(CWM.maxht~max))
-anova(mxH, mxH.mx) # SIG, table mxH.mx
-xtable(mxH, digits=3) 
+mxH <- with(core18div, lm(log(CWM.maxht)~max+CLAY)) 
+summary(mxH)
+mxH.mx <- with(core18div, lm(log(CWM.maxht)~max))
+summary(mxH.mx)
+anova(mxH, mxH.mx) # not significant, plot mxH.mx
 
 ### CWM of mean HT
-mnH.corr <- env.corr(core18div, core18div$CWM.mn.ht)
-xtable(mnH.corr, digits=3) 
-mnH <- with(core18div, lm(CWM.mn.ht~max+CLAY)) 
-# for plotting
-mnH.mx <- with(core18div, lm(CWM.mn.ht ~ max))
-anova(mnH, mnH.mx) # SIG, table mnH -> SUPP
-xtable(mnH, digits=3)
+mnH <- with(core18div, lm(log(CWM.mn.ht)~max+CLAY)) 
+summary(mnH)
+mnH.mx <- with(core18div, lm(log(CWM.mn.ht)~max))
+summary(mnH.mx)
+anova(mnH, mnH.mx) # not significant, plot mnH.mx
 
 ### FDis - with four traits
-fdis.4.corr <- env.corr(core18div, core18div$fdis)
-xtable(fdis.4.corr, digits=3) 
-
-fdis.4 <- with(core18div, lm(fdis~max+CLAY)) 
-fdis.4.mx <- with(core18div, lm(fdis~max))
-anova(fdis.4, fdis.4.mx) # SIG, table fdis.4
-xtable(fdis.4, digits=3)
+fdis.4 <- with(core18div, lm(log(fdis)~max+CLAY)) 
+summary(fdis.4)
+fdis.4.mx <- with(core18div, lm(log(fdis)~max))
+anova(fdis.4, fdis.4.mx) # not significant, plot fdis.4.mx
 
 ### FDIS - with just two traits, max.height and LA
-fdis.2.corr <- env.corr(core18div, core18div$fdis.two)
-xtable(fdis.2.corr, digits=3)
+fdis.2 <- with(core18div, lm(log(fdis.two)~max+CLAY))
+summary(fdis.2)
+fdis.2.mx <- with(core18div, lm(log(fdis.two)~max))
+summary(fdis.2.mx)
+anova(fdis.2, fdis.2.mx) # not significant, plot fdis.2.mx
 
-fdis.2 <- with(core18div, lm(fdis.two~max+CLAY))
-fdis.2.mx <- with(core18div, lm(fdis.two~max))
-anova(fdis.2, fdis.2.mx) # SIG, table fdis.2 -> SUPP
-xtable(fdis.2, digits = 3)
-
-### NOTE: NEW FIGURE 3 is located in fdiv-env_life-hist_core18.R
-# ### FIG 3 - Plotting how functional diversity changes across the MEAN temperature variable.
-# jpeg("./analysis/figures/fdiv-env-core18.jpeg", width=7, height=7, unit="in",res=300)
-# par(mfrow=c(2,2))
-# par(mar=c(4,5,0.1,0.5))
-# par(oma=c(1.5,1.5,1.5,1.5))
-# 
-# # LA ~ mean
-# with(core18div, plot(log(CWM.LA)~mean, pch=19, xlab="", ylab=expression(italic("ln")("Leaf area")), cex=1.2, axes=FALSE, xlim=c(4,14),ylim=c(-3,4.5), col="#009E73", cex.lab=1.05))
-# abline(la.mn, lwd=2)
-# axis(1, cex.lab=1.5)
-# axis(2, at=c(-3,-1,1,3), cex.lab=1.5)
-# mtext(expression(bold("(a)") ~~~~~~~~~~~~~~~~~~~~~~~~ R^2 ~ "= 0.66, p-value < 0.001"),side=3,line=-2, adj=2.2, cex = 0.85)
-# 
-# # max ht ~ sd
-# with(core18div, plot(CWM.maxht~max, pch=19, xlab="", ylab="Max. height (cm)", cex=1.2, axes=FALSE, xlim=c(10,70),ylim=c(0,1500), col="#E69F00", cex.lab=1.05))
-# abline(mxH.mx, lwd=2)
-# axis(1, cex.lab=1.5)
-# axis(2, at=c(0,400,800,1200), cex.lab=1.5)
-# mtext(expression(bold("(b)") ~~~~~~~~~~~~~~~~~~~~~~~~ R^2 ~ "= 0.21, p-value = 0.021"),side=3,line=-2, adj=2.2, cex=0.85)
-# 
-# # SLA ~ mean
-# with(core18div, plot(log(CWM.SLA)~mean, pch=19, xlab=expression(paste('Mean temp. (',degree,'C)')), ylab=expression(italic("ln")("Specific leaf area")), cex=1.2, axes=FALSE, xlim=c(4,14),ylim=c(2,5.7), col="#009E73", cex.lab=1.05))
-# abline(sla.mn, lwd=2)
-# axis(1, cex.lab=1.5)
-# axis(2, at=c(2,3,4,5), cex.lab=1.5)
-# mtext(expression(bold("(c)") ~~~~~~~~~~~~~~~~~~~~~~~~ R^2 ~ "= 0.31, p-value = 0.004"), side=3,line=-2, adj=2.2, cex=0.85)
-# 
-# # functional dispersion ~ sd temperature
-# with(core18div, plot(fdis~max, pch=19, xlab=expression(paste('Max. temp. (',degree,'C)')), ylab="Functional dispersion", cex=1.2, axes=FALSE, xlim=c(10,70), ylim=c(0,6), col="#0072B2", cex.lab=1.05))
-# abline(fdis.4.mx, lwd=2)
-# axis(1, cex.lab=1.5)
-# axis(2, at=c(0,1,2,3,4,5), cex.lab=1.5)
-# mtext(expression(bold("(d)") ~~~~~~~~~~~~~~~~~~~~~~~~ R^2 ~ "= 0.26, p-value = 0.010"),side=3,line=-2, adj=2.2, cex=0.85)
-# 
-# dev.off()
-
-##################################################################################################
-# Q3: what is the relationship between functional diversity (CWM and dispersion) and phylodiversity? (25 plots)
-test.la.phy <- with(core18div, lm(log(CWM.LA)~sesmntd+sesmpd+pd+nsp+simpsdiv)) # VIF high for pd, sesmntd, and nsp
-vif(test.la.phy)
-
-# LA ~ phy
-la.phy.cor <- cor.test.phy(core18div, log(core18div$CWM.LA))
-xtable(la.phy.cor, digits=3)
-
-la.phy <- with(core18div, lm(log(CWM.LA)~pd+nsp))
-la.pd <- with(core18div, lm(log(CWM.LA)~pd))
-anova(la.phy, la.pd) # not sig, plot la.pd
-
-# SLA ~ phy
-sla.phy.cor <- cor.test.phy(core18div, log(core18div$CWM.SLA))
-xtable(sla.phy.cor, digits=3)
-
-sla.phy <- with(core18div, lm(log(CWM.SLA)~pd+nsp))
-sla.pd <- with(core18div, lm(log(CWM.SLA)~pd))
-anova(sla.phy, sla.pd) # not sig, plot sla.pd
-
-# Max. height ~ phy
-mxH.phy.cor <- cor.test.phy(core18div, core18div$CWM.maxht) 
-xtable(mxH.phy.cor, digits=3)
-
-mxH.phy <- with(core18div, lm(CWM.maxht~sesmntd+nsp))
-mxH.mntd <- with(core18div, lm(CWM.maxht~sesmntd))
-anova(mxH.phy, mxH.mntd) # not sig, plot mxH.mntd
-
-# Mean height ~ phy
-mnH.phy.cor <- cor.test.phy(core18div, core18div$CWM.mn.ht)
-xtable(mnH.phy.cor, digits=3)
-
-mnH.phy <- with(core18div, lm(CWM.mn.ht~sesmntd+nsp))
-mnH.mntd <- with(core18div, lm(CWM.mn.ht~sesmntd))
-anova(mnH.phy, mnH.mntd) # not sig, plot mnH.mntd -> SUPP
-
-# Fdis ~ phy
-fdis.phy.cor <- cor.test.phy(core18div, core18div$fdis)
-xtable(fdis.phy.cor, digits=3)
-
-fdis.phy <- with(core18div, lm(fdis~sesmntd+nsp))
-fdis.mntd <- with(core18div, lm(fdis~sesmntd))
-anova(fdis.phy, fdis.mntd) # not sig, plot fdis.mntd
-
-# Fdis.two ~ phy
-fdis.2.phy.cor <- cor.test.phy(core18div, core18div$fdis.two)
-xtable(fdis.2.phy.cor, digits=3)
-fdis.2.phy <- with(core18div, lm(fdis.two~sesmntd+nsp))
-xtable(fdis.2.phy, digits=3)
-# for plotting
-fdis.2.mntd <- with(core18div, lm(fdis.two~sesmntd))
-anova(fdis.2.phy, fdis.2.mntd) # not sig, plot fdis.2.mntd -> SUPP
-
-#################################################################
-# FIG 4 - Functional diversity across phy-div metrics at 25 plots
-# Plot significant relationships with SESmntd here, do the rest in the supplement
-jpeg("./analysis/figures/fdiv-phydiv-core18.jpeg", width=7, height=7, unit="in",res=300)
+### FIG. 3 - PLOTTING: how logged mean and variance in function shifts across microenvironment
+jpeg("./analysis/figures/fdiv-env-core18.jpeg", width=7, height=7, unit="in",res=300)
 par(mfrow=c(2,2))
 par(mar=c(4,5,0.1,0.5))
 par(oma=c(1.5,1.5,1.5,1.5))
 
-# CWM of leaf area across PD
-with(core18div, plot(log(CWM.LA)~pd, pch=19, xlab="", ylab=expression(italic("ln")("Leaf area")),  cex=1.2, axes=FALSE, xlim=c(500, 2500), ylim=c(-3,4.7), col="#009E73", cex.lab=1.05))
-abline(la.pd, lwd=2)
+# LA ~ mean
+with(core18div, plot(log(CWM.LA)~mean, pch=19, xlab=expression(paste('Mean temp. (',degree,'C)')), ylab=expression(italic("ln")("Leaf area")), cex=0.9, axes=FALSE, xlim=c(4,14),ylim=c(-3,3.4), col="#009E73" )) # col was
+abline(la.mn, lwd=2)
 axis(1, cex.lab=1.5)
 axis(2, at=c(-3,-1,1,3), cex.lab=1.5)
-mtext(expression(bold("(a)") ~~~~~~~~~~~~~~~~~~~~~~~~ R^2 ~ "= 0.35, p-value = 0.002"),side=3,line=-2, adj=2.2, cex=0.85)
+legend(4,-2, expression(R^2 ~ "= 0.66, p-value < 0.001"), box.lty=0, bg="transparent", cex = 0.8)
+mtext(expression(bold("(a)")),side=3, line=-2, adj=-0.35, cex = 0.85)
 
-# CWM of maximum height across SESmntd
-with(core18div, plot(CWM.maxht~sesmntd, pch=19, xlab="", ylab="Max. height", cex=1.2, axes=FALSE,  xlim=c(-3,5), ylim=c(0,1550),col="#E69F00", cex.lab=1.05))
-abline(mxH.mntd, lwd=2)
-axis(1, at=c(-3,-1, 1, 3, 5), cex.lab=1.5)
-axis(2, at=c(0, 400, 800, 1200), cex.lab=1.5)
-mtext(expression(bold("(b)") ~~~~~~~~~~~~~~~~~~~~~~~~ R^2 ~ "= 0.70, p-value < 0.001"),side=3,line=-2, adj=2.2, cex=0.85)
+# mxH ~ max
+with(core18div, plot(log(CWM.maxht)~max, pch=19, xlab=expression(paste('Max. temp. (',degree,'C)')), ylab=expression(italic("ln")("Max. Height")), cex=0.9, axes=FALSE, xlim=c(15,65), ylim=c(3,7.3),col="#E69F00")) 
+abline(mxH.mx, lwd=2)
+axis(1, at=c(15,25,35,45,55,65), cex.lab=1.5)
+axis(2, at=c(3,4,5,6,7), cex.lab=1.5)
+legend(25,6.5, expression(R^2 ~ "= 0.47, p-value < 0.001"), box.lty=0, bg="transparent", cex = 0.8)
+mtext(expression(bold("(b)")),side=3, line=-2, adj=-0.35, cex = 0.85)
 
-# CWM of specific leaf area across PD
-with(core18div, plot(log(CWM.SLA)~pd, pch=19, xlab="Faith's PD", ylab=expression(italic("ln")("Specific leaf area")), cex=1.2, axes=FALSE, xlim=c(500,2500), ylim=c(2,5.8), col="#009E73", cex.lab=1.05))
-abline(sla.pd, lwd=2)
+# SLA ~ mean
+with(core18div, plot(log(CWM.SLA)~mean, pch=19, xlab=expression(paste('Mean temp. (',degree,'C)')), ylab=expression(italic("ln")("Specific leaf area")), cex=0.9, axes=FALSE, xlim=c(4,14), ylim=c(2,5.2), col="#009E73" ))
+abline(sla.mn, lwd=2)
 axis(1, cex.lab=1.5)
 axis(2, at=c(2,3,4,5), cex.lab=1.5)
-mtext(expression(bold("(c)") ~~~~~~~~~~~~~~~~~~~~~~~~ R^2 ~ "= 0.21, p-value = 0.020"),side=3,line=-2, adj=2.2, cex=0.85)
+legend(6.7,4.2, expression(R^2 ~ "= 0.31, p-value = 0.004"), box.lty=0, bg="transparent", cex = 0.8)
+mtext(expression(bold("(c)")),side=3, line=-2, adj=-0.35, cex = 0.85)
 
-# Functional dispersion across SESmntd
-with(core18div, plot(fdis~sesmntd, pch=19, xlab=expression(SES[MNTD]), ylab="Functional dispersion", cex=1.2, axes=FALSE,  col="#0072B2", xlim=c(-3,5), ylim=c(0,6.3),cex.lab=1.05))
-abline(fdis.mntd, lwd=2)
-axis(1, at=c(-3,-1,1,3,5), cex.lab=1.5)
-axis(2, at=c(0,1,2,3,4,5), cex.lab=1.5)
-mtext(expression(bold("(d)") ~~~~~~~~~~~~~~~~~~~~~~~~ R^2 ~ "= 0.69, p-value < 0.001"),side=3,line=-2, adj=2.2, cex=0.85)
+# fdis.4 ~ max
+with(core18div, plot(log(fdis)~max, pch=19, xlab=expression(paste('Max. temp. (',degree,'C)')), ylab=expression(italic("ln")("FDis")), cex=0.9, axes=FALSE, xlim=c(15,65), ylim=c(-3,2.3), col="#0072B2")) 
+abline(fdis.4.mx, lwd=2)
+axis(1, at=c(15,25,35,45,55,65), cex.lab=1.5)
+axis(2, at=c(-3, -2, -2, -1, 0, 1, 2), cex.lab=1.5)
+legend(25,1, expression(R^2 ~ "= 0.40, p-value < 0.001"), box.lty=0, bg="transparent", cex = 0.8)
+mtext(expression(bold("(d)")),side=3, line=-2, adj=-0.35, cex = 0.85)
 
 dev.off()
-#######
-# mnH ~ mntd and fdis2~mnH for supplement
 
-jpeg("./analysis/figures/supp-fdiv-phydiv-core18.jpeg", width=7, height=3.5, unit="in",res=300)
+# PLOT the similar ones in  the supplement
+jpeg("./analysis/figures/SUPP-fdiv-env-core18.jpeg", width=7, height=3.5, unit="in",res=300)
 par(mfrow=c(1,2))
-par(mar=c(4,4,1,1.5))
-par(oma=c(.5,.5,.5,.5))
+par(mar=c(4,5,0.1,0.5))
+par(oma=c(1.5,1.5,1.5,1.5))
 
-# CWM of leaf area across PD
-with(core18div, plot(CWM.mn.ht~sesmntd, pch=19, xlab=expression(SES[MNTD]), ylab="Mean height (cm)", cex=1.2, axes=FALSE, col="#E69F00", cex.lab=1.05))
-abline(mnH.mntd, lwd=2)
-axis(1)
-axis(2)
-mtext(expression(bold("(a)") ~~~~~~~~~~~~~~~~~~~~~~~~ R^2 ~ "= 0.66, p-value < 0.001"),side=3,line=-0.5, adj=2.2, cex=0.85)
+# mnH ~ mean --> bump to the supplement
+with(core18div, plot(log(CWM.mn.ht)~max, pch=19, xlab=expression(paste('Max. temp. (',degree,'C)')), ylab=expression(italic("ln")("Mean Height")), cex=0.8, cex.lab=0.8,axes=FALSE, xlim=c(15,65), ylim=c(2.9,7.2), col="#E69F00")) 
+abline(mnH.mx, lwd=2)
+axis(1, at=c(15,25,35,45,55,65), cex.axis=0.8)
+axis(2, at=c(3,4,5,6,7), cex.axis=0.8)
+legend(25,6, expression(R^2 ~ "= 0.43, p-value < 0.001"), box.lty=0, bg="transparent", cex = 0.6)
+mtext(expression(bold("(a)")),side=3, line=-1.3, adj=-0.4, cex = 0.85)
 
-# CWM of maximum height across SESmntd
-with(core18div, plot(fdis.two~sesmntd, pch=19, xlab=expression(SES[MNTD]), ylab="FDis - 2 tr.", cex=1.2, axes=FALSE,col="#0072B2", cex.lab=1.05))
-abline(fdis.2.mntd, lwd=2)
+with(core18div, plot(log(fdis.two)~max, pch=19, xlab=expression(paste('Max. temp. (',degree,'C)')), ylab=expression(italic("ln")("FDis- 2 tr.")), cex=0.8,cex.lab=0.8, axes=FALSE, xlim=c(15,65), col="#0072B2")) 
+abline(fdis.2.mx, lwd=2)
+axis(1, at=c(15,25,35,45,55,65), cex.axis=0.8)
+axis(2, at=c(-3, -2, -2, -1, 0, 1), cex.axis=0.8)
+legend(25,0.5, expression(R^2 ~ "= 0.41, p-value < 0.001"), box.lty=0, bg="transparent", cex = 0.6)
+mtext(expression(bold("(b)")),side=3, line=-1.3, adj=-0.4, cex = 0.85)
+
+dev.off()
+
+#######################################################################################################################################################################
+### Q3: How does including information about phylogenetic differences (in addition to functional differences) between species #########################################
+### change our understanding of the ecological differences between these assemblages and how those assemblages change across spatially different microenvironments? ###
+
+# Calculate SESmntd for different values of the phylogenetic weighting parameter (a)
+# where a=0 means all difference is functionally based and a=1 means all differences is phylogenetically based 
+# (this takes a few minutes)
+# subset to species richness, SESmntd, SESmpd, and the value of a
+fun.phy.calc <- pez.dispersion(core18cdata, null.model="taxa.labels", abundance=TRUE, traitgram=seq(0,1,0.1))
+fun.phy.s <- with(fun.phy.calc, cbind(ses.mntd.mntd.obs.z, traitgram))
+fun.phy.s <- as.data.frame(fun.phy.s)
+colnames(fun.phy.s) <- c("mntd", "a.f.p")
+
+# replicate environmental variables for add-in
+env18.core.rep <- sapply(env18.core, rep.int, times=11)
+# combine the diversity and env info together
+fun.phy <- cbind(fun.phy.s, env18.core.rep)
+
+### Q3a: How does mntd vary overall, depending on how much functional (a=0) vs. phylogenetic (a=1) influence on difference?
+mean.fp <- matrix(NA,nrow=11,ncol=3)
+mean.fp[,1] <- seq(0,1,0.1)
+mean.fp[,2] <- with(fun.phy, tapply(mntd, a.f.p, na.rm=TRUE,FUN=mean))
+mean.fp[,3] <- with(fun.phy, tapply(mntd, a.f.p, na.rm=TRUE, FUN=sd)/sqrt(25))
+mean.fp <- as.data.frame(mean.fp)
+colnames(mean.fp) <- c("a", "mean.mntd", "se.mntd")
+
+fp.mntd.anova <- with(fun.phy, aov(mntd ~ a.f.p))
+summary(fp.mntd.anova) # no
+
+### Q3b: Is there a difference in these relationships depending on the degree to which phylogeny is included?
+fp.mntd <- with(fun.phy, lm(mntd~(mean+CLAY+a.f.p)^2, na.action=na.pass))
+fpmntd.dredge <- dredge(fp.mntd, beta="none", rank="AIC")
+summary(model.avg(fpmntd.dredge, subset=delta<4, fit=TRUE)) 
+get.models(fpmntd.dredge, subset = TRUE)
+
+# FIG 4 - PLOTTING
+ub <- with(mean.fp, as.vector(mean.mntd+se.mntd))
+lb <- with(mean.fp, as.vector(mean.mntd-se.mntd))
+
+svg("./analysis/figures/funct-phy-core18-raw.svg", width=9.5, height=3)
+par(mfrow=c(1,4))
+par(mar=c(4,5,0.1,0.5))
+par(oma=c(1.5,1.5,1.5,1.5))
+
+with(mean.fp, plot(mean.mntd~a, ylim=c(-1.3, -0.3), pch=19, col=brewer.pal(11,"BrBG")[11:1], axes=FALSE, 
+                   ylab=expression("Mean SES"[MNTD]), xlab=expression(italic("a"))))
+with(mean.fp, points(mean.mntd~a, cex=1.2))
 axis(1)
-axis(2)
-mtext(expression(bold("(b)") ~~~~~~~~~~~~~~~~~~~~~~~~ R^2 ~ "= 0.68, p-value < 0.001"),side=3,line=-0.5, adj=2.2, cex=0.85)
+axis(2, at=c(-1.3, -1.1, -0.9, -0.7, -0.5))
+segments(mean.fp$a, ub, mean.fp$a, lb)
+mtext(expression(bold("(a)")),side=3, line=-2, adj=-0.42, cex = 0.75)
+
+# How does functional diversity change across environment 
+with(fun.phy, plot(mntd~mean, col=brewer.pal(11, "BrBG")[11:1][as.factor(a.f.p)], xlim=c(4,14), ylim=c(-3,4.3), 
+                   pch=19, axes=FALSE, xlab=expression(paste('Mean temp. (',degree,'C)')), ylab=expression(SES[MNTD])))
+axis(1)
+axis(2, at=c(-3,-1,1,3))
+mtext(expression(bold("(b)")),side=3, line=-2, adj=-0.42, cex = 0.75)
+
+# across clay
+with(fun.phy, plot(mntd~CLAY, col=brewer.pal(11, "BrBG")[11:1][as.factor(a.f.p)], xlim=c(0,30), ylim=c(-3, 4.3),
+                   pch=19, axes=FALSE, xlab="Clay (%)", ylab=expression(SES[MNTD])))
+axis(1)
+axis(2, at=c(-3,-1,1,3))
+mtext(expression(bold("(c)")),side=3, line=-2, adj=-0.42, cex = 0.75)
+
+par(pin=c(0.07,0.7))
+image(1, unique(fun.phy$a.f.p), t(seq_along(unique(fun.phy$a.f.p))), col=brewer.pal(11, "BrBG")[11:1], axes=FALSE, xlab="", ylab="")
+axis(4, las=1, cex=0.3)
+title(expression(italic(a)), line=0.7, cex=0.8)
 
 dev.off()

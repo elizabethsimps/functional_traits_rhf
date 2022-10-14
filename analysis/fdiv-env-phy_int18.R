@@ -184,7 +184,7 @@ fdis.phy.int.cor <- cor.test.phy(int.div, int.div$fdis) #pull out nsp
 fdis.phy.int <- with(int.div, lm(fdis~sesmntd+sesmpd+pd+simpsdiv)) # pd and maybe mntd sig
 fdis.phy.int.phy <- with(int.div, lm(fdis~sesmntd+pd)) #both pd and mntd sig
 anova(fdis.phy.int, fdis.int.phy) # no sig. so use simpler model - > table
-xtable(fdis.phy.int.phy)
+xtable(fdis.phy.int.phy, digits=3)
 
 # FIG 4 - Functional diversity across phy-div metrics at 25 plots
 # Plot significant relationships with SESmntd here, do the rest in the supplement
