@@ -117,11 +117,13 @@ summary(model.avg(la.dredge, subset=delta<4, fit=TRUE))
 # Plotting setup for LA 
 la.coef <- coefTable(model.avg(la.dredge, subset=delta<4, fit=TRUE))
 colnames(la.coef)[colnames(la.coef)=="Std. Error"] <- "se"
-la.coef <- as.data.frame(la.coef)
-la.coef$var <- c("Intercept", "Clay", "Herb.", "Wood", "Mean", "Clay x Herb", "Clay x Wood", "Herb x Mean temp.", "Wood x Mean.temp")
-la.coef$num <- seq_len(nrow(la.coef))
-ub.la <- with(la.coef, as.vector(Estimate+se))
-lb.la <- with(la.coef, as.vector(Estimate-se))
+la.coef <- as.data.frame(la.coef[,1:2])
+la.coef <- la.coef[c(1,3,4,2,6,7,5,8,9),]
+
+la.coef$var <- c("An./bn. [ref.]", "Herb.", "Woody", "An./bn. x Clay [ref.]", "Herb. x Clay", "Woody x Clay", "An./bn. x Mean t. [ref.]", "Herb. x Mean t.", "Woody x Mean t.")
+la.coef$num <- seq(9,1,-1)
+la.coef$ub <- with(la.coef, as.vector(Estimate+se))
+la.coef$lb <- with(la.coef, as.vector(Estimate-se))
 
 ### CWM of SLA
 sla.lh <- with(lh.div, lm(CWM.SLA~(mean*lh)+(CLAY*lh), na.action=na.pass))
@@ -132,14 +134,17 @@ summary(model.avg(sla.dredge, subset=delta<4, fit=TRUE))
 # Plotting setup for SLA 
 sla.coef <- coefTable(model.avg(sla.dredge, subset=delta<4, fit=TRUE))
 colnames(sla.coef)[colnames(sla.coef)=="Std. Error"] <- "se"
-sla.coef <- as.data.frame(sla.coef)
-sla.coef$var <- c("Intercept", "Herb.", "Wood", "Mean", "Herb x Mean temp.", "Wood x Mean.temp", "Clay")
-sla.coef$num <- seq_len(nrow(sla.coef))
-ub.sla <- with(sla.coef, as.vector(Estimate+se))
-lb.sla <- with(sla.coef, as.vector(Estimate-se))
+sla.coef <- as.data.frame(sla.coef[,1:2])
+sla.coef <- sla.coef[c(1,2,3,7,4,5,6),]
+
+
+sla.coef$var <- c("An./bn. [ref.]", "Herb.", "Woody", "An./bn. x Clay [ref.]", "An./bn. x Mean t. [ref.]", "Herb. x Mean t.", "Woody x Mean t.")
+sla.coef$num <- seq(7,1,-1)
+sla.coef$ub <- with(sla.coef, as.vector(Estimate+se))
+sla.coef$lb <- with(sla.coef, as.vector(Estimate-se))
 
 ### max height
-mxH.lh <- with(lh.div, lm(CWM.maxht~(max*lh)+(CLAY*lh), na.action=na.pass))
+mxH.lh <- with(lh.div, lm(CWM.maxht~(sd*lh)+(SAND*lh), na.action=na.pass))
 mxH.dredge <- dredge(mxH.lh, beta="none", rank="AIC")
 summary(model.avg(mxH.dredge, subset=delta<4, fit=TRUE))
 #get.models(mxH.dredge, subset=TRUE)
@@ -147,30 +152,33 @@ summary(model.avg(mxH.dredge, subset=delta<4, fit=TRUE))
 # Plotting setup for mxH
 mxH.coef <- coefTable(model.avg(mxH.dredge, subset=delta<4, fit=TRUE))
 colnames(mxH.coef)[colnames(mxH.coef)=="Std. Error"] <- "se"
-mxH.coef <- as.data.frame(mxH.coef)
-mxH.coef$var <- c("Intercept", "Clay", "Herb.", "Wood", "Max. temp.", "Clay x Herb.", "Clay x Wood", "Herb. x Max. temp.", "Wood x Max. temp.")
-mxH.coef$num <- seq_len(nrow(mxH.coef))
-ub.mxH <- with(mxH.coef, as.vector(Estimate+se))
-lb.mxH <- with(mxH.coef, as.vector(Estimate-se))
+mxH.coef <- as.data.frame(mxH.coef[,1:2])
+mxH.coef <- mxH.coef[c(1,2,3,7,8,9,4,5,6),]
 
-# ### mean height
-# mnH.lh <- with(lh.div, lm(CWM.mn.ht~(max*lh)+(CLAY*lh), na.action=na.pass))
-# mnH.dredge <- dredge(mnH.lh, beta="none", rank="AIC")
-# summary(model.avg(mnH.dredge, subset=delta<4, fit=TRUE)) # doesnt work...bc only one model supplied
-# summary(mnH.lh)
-# #get.models(mnH.dredge, subset = TRUE)
-# 
-# # Plotting setup for mnH
-# mnH.coef <- coefTable(model.avg(mnH.dredge, subset=delta<4, fit=TRUE))
-# colnames(mnH.coef)[colnames(mnH.coef)=="Std. Error"] <- "se"
-# mnH.coef <- as.data.frame(mnH.coef)
-# mnH.coef$var <- c("Intercept", "Max. temp.", "Herb.", "Wood", "Clay", "Max. temp. x Herb.", "Max. temp. x Wood", "Herb. x Clay", "Wood x Clay")
-# mnH.coef$num <- seq_len(nrow(mnH.coef))
-# ub.mnH <- with(mnH.coef, as.vector(Estimate+se))
-# lb.mnH <- with(mnH.coef, as.vector(Estimate-se))
+mxH.coef$var <- c("An./bn. [ref.]", "Herb.", "Woody", "An./bn. x Sand [ref.]", "Herb. x Sand", "Woody x Sand", "An./bn. x SD t. [ref.]", "Herb. x SD t.", "Woody x SD t.")
+mxH.coef$num <- seq(9,1,-1)
+mxH.coef$ub <- with(mxH.coef, as.vector(Estimate+se))
+mxH.coef$lb <- with(mxH.coef, as.vector(Estimate-se))
+
+### mean height - pop this into the supplement
+mnH.lh <- with(lh.div, lm(CWM.mn.ht~(sd*lh)+(SAND*lh), na.action=na.pass))
+mnH.dredge <- dredge(mnH.lh, beta="none", rank="AIC")
+summary(model.avg(mnH.dredge, subset=delta<4, fit=TRUE))
+#get.models(mnH.dredge, subset=TRUE)
+
+# Plotting setup for mnH
+mnH.coef <- coefTable(model.avg(mnH.dredge, subset=delta<4, fit=TRUE))
+colnames(mnH.coef)[colnames(mnH.coef)=="Std. Error"] <- "se"
+mnH.coef <- as.data.frame(mnH.coef[,1:2])
+mnH.coef <- mnH.coef[c(1,2,3,7,8,9,4,5,6),]
+
+mnH.coef$var <- c("An./bn. [ref.]", "Herb.", "Woody", "An./bn. x Sand [ref.]", "Herb. x Sand", "Woody x Sand", "An./bn. x SD t. [ref.]", "Herb. x SD t.", "Woody x SD t.")
+mnH.coef$num <- seq(9,1,-1)
+mnH.coef$ub <- with(mnH.coef, as.vector(Estimate+se))
+mnH.coef$lb <- with(mnH.coef, as.vector(Estimate-se))
 
 ### functional dispersion
-fdis.lh <- with(lh.div, lm(fdis~(max*lh)+(CLAY*lh), na.action=na.pass)) 
+fdis.lh <- with(lh.div, lm(fdis~(mean*lh)+(CLAY*lh), na.action=na.pass)) 
 fdis.dredge <- dredge(fdis.lh, beta="none", rank="AIC")
 summary(model.avg(fdis.dredge, subset=delta<4, fit=TRUE)) 
 #get.models(fdis.dredge, subset = TRUE)
@@ -178,11 +186,13 @@ summary(model.avg(fdis.dredge, subset=delta<4, fit=TRUE))
 # Plotting setup for Fdis
 fdis.coef <- coefTable(model.avg(fdis.dredge, subset=delta<4, fit=TRUE))
 colnames(fdis.coef)[colnames(fdis.coef)=="Std. Error"] <- "se"
-fdis.coef <- as.data.frame(fdis.coef)
-fdis.coef$var <- c("Intercept", "Clay", "Herb.", "Wood", "Max. temp.", "Clay x Herb.", "Clay x Wood", "Herb. x Max. temp.", "Wood x Max. temp.")
-fdis.coef$num <- seq_len(nrow(fdis.coef))
-ub.fdis <- with(fdis.coef, as.vector(Estimate+se))
-lb.fdis <- with(fdis.coef, as.vector(Estimate-se))
+fdis.coef <- as.data.frame(fdis.coef[,1:2])
+fdis.coef <- fdis.coef[c(1,3,4,2,6,7,5,8,9),]
+
+fdis.coef$var <- c("An./bn. [ref.]", "Herb.", "Woody", "An./bn. x Clay [ref.]", "Herb. x Clay", "Woody x Clay", "An./bn. x Mean t. [ref.]", "Herb. x Mean t.", "Woody x Mean t.")
+fdis.coef$num <- seq(9,1,-1)
+fdis.coef$ub <- with(fdis.coef, as.vector(Estimate+se))
+fdis.coef$lb <- with(fdis.coef, as.vector(Estimate-se))
 
 ########################
 # transparent colors for this plot
@@ -190,9 +200,9 @@ t.brown <- rgb(84, 48, 5, max = 255, alpha = 170, names = "t.brown")
 t.blue <- rgb(53, 151, 143, max = 255, alpha = 170, names = "t.blue")
 t.green <- rgb(127, 188, 65, max = 255, alpha = 170, names = "t.green")
 
-#### PLOTTING LEAF TRAITS
-jpeg("./analysis/figures/fdiv-env-core18-wLH.jpeg", width=6, height=10, unit="in",res=300)
-par(mfrow=c(4,2))
+#### PLOTTING LIFE HISTORY AFFECTS
+jpeg("./analysis/figures/fdiv-env-core18-wLH.jpeg", width=6, height=7.5, unit="in",res=300)
+par(mfrow=c(3,2))
 par(oma=c(1.5,1.2,1.5,1.2))
 
 ###### LA plots #####
@@ -204,19 +214,69 @@ with(unscaled.lh.div, plot(log(CWM.LA)~mean, pch=19, cex=0.9, col=ifelse(lh=="wo
                      axes=FALSE, xlim=c(4,14)))
 axis(1, cex.lab=1.5)
 axis(2, cex.lab=1.5, at=c(-4,-2,0,2,4))
-legend(10,4.5, legend=c('Woody perenn.', 'Herb. perenn.', 'Annual/biennial'), pch=16, cex=0.7, col = c("#543005", "#35978F", "#7FBC41"))
+legend(11.5,4.5, legend=c('An./bn.','Herb.','Woody'), pch=16, cex=0.7, col = c("#7FBC41","#35978F","#543005"))
 mtext(expression(bold("(a)")), side=3, line=-1.3, adj=-0.35, cex = 0.85)
 
 # Relative effect plot for LA
-par(mar=c(4,7.5,1.5,2))
-with(la.coef, plot(num~Estimate, pch=19, xlab="Relative effect", ylab="", xlim=c(-1.2, 0.8), axes=FALSE, cex=1.2, col="#009E73", new.mar=c(4,9,2,6)))
+par(mar=c(4,8,1.5,2))
+with(la.coef, plot(num~Estimate, pch=19, xlim=c(-1.15, 1.5), xlab="Relative effect", ylab="", axes=FALSE, cex=1.2, col="#009E73"))
 abline(v=0, lwd=2, lty=2, col="gray")
-with(la.coef, segments(Estimate, num, ub.la, num, lwd=2, col="#009E73"))
-with(la.coef, segments(Estimate, num, lb.la, num, lwd=2, col="#009E73"))
+with(la.coef, segments(Estimate, num, ub, num, lwd=2, col="#009E73"))
+with(la.coef, segments(Estimate, num, lb, num, lwd=2, col="#009E73"))
 axis(1)
 with(la.coef, axis(2, at=num, lwd.ticks=0,labels=var, las=1, cex.axis=0.8))
 box()
 mtext(expression(bold("(b)")),side=3, line=-1.3, adj=-0.8, cex = 0.85)
+
+###### Max. height plots #####
+# Max. height - plotted by life history
+par(mar=c(4,5,1.5,2.5))
+with(unscaled.lh.div, plot(log(CWM.maxht)~sd, pch=19, cex=0.9, col=ifelse(lh=="wood","#543005AA", ifelse(lh=="herb", "#35978FAA","#7FBC41AA")), 
+                           xlab=expression(paste('SD temp. (',degree,'C)')), ylab=expression(italic("ln")("Max. Height")), 
+                           axes=FALSE, xlim=c(5,15)))
+axis(1, cex.lab=1.5, at=c(5,7,9,11,13,15))
+axis(2, cex.lab=1.5)
+mtext(expression(bold("(c)")),side=3, line=-1.3, adj=-0.35, cex = 0.85)
+
+# Relative effect plot for mxH
+par(mar=c(4,8,1.5,2))
+with(mxH.coef, plot(num~Estimate, pch=19, xlab="Relative effect", ylab="", xlim=c(-0.65, 1.75), axes=FALSE, cex=1.2, col="#E69F00"))
+abline(v=0, lwd=2, lty=2, col="gray")
+with(mxH.coef, segments(Estimate, num, ub, num, lwd=2, col="#E69F00"))
+with(mxH.coef, segments(Estimate, num, lb, num, lwd=2, col="#E69F00"))
+axis(1)
+with(mxH.coef, axis(2, at=num, lwd.ticks=0,labels=var, las=1, cex.axis=0.8))
+box()
+mtext(expression(bold("(d)")),side=3, line=-1.3, adj=-0.8, cex = 0.85)
+
+###### Fdis plots #####
+# Fdis - plotted by life history
+par(mar=c(4,5,1.5,2.5))
+with(unscaled.lh.div, plot(fdis~mean, pch=19, cex=0.9, col=ifelse(lh=="wood","#543005AA", ifelse(lh=="herb", "#35978FAA","#7FBC41AA")), 
+                           xlab=expression(paste('Mean temp. (',degree,'C)')), ylab="FDis", 
+                           axes=FALSE, xlim=c(4,14)))
+axis(1, cex.lab=1.5)
+axis(2, cex.lab=1.5)
+mtext(expression(bold("(e)")),side=3, line=-1.3, adj=-0.35, cex = 0.85)
+
+# Relative effect plot for Fdis
+par(mar=c(4,8,1.5,2))
+with(fdis.coef, plot(num~Estimate, pch=19, xlab="Relative effect", ylab="", xlim=c(-1.7, 1),axes=FALSE, cex=1.2, col="#0072B2"))
+abline(v=0, lwd=2, lty=2, col="gray")
+with(fdis.coef, segments(Estimate, num, ub, num, lwd=2, col="#0072B2"))
+with(fdis.coef, segments(Estimate, num, lb, num, lwd=2, col="#0072B2"))
+axis(1, cex.axis=0.9)
+with(fdis.coef, axis(2, at=num, lwd.ticks=0,labels=var, las=1, cex.axis=0.8))
+box()
+mtext(expression(bold("(f)")),side=3, line=-1.3, adj=-0.8, cex = 0.85)
+
+dev.off()
+
+##### SUPPLEMENT #####
+### Mean height plots
+jpeg("./analysis/figures/SUPP-fdiv-env-core18-wLH.jpeg", width=6, height=5, unit="in",res=300)
+par(mfrow=c(2,2))
+par(oma=c(1,1,1,1))
 
 ###### SLA plots #####
 
@@ -224,63 +284,44 @@ mtext(expression(bold("(b)")),side=3, line=-1.3, adj=-0.8, cex = 0.85)
 par(mar=c(4,5,1.5,2.5))
 with(unscaled.lh.div, plot(log(CWM.SLA)~mean, pch=19, cex=0.9, col=ifelse(lh=="wood","#543005AA", ifelse(lh=="herb", "#35978FAA","#7FBC41AA")), 
                            xlab=expression(paste('Mean temp. (',degree,'C)')), ylab=expression(italic("ln")("Specific leaf area")), 
-                           axes=FALSE, xlim=c(4,14), ylim=c(1,5.3)))
-axis(1, cex.lab=1.5)
-axis(2, cex.lab=1.5)
-mtext(expression(bold("(c)")),side=3, line=-1.3, adj=-0.35, cex = 0.85)
+                           axes=FALSE, xlim=c(4,14), ylim=c(1,5.3), cex.lab=0.8))
+axis(1, cex.axis=0.8)
+axis(2, cex.axis=0.8)
+legend(11,5.2, legend=c('An./bn.','Herb.','Woody'), pch=16, cex=0.5, col = c("#7FBC41","#35978F","#543005"))
+mtext(expression(bold("(a)")),side=3, line=-0.85, adj=-0.5, cex = 0.75)
 
 # Relative effect plot for SLA
-par(mar=c(4,7.5,1.5,2))
-with(sla.coef, plot(num~Estimate, pch=19, xlab="Relative effect", ylab="", xlim=c(-1.2, 0.5), axes=FALSE, cex=1.2, col="#009E73", ))
+par(mar=c(4,8,1.5,2))
+with(sla.coef, plot(num~Estimate, pch=19, xlab="Relative effect", ylab="", xlim=c(-1.2, 0.4), axes=FALSE, cex=1.2, col="#009E73", , cex.lab=0.8))
 abline(v=0, lwd=2, lty=2, col="gray")
-with(sla.coef, segments(Estimate, num, ub.sla, num, lwd=2, col="#009E73"))
-with(sla.coef, segments(Estimate, num, lb.sla, num, lwd=2, col="#009E73"))
-axis(1)
+with(sla.coef, segments(Estimate, num, ub, num, lwd=2, col="#009E73"))
+with(sla.coef, segments(Estimate, num, lb, num, lwd=2, col="#009E73"))
+axis(1, cex.axis=0.8)
 with(sla.coef, axis(2, at=num, lwd.ticks=0,labels=var, las=1, cex.axis=0.8))
 box()
-mtext(expression(bold("(d)")),side=3, line=-1.3, adj=-0.8, cex = 0.85)
+mtext(expression(bold("(b)")),side=3, line=-0.85, adj=-1.3, cex = 0.75)
 
 
-###### Max. height plots #####
-# Max. height - plotted by life history
+###### Mean. height plots #####
+# Mean. height - plotted by life history
 par(mar=c(4,5,1.5,2.5))
-with(unscaled.lh.div, plot(log(CWM.maxht)~max, pch=19, cex=0.9, col=ifelse(lh=="wood","#543005AA", ifelse(lh=="herb", "#35978FAA","#7FBC41AA")), 
-                           xlab=expression(paste('Max. temp. (',degree,'C)')), ylab=expression(italic("ln")("Max. Height")), 
-                           axes=FALSE, xlim=c(15,65)))
-axis(1, cex.lab=1.5, at=c(15,25,35,45,55,65))
-axis(2, cex.lab=1.5)
-mtext(expression(bold("(e)")),side=3, line=-1.3, adj=-0.35, cex = 0.85)
+with(unscaled.lh.div, plot(log(CWM.mn.ht)~sd, pch=19, cex=0.9, col=ifelse(lh=="wood","#543005AA", ifelse(lh=="herb", "#35978FAA","#7FBC41AA")), 
+                           xlab=expression(paste('SD temp. (',degree,'C)')), ylab=expression(italic("ln")("Mean height")), 
+                           axes=FALSE, xlim=c(5,15), ylim=c(2,7), cex.lab=0.8))
+axis(1, cex.axis=0.8, at=c(5,7,9,11,13,15))
+axis(2, cex.axis=0.8)
+mtext(expression(bold("(c)")),side=3, line=-0.85, adj=-0.5, cex = 0.75)
 
-# Relative effect plot for mxH
-par(mar=c(4,7.5,1.5,2))
-with(mxH.coef, plot(num~Estimate, pch=19, xlab="Relative effect", ylab="", xlim=c(-0.8, 1.7), axes=FALSE, cex=1.2, col="#E69F00"))
+# Relative effect plot for mnH
+par(mar=c(4,8,1.5,2))
+with(mnH.coef, plot(num~Estimate, pch=19, xlab="Relative effect", ylab="", xlim=c(-0.8, 1.8), axes=FALSE, cex=1.2, col="#E69F00", cex.lab=0.8))
 abline(v=0, lwd=2, lty=2, col="gray")
-with(mxH.coef, segments(Estimate, num, ub.mxH, num, lwd=2, col="#E69F00"))
-with(mxH.coef, segments(Estimate, num, lb.mxH, num, lwd=2, col="#E69F00"))
-axis(1)
-with(mxH.coef, axis(2, at=num, lwd.ticks=0,labels=var, las=1, cex.axis=0.8))
+with(mnH.coef, segments(Estimate, num, ub, num, lwd=2, col="#E69F00"))
+with(mnH.coef, segments(Estimate, num, lb, num, lwd=2, col="#E69F00"))
+axis(1, cex.axis=0.8)
+with(mnH.coef, axis(2, at=num, lwd.ticks=0,labels=var, las=1, cex.axis=0.8))
 box()
-mtext(expression(bold("(f)")),side=3, line=-1.3, adj=-0.8, cex = 0.85)
-
-###### Fdis plots #####
-# Fdis - plotted by life history
-par(mar=c(4,5,1.5,2.5))
-with(unscaled.lh.div, plot(fdis~max, pch=19, cex=0.9, col=ifelse(lh=="wood","#543005AA", ifelse(lh=="herb", "#35978FAA","#7FBC41AA")), 
-                           xlab=expression(paste('Max. temp. (',degree,'C)')), ylab="FDis", 
-                           axes=FALSE, xlim=c(15,65)))
-axis(1, cex.lab=1.5, at=c(15,25,35,45,55,65))
-axis(2, cex.lab=1.5)
-mtext(expression(bold("(g)")),side=3, line=-1.3, adj=-0.35, cex = 0.85)
-
-# Relative effect plot for mxH
-par(mar=c(4,7.5,1.5,2))
-with(fdis.coef, plot(num~Estimate, pch=19, xlab="Relative effect", ylab="", xlim=c(-1.7, 1),axes=FALSE, cex=1.2, col="#0072B2"))
-abline(v=0, lwd=2, lty=2, col="gray")
-with(fdis.coef, segments(Estimate, num, ub.fdis, num, lwd=2, col="#0072B2"))
-with(fdis.coef, segments(Estimate, num, lb.fdis, num, lwd=2, col="#0072B2"))
-axis(1, cex.axis=0.9)
-with(fdis.coef, axis(2, at=num, lwd.ticks=0,labels=var, las=1, cex.axis=0.8))
-box()
-mtext(expression(bold("(h)")),side=3, line=-1.3, adj=-0.8, cex = 0.85)
+mtext(expression(bold("(d)")), side=3, line=-0.85, adj=-1.3, cex = 0.75)
 
 dev.off()
+

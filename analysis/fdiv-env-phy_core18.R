@@ -67,25 +67,19 @@ div.calc <- function(c.data){
 }
 
 # Calculate Pearson's r and p-values between microenvironment and topography
-mt.corr <- function(div, micro){
-  output <- c(with(div, cor.test(micro,aspect))$estimate, with(div, cor.test(micro, elev))$estimate, with(div, cor.test(micro, slope))$estimate) 
-  output <- as.data.frame(rbind(output, c(with(div, cor.test(micro, aspect))$p.value, with(div, cor.test(micro, elev))$p.value, with(div, cor.test(micro, slope))$p.value)))
-  colnames(output) <- c("aspect", "elev", "slope")
-  rownames(output) <- c("pearsons.r", "p.value")
+# calculated the corrleation of the first input to all the rest
+all.corr <- function(...){
+  data <- list(...)
+  n <- length(data)
+  output <- matrix(nrow=2, ncol=n-1)
+  for (i in 1:(n-1)){
+    output[,i] <- c(cor.test(data[[1]], data[[i+1]])$estimate, cor.test(data[[1]], data[[i+1]])$p.value)
+  }
+  output <- as.data.frame(output)
+  rownames(output) <- c("pearsons.r", "p-value")
+  colnames
   return(output)
 }
-
-# Calculate Pearson's r and p-values between diversity metrics and microenvironment
-env.corr <- function(div,met){
-  output <- c(with(div, cor.test(met,mean))$estimate, with(div, cor.test(met,sd))$estimate, with(div, cor.test(met,max))$estimate, with(div, cor.test(met,min))$estimate,
-              with(div, cor.test(met, SAND))$estimate, with(div, cor.test(met, SILT))$estimate, with(div, cor.test(met, CLAY))$estimate)
-  output <- as.data.frame(rbind(output, c(with(div, cor.test(met,mean))$p.value, with(div, cor.test(met,sd))$p.value, with(div, cor.test(met,max))$p.value, with(div, cor.test(met,min))$p.value,
-                                          with(div, cor.test(met, SAND))$p.value, with(div, cor.test(met, SILT))$p.value, with(div, cor.test(met, CLAY))$p.value)))
-  colnames(output) <- c("mean", "sd", "max", "min", "sand", "silt", "clay")
-  rownames(output) <- c("pearsons.r", "p.value")
-  return(output)
-}
-
 
 #################################################################################################################
 ### Q1: How does microenvironment (soil temp. and texture) vary across topography (aspect, elevation, slope)? ###
@@ -94,19 +88,29 @@ env.corr <- function(div,met){
 
 env18.core <- env.micro[,c(7:12,14:17)]
 
+### Does temperature correlate with soil texture at all?
+mn.text <- with(env18.core, all.corr(mean, SAND, SILT, CLAY))
+sd.text <- with(env18.core, all.corr(sd, SAND, SILT, CLAY))
+max.text <- with(env18.core, all.corr(max, SAND, SILT, CLAY))
+min.text <- with(env18.core, all.corr(min, SAND, SILT, CLAY))
+
+temp.text <- rbind(mn.text, sd.text, max.text, min.text)
+colnames(temp.text) <- c("Sand", "Silt", "Clay")
+xtable(temp.text, digits=3)
+
 # Because of low replication (25 plots), only have statistical power to do a univariate analysis.
 # So, look at which topo. var. is most correlated with each microenv. var. using Pearson's r
+mn.topo <- with(env18.core, all.corr(mean, aspect, elev, slope))
+sd.topo <- with(env18.core, all.corr(sd, aspect, elev, slope))
+max.topo <- with(env18.core, all.corr(max, aspect, elev, slope))
+min.topo <- with(env18.core, all.corr(min, aspect, elev, slope))
+sand.topo <- with(env18.core, all.corr(SAND, aspect, elev, slope))
+silt.topo <- with(env18.core, all.corr(SILT, aspect, elev, slope))
+clay.topo <- with(env18.core, all.corr(CLAY, aspect, elev, slope))
 
-# Temp. corr. with topo.
-mt.corr(env18.core, env18.core$mean)
-mt.corr(env18.core, env18.core$sd)
-mt.corr(env18.core, env18.core$max)
-mt.corr(env18.core, env18.core$min)
-
-# Texture corr. with topo.
-mt.corr(env18.core, env18.core$SAND)
-mt.corr(env18.core, env18.core$SILT)
-mt.corr(env18.core, env18.core$CLAY)
+env.topo <- rbind(mn.topo, sd.topo, max.topo, min.topo, sand.topo, silt.topo, clay.topo)
+colnames(env.topo) <- c("aspect", "elevation", "slope")
+xtable(env.topo, digits=3)
 
 # Univariate models of how temperature and texture vary across microenvironment
 mn.a <- with(env18.core, lm(mean~aspect))
@@ -115,14 +119,13 @@ sd.a <- with(env18.core, lm(sd~aspect))
 summary(sd.a)
 max.a <- with(env18.core, lm(max~aspect))
 summary(max.a)
-min.e <- with(env18.core, lm(min~elev))
-summary(min.e) # not sig
+min.1 <- with(env18.core, lm(min~1))
+summary(min.1)
 
-# For texture variables, look at elevation
 sand.e <- with(env18.core, lm(SAND~elev))
 summary(sand.e)
-silt.e <- with(env18.core, lm(SILT~elev))
-summary(silt.e) # not sig.
+silt.1 <- with(env18.core, lm(SILT~1))
+summary(silt.1)
 clay.e <- with(env18.core, lm(CLAY~elev))
 summary(clay.e)
 
@@ -200,13 +203,19 @@ core18div <- div.calc(core18cdata)
 # Addtl. note: There is also covariation within temp. and within texture variables
 # --> another good reason to look at one microenvironment variable within each of these categories
 
-## Correlations btn. fdiv and microenv
-env.corr(core18div, log(core18div$CWM.LA))
-env.corr(core18div, log(core18div$CWM.SLA)) 
-env.corr(core18div, core18div$CWM.maxht)
-env.corr(core18div, core18div$CWM.mn.ht)
-env.corr(core18div, core18div$fdis)
-env.corr(core18div, core18div$fdis.two)
+## Correlations btn. fdiv and microenv (but just mean, sd, max, sand, and clay, because these were the ones that correlated with topography)
+# (now the analysis builds on itself!)
+la.env <- with(core18div, all.corr(log(CWM.LA), mean, sd, max, SAND, CLAY))
+sla.env <- with(core18div, all.corr(log(CWM.SLA), mean, sd, max, SAND, CLAY))
+mxH.env <- with(core18div, all.corr(log(CWM.maxht), mean, sd, max, SAND, CLAY))
+mnH.env <- with(core18div, all.corr(log(CWM.mn.ht), mean, sd, max, SAND, CLAY))
+fdis.env <- with(core18div, all.corr(log(fdis), mean, sd, max, SAND, CLAY))
+fdis.two.env <- with(core18div, all.corr(log(fdis.two), mean, sd, max, SAND, CLAY))
+
+fdiv.env <- rbind(la.env, sla.env, mxH.env, mnH.env, fdis.env, fdis.two.env)
+colnames(fdiv.env) <- c("mean", "sd", "max", "sand", "clay")
+xtable(fdiv.env, digits=3)
+
 
 ### CWM of LA
 la <- with(core18div, lm(log(CWM.LA)~mean+CLAY))
@@ -223,31 +232,32 @@ summary(sla.mn)
 anova(sla, sla.mn) # not significant, plot sla.mn
 
 ### CWM of max HT
-mxH <- with(core18div, lm(log(CWM.maxht)~max+CLAY)) 
+mxH <- with(core18div, lm(log(CWM.maxht)~sd+SAND)) 
 summary(mxH)
-mxH.mx <- with(core18div, lm(log(CWM.maxht)~max))
-summary(mxH.mx)
-anova(mxH, mxH.mx) # not significant, plot mxH.mx
+mxH.sd <- with(core18div, lm(log(CWM.maxht)~sd))
+summary(mxH.sd)
+anova(mxH, mxH.sd) # not significant, plot mxH.sd
 
 ### CWM of mean HT
-mnH <- with(core18div, lm(log(CWM.mn.ht)~max+CLAY)) 
+mnH <- with(core18div, lm(log(CWM.mn.ht)~sd+SAND)) 
 summary(mnH)
-mnH.mx <- with(core18div, lm(log(CWM.mn.ht)~max))
-summary(mnH.mx)
-anova(mnH, mnH.mx) # not significant, plot mnH.mx
+mnH.sd <- with(core18div, lm(log(CWM.mn.ht)~sd))
+summary(mnH.sd)
+anova(mnH, mnH.sd) # not significant, plot mnH.mx
 
 ### FDis - with four traits
-fdis.4 <- with(core18div, lm(log(fdis)~max+CLAY)) 
+fdis.4 <- with(core18div, lm(log(fdis)~mean+CLAY)) 
 summary(fdis.4)
-fdis.4.mx <- with(core18div, lm(log(fdis)~max))
-anova(fdis.4, fdis.4.mx) # not significant, plot fdis.4.mx
+fdis.4.mn <- with(core18div, lm(log(fdis)~mean))
+summary(fdis.4.mn)
+anova(fdis.4, fdis.4.mn) # not significant, plot fdis.4.mx
 
 ### FDIS - with just two traits, max.height and LA
-fdis.2 <- with(core18div, lm(log(fdis.two)~max+CLAY))
+fdis.2 <- with(core18div, lm(log(fdis.two)~mean+SAND))
 summary(fdis.2)
-fdis.2.mx <- with(core18div, lm(log(fdis.two)~max))
-summary(fdis.2.mx)
-anova(fdis.2, fdis.2.mx) # not significant, plot fdis.2.mx
+fdis.2.mn <- with(core18div, lm(log(fdis.two)~mean))
+summary(fdis.2.mn)
+anova(fdis.2, fdis.2.mn) # not significant, plot fdis.2.mx
 
 ### FIG. 3 - PLOTTING: how logged mean and variance in function shifts across microenvironment
 jpeg("./analysis/figures/fdiv-env-core18.jpeg", width=7, height=7, unit="in",res=300)
@@ -263,12 +273,12 @@ axis(2, at=c(-3,-1,1,3), cex.lab=1.5)
 legend(4,-2, expression(R^2 ~ "= 0.66, p-value < 0.001"), box.lty=0, bg="transparent", cex = 0.8)
 mtext(expression(bold("(a)")),side=3, line=-2, adj=-0.35, cex = 0.85)
 
-# mxH ~ max
-with(core18div, plot(log(CWM.maxht)~max, pch=19, xlab=expression(paste('Max. temp. (',degree,'C)')), ylab=expression(italic("ln")("Max. Height")), cex=0.9, axes=FALSE, xlim=c(15,65), ylim=c(3,7.3),col="#E69F00")) 
-abline(mxH.mx, lwd=2)
-axis(1, at=c(15,25,35,45,55,65), cex.lab=1.5)
+# mxH ~ sd
+with(core18div, plot(log(CWM.maxht)~sd, pch=19, xlab=expression(paste('SD temp. (',degree,'C)')), ylab=expression(italic("ln")("Max. Height")), cex=0.9, axes=FALSE, xlim=c(5,15),ylim=c(3,7.3),col="#E69F00")) 
+abline(mxH.sd, lwd=2)
+axis(1, at=c(5,7,9,11,13,15),cex.lab=1.5)
 axis(2, at=c(3,4,5,6,7), cex.lab=1.5)
-legend(25,6.5, expression(R^2 ~ "= 0.47, p-value < 0.001"), box.lty=0, bg="transparent", cex = 0.8)
+legend(8,6.5, expression(R^2 ~ "= 0.49, p-value < 0.001"), box.lty=0, bg="transparent", cex = 0.8)
 mtext(expression(bold("(b)")),side=3, line=-2, adj=-0.35, cex = 0.85)
 
 # SLA ~ mean
@@ -279,12 +289,12 @@ axis(2, at=c(2,3,4,5), cex.lab=1.5)
 legend(6.7,4.2, expression(R^2 ~ "= 0.31, p-value = 0.004"), box.lty=0, bg="transparent", cex = 0.8)
 mtext(expression(bold("(c)")),side=3, line=-2, adj=-0.35, cex = 0.85)
 
-# fdis.4 ~ max
-with(core18div, plot(log(fdis)~max, pch=19, xlab=expression(paste('Max. temp. (',degree,'C)')), ylab=expression(italic("ln")("FDis")), cex=0.9, axes=FALSE, xlim=c(15,65), ylim=c(-3,2.3), col="#0072B2")) 
-abline(fdis.4.mx, lwd=2)
-axis(1, at=c(15,25,35,45,55,65), cex.lab=1.5)
+# fdis.4 ~ mean
+with(core18div, plot(log(fdis)~mean, pch=19, xlab=expression(paste('Mean temp. (',degree,'C)')), ylab=expression(italic("ln")("FDis")), cex=0.9, axes=FALSE, xlim=c(4,14), ylim=c(-3,2.3), col="#0072B2")) 
+abline(fdis.4.mn, lwd=2)
+axis(1, cex.lab=1.5)
 axis(2, at=c(-3, -2, -2, -1, 0, 1, 2), cex.lab=1.5)
-legend(25,1, expression(R^2 ~ "= 0.40, p-value < 0.001"), box.lty=0, bg="transparent", cex = 0.8)
+legend(7,1, expression(R^2 ~ "= 0.56, p-value < 0.001"), box.lty=0, bg="transparent", cex = 0.8)
 mtext(expression(bold("(d)")),side=3, line=-2, adj=-0.35, cex = 0.85)
 
 dev.off()
@@ -296,18 +306,18 @@ par(mar=c(4,5,0.1,0.5))
 par(oma=c(1.5,1.5,1.5,1.5))
 
 # mnH ~ mean --> bump to the supplement
-with(core18div, plot(log(CWM.mn.ht)~max, pch=19, xlab=expression(paste('Max. temp. (',degree,'C)')), ylab=expression(italic("ln")("Mean Height")), cex=0.8, cex.lab=0.8,axes=FALSE, xlim=c(15,65), ylim=c(2.9,7.2), col="#E69F00")) 
-abline(mnH.mx, lwd=2)
-axis(1, at=c(15,25,35,45,55,65), cex.axis=0.8)
+with(core18div, plot(log(CWM.mn.ht)~sd, pch=19, xlab=expression(paste('SD temp. (',degree,'C)')), ylab=expression(italic("ln")("Mean Height")), cex=0.8, cex.lab=0.8,axes=FALSE, xlim=c(5,15), ylim=c(2.9,7.2), col="#E69F00")) 
+abline(mnH.sd, lwd=2)
+axis(1, at=c(5,7,9,11,13,15), cex.axis=0.8)
 axis(2, at=c(3,4,5,6,7), cex.axis=0.8)
-legend(25,6, expression(R^2 ~ "= 0.43, p-value < 0.001"), box.lty=0, bg="transparent", cex = 0.6)
+legend(8,6, expression(R^2 ~ "= 0.46, p-value < 0.001"), box.lty=0, bg="transparent", cex = 0.6)
 mtext(expression(bold("(a)")),side=3, line=-1.3, adj=-0.4, cex = 0.85)
 
-with(core18div, plot(log(fdis.two)~max, pch=19, xlab=expression(paste('Max. temp. (',degree,'C)')), ylab=expression(italic("ln")("FDis- 2 tr.")), cex=0.8,cex.lab=0.8, axes=FALSE, xlim=c(15,65), col="#0072B2")) 
-abline(fdis.2.mx, lwd=2)
-axis(1, at=c(15,25,35,45,55,65), cex.axis=0.8)
+with(core18div, plot(log(fdis.two)~mean, pch=19, xlab=expression(paste('Mean temp. (',degree,'C)')), ylab=expression(italic("ln")("FDis- 2 tr.")), cex=0.8,cex.lab=0.8, axes=FALSE, xlim=c(4,14), col="#0072B2")) 
+abline(fdis.2.mn, lwd=2)
+axis(1, cex.axis=0.8)
 axis(2, at=c(-3, -2, -2, -1, 0, 1), cex.axis=0.8)
-legend(25,0.5, expression(R^2 ~ "= 0.41, p-value < 0.001"), box.lty=0, bg="transparent", cex = 0.6)
+legend(7,0.5, expression(R^2 ~ "= 0.56, p-value < 0.001"), box.lty=0, bg="transparent", cex = 0.6)
 mtext(expression(bold("(b)")),side=3, line=-1.3, adj=-0.4, cex = 0.85)
 
 dev.off()
@@ -319,7 +329,7 @@ dev.off()
 # Calculate SESmntd for different values of the phylogenetic weighting parameter (a)
 # where a=0 means all difference is functionally based and a=1 means all differences is phylogenetically based 
 # (this takes a few minutes)
-# subset to species richness, SESmntd, SESmpd, and the value of a
+# subset to species richness, SESmntd and the value of a
 fun.phy.calc <- pez.dispersion(core18cdata, null.model="taxa.labels", abundance=TRUE, traitgram=seq(0,1,0.1))
 fun.phy.s <- with(fun.phy.calc, cbind(ses.mntd.mntd.obs.z, traitgram))
 fun.phy.s <- as.data.frame(fun.phy.s)
@@ -342,41 +352,79 @@ fp.mntd.anova <- with(fun.phy, aov(mntd ~ a.f.p))
 summary(fp.mntd.anova) # no
 
 ### Q3b: Is there a difference in these relationships depending on the degree to which phylogeny is included?
-fp.mntd <- with(fun.phy, lm(mntd~(mean+CLAY+a.f.p)^2, na.action=na.pass))
-fpmntd.dredge <- dredge(fp.mntd, beta="none", rank="AIC")
-summary(model.avg(fpmntd.dredge, subset=delta<4, fit=TRUE)) 
-get.models(fpmntd.dredge, subset = TRUE)
+
+# How the relationship between MNTD and mean temperature changes as the value of a changes
+fp.mn.slope <- matrix(nrow=11, ncol=4)
+for(i in seq_along(unique(fun.phy$a.f.p))){
+  model.mn <- with(fun.phy[fun.phy$a.f.p == unique(fun.phy$a.f.p)[i],], lm(mntd~mean))
+  fp.mn.slope[i,1] <- summary(model.mn)$coefficients[2,1]
+  fp.mn.slope[i,2] <- summary(model.mn)$coefficients[2,4]
+  fp.mn.slope[i,3] <- summary(model.mn)$r.squared
+  fp.mn.slope[i,4] <- summary(model.mn)$fstatistic[1]
+}
+
+fp.mn.slope <- as.data.frame(fp.mn.slope)
+colnames(fp.mn.slope) <- c("slope", "p-value", "r2", "f-statistic_{1,23}" )
+fp.mn.slope$a.f.p <- seq(0,1,0.1)
+xtable(fp.mn.slope, digits=3) #put in the supplement
+
+# Don't plot this because yes it's significant, but this is not a linear normal relationship
+# DOES NOT MEET ASSUMPTIONS OF NORMALITY
+slope.mn.lm <- with(fp.mn.slope, lm(slope~a.f.p))
+
+# How the relationship between MNTD and clay (%) changes as the value of a changes
+fp.c.slope <- matrix(nrow=11, ncol=4)
+for(i in seq_along(unique(fun.phy$a.f.p))){
+  model.c <- with(fun.phy[fun.phy$a.f.p == unique(fun.phy$a.f.p)[i],], lm(mntd~CLAY))
+  fp.c.slope[i,1] <- summary(model.c)$coefficients[2,1]
+  fp.c.slope[i,2] <- summary(model.c)$coefficients[2,4]
+  fp.c.slope[i,3] <- summary(model.c)$r.squared
+  fp.c.slope[i,4] <- summary(model.c)$fstatistic[1]
+}
+
+fp.c.slope <- as.data.frame(fp.c.slope)
+colnames(fp.c.slope) <- c("slope", "p-value", "r2", "f-statistic_{1,23}" )
+fp.c.slope$a.f.p <- seq(0,1,0.1)
+xtable(fp.c.slope, digits=3) #put in the supplement
+
+# Don't plot this because yes it's significant, but this is not a linear normal relationship
+# DOES NOT MEET ASSUMPTIONS OF NORMALITY
+slope.c.lm <- with(fp.c.slope, lm(slope~a.f.p))
+# THE SLOPES ARE NOT SIGNIFICANT BUT THE RELATIONSHIP BETWEEEN THEM AND A is...
 
 # FIG 4 - PLOTTING
 ub <- with(mean.fp, as.vector(mean.mntd+se.mntd))
 lb <- with(mean.fp, as.vector(mean.mntd-se.mntd))
 
-svg("./analysis/figures/funct-phy-core18-raw.svg", width=9.5, height=3)
+svg("./analysis/figures/funct-phy-core18-raw.svg", width=10, height=2.7)
 par(mfrow=c(1,4))
 par(mar=c(4,5,0.1,0.5))
 par(oma=c(1.5,1.5,1.5,1.5))
 
-with(mean.fp, plot(mean.mntd~a, ylim=c(-1.3, -0.3), pch=19, col=brewer.pal(11,"BrBG")[11:1], axes=FALSE, 
+# how the value of mntd changes across a as different amounts of function and phylogeny are included
+with(mean.fp, plot(mean.mntd~a, ylim=c(-1.3, -0.5), pch=19, col=brewer.pal(11,"BrBG")[11:1], axes=FALSE, 
                    ylab=expression("Mean SES"[MNTD]), xlab=expression(italic("a"))))
 with(mean.fp, points(mean.mntd~a, cex=1.2))
 axis(1)
 axis(2, at=c(-1.3, -1.1, -0.9, -0.7, -0.5))
 segments(mean.fp$a, ub, mean.fp$a, lb)
-mtext(expression(bold("(a)")),side=3, line=-2, adj=-0.42, cex = 0.75)
+mtext(expression(bold("(a)")),side=3, line=-0.5, adj=-0.42, cex = 0.8)
 
-# How does functional diversity change across environment 
-with(fun.phy, plot(mntd~mean, col=brewer.pal(11, "BrBG")[11:1][as.factor(a.f.p)], xlim=c(4,14), ylim=c(-3,4.3), 
-                   pch=19, axes=FALSE, xlab=expression(paste('Mean temp. (',degree,'C)')), ylab=expression(SES[MNTD])))
+# across mean
+with(fp.mn.slope, plot(slope~a.f.p, pch=19, col=brewer.pal(11,"BrBG")[11:1], axes=FALSE, ylim=c(-0.40, -0.10),
+                         ylab=expression(paste('Slope('~SES[MNTD]~'~ mean temp.)')), xlab=expression(italic(a))))
+with(fp.mn.slope, points(slope~a.f.p, cex=1.2))
 axis(1)
-axis(2, at=c(-3,-1,1,3))
-mtext(expression(bold("(b)")),side=3, line=-2, adj=-0.42, cex = 0.75)
+axis(2, at=c(-0.4, -0.3, -0.2, -0.1))
+mtext(expression(bold("(b)")),side=3, line=-0.5, adj=-0.42, cex = 0.8)
 
 # across clay
-with(fun.phy, plot(mntd~CLAY, col=brewer.pal(11, "BrBG")[11:1][as.factor(a.f.p)], xlim=c(0,30), ylim=c(-3, 4.3),
-                   pch=19, axes=FALSE, xlab="Clay (%)", ylab=expression(SES[MNTD])))
+with(fp.c.slope, plot(slope~a.f.p, pch=19, col=brewer.pal(11,"BrBG")[11:1], axes=FALSE, ylim=c(0.014, 0.026),
+                       ylab=expression(paste('Slope('~SES[MNTD]~'~ % clay)')), xlab=expression(italic(a))))
+with(fp.c.slope, points(slope~a.f.p, cex=1.2))
 axis(1)
-axis(2, at=c(-3,-1,1,3))
-mtext(expression(bold("(c)")),side=3, line=-2, adj=-0.42, cex = 0.75)
+axis(2, at=c(0.014, 0.018, 0.022, 0.026))
+mtext(expression(bold("(c)")),side=3, line=-0.5, adj=-0.42, cex = 0.8)
 
 par(pin=c(0.07,0.7))
 image(1, unique(fun.phy$a.f.p), t(seq_along(unique(fun.phy$a.f.p))), col=brewer.pal(11, "BrBG")[11:1], axes=FALSE, xlab="", ylab="")

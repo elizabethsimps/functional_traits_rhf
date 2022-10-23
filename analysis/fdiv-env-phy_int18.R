@@ -20,43 +20,37 @@ rownames(int.env) <- env$plot_id
 int.tree <- congeneric.merge(tree, colnames(int.comm), split = " ")
 
 # Make comparative community object and calculate diversity metrics from that
-int.div <- div.calc(int.tree, int.comm, traits, int.env)
-
+int.cdata <- comparative.comm(int.tree, int.comm, traits, int.env)
+int.div <- div.calc(int.cdata)
 #################
-### Functions ###
-int.corr <- function(div,met){
-  output <- c(with(div, cor.test(met,aspect))$estimate, with(div, cor.test(met,elev))$estimate, with(div, cor.test(met,slope))$estimate,
-              with(div, cor.test(met, SAND))$estimate, with(div, cor.test(met, SILT))$estimate, with(div, cor.test(met, CLAY))$estimate)
-  output <- as.data.frame(rbind(output, c(with(div, cor.test(met,aspect))$p.value, with(div, cor.test(met,elev))$p.value, with(div, cor.test(met,slope))$p.value, 
-                                          with(div, cor.test(met, SAND))$p.value, with(div, cor.test(met, SILT))$p.value, with(div, cor.test(met, CLAY))$p.value)))
-  colnames(output) <- c("aspect", "elev", "slope", "sand", "silt", "clay")
-  rownames(output) <- c("pearsons.r", "p.value")
-  return(output)
-}
 
 ###################################################################
 # How does microenvironment vary across topography?
 # for 2018 intesified plots (76 total) can look at each texture component across topography
+int.sand <- with(int.div, lm(SAND~aspect+elev+slope))
+int.sand.e <- with(int.div, lm(SAND~elev))
+anova(int.sand, int.sand.e) # not sig. plot int.sand.e
+summary(int.sand.e)
 
-int.sand <- with(int.div, lm(SAND~aspect+elev+slope)) # varies across elevation
-int.sand.e <- with(int.div, lm(SAND~elev)) # intercept not sig.
+int.silt <- with(int.div, lm(SILT~aspect+elev+slope))
+# only intercept sig.
 
-int.silt <- with(int.div, lm(SILT~aspect+elev+slope)) # just intercept
-int.silt.1 <- with(int.div, lm(SILT~1))
-
-int.clay <- with(int.div, lm(CLAY~aspect+elev+slope)) # varies across elevation
+int.clay <- with(int.div, lm(CLAY~aspect+elev+slope))
 int.clay.e <- with(int.div, lm(CLAY~elev))
+anova(int.clay, int.clay.e) # not sig. plot int.clay.e
+summary(int.clay.e)
 
 # FOR SUPPLEMENT - plot just the intensified clay / sand /silt figure and the soil texture triangle for all 76 plots
 # Plotting changes in texture across environment plus the USDA texture triangle for all 76 plots 
-jpeg("./analysis/figures/supp-env-int.jpeg", width=7, height=3.5, unit="in",res=300)
+jpeg("./analysis/figures/SUPP-env-int.jpeg", width=7, height=3.5, unit="in",res=300)
 par(mfrow=c(1,2))
 par(mar=c(5,5,0.5,0.5))
 par(oma=c(1,1,1,1))
 
-with(int.div, plot(SAND~elev, pch=19, xlab="Elevation (m.s.l.)", ylab= "Soil component (%)", cex=0.6, cex.lab=0.8, axes=FALSE, col="goldenrod3", xlim=c(1700,2100), ylim=c(0,80)))
+with(int.div, plot(SILT~elev, pch=19, xlab="Elevation (m.s.l.)", ylab= "Soil component (%)", cex=0.6, cex.lab=0.8, axes=FALSE, col="gray", xlim=c(1700,2100), ylim=c(0,80)))
+with(int.div, points(SAND~elev, pch=19, cex=0.6, col="goldenrod3"))
 abline(int.sand.e, lwd=3, col="goldenrod3")
-with(int.div, points(CLAY~elev, pch=19, cex=0.7, col="sienna"))
+with(int.div, points(CLAY~elev, pch=19, cex=0.6, col="sienna"))
 abline(int.clay.e, lwd=3, col="sienna")
 axis(1, cex.axis=0.8)
 axis(2, cex.axis=0.8)
@@ -74,26 +68,25 @@ dev.off()
 ### How do functional does functional dispersion and the community weighted mean of the traits vary across topography and texture at intensified plots?
 
 ### CWM of LA
-int.la.cor <- int.corr(int.div, log(int.div$CWM.LA))
-
-int.la <- with(int.div, lm(log(CWM.LA)~aspect+elev+slope+SAND+SILT)) # aspect
-int.la.a <- with(int.div, lm(log(CWM.LA)~aspect)) 
-anova(int.la, int.la.a) # not sig. plot int.sla.a -> supp fig
+int.la <- with(int.div, lm(log(CWM.LA)~(aspect+elev+slope)*CLAY)) # aspect
+summary(int.la)
+int.la.a <- with(int.div, lm(log(CWM.LA)~aspect))
+summary(int.la.a)
+anova(int.la, int.la.a) # not sig. plot int.sla.a -> supp fig.
 
 ### CWM of SLA 
-int.sla.cor <- int.corr(int.div, log(int.div$CWM.SLA))
-
-int.sla <- with(int.div, lm(log(CWM.SLA)~aspect+elev+slope+SAND+SILT)) # aspect
+int.sla <- with(int.div, lm(log(CWM.SLA)~(aspect+elev+slope)*CLAY)) # aspect + slope, but slope doesn't stay sig when other factors drop out
+summary(int.sla)
 int.sla.a <- with(int.div, lm(log(CWM.SLA)~aspect))
-anova(int.sla, int.sla.a) # not sig. plot int.sla.a -> supp fig
+summary(int.sla.as)
+anova(int.sla, int.sla.a) # not sig. plot int.sla.a -> supp fig.
 
 ### CWM of max HT
-int.mxH.cor <- int.corr(int.div, int.div$CWM.maxht)
-
-int.mxH <- with(int.div, lm(CWM.maxht~aspect+elev+slope+SILT+CLAY)) # aspect and elev
-int.mxH.ae <- with(int.div, lm(CWM.maxht~aspect+elev))
-anova(int.mxH, int.mxH.ae) # not sig, do simpler model -> supp table
-xtable(int.mxH.ae, digits = 3)
+int.mxH <- with(int.div, lm(log(CWM.maxht)~(aspect+elev+slope)*SAND)) # not sig at this complexity
+summary(int.mxH)
+int.mxH.a <- with(int.div, lm(log(CWM.maxht)~aspect)) 
+summary(int.mxH.a)
+anova(int.mxH, int.mxH.a) # not sig, do simpler model -> supp fig.
 
 ### CWM of mean HT
 int.mnH.cor <- int.corr(int.div, int.div$CWM.mn.ht)
