@@ -137,7 +137,6 @@ colnames(sla.coef)[colnames(sla.coef)=="Std. Error"] <- "se"
 sla.coef <- as.data.frame(sla.coef[,1:2])
 sla.coef <- sla.coef[c(1,2,3,7,4,5,6),]
 
-
 sla.coef$var <- c("An./bn. [ref.]", "Herb.", "Woody", "An./bn. x Clay [ref.]", "An./bn. x Mean t. [ref.]", "Herb. x Mean t.", "Woody x Mean t.")
 sla.coef$num <- seq(7,1,-1)
 sla.coef$ub <- with(sla.coef, as.vector(Estimate+se))
@@ -279,7 +278,6 @@ par(mfrow=c(2,2))
 par(oma=c(1,1,1,1))
 
 ###### SLA plots #####
-
 # SLA - plotted by life history
 par(mar=c(4,5,1.5,2.5))
 with(unscaled.lh.div, plot(log(CWM.SLA)~mean, pch=19, cex=0.9, col=ifelse(lh=="wood","#543005AA", ifelse(lh=="herb", "#35978FAA","#7FBC41AA")), 
@@ -300,7 +298,6 @@ axis(1, cex.axis=0.8)
 with(sla.coef, axis(2, at=num, lwd.ticks=0,labels=var, las=1, cex.axis=0.8))
 box()
 mtext(expression(bold("(b)")),side=3, line=-0.85, adj=-1.3, cex = 0.75)
-
 
 ###### Mean. height plots #####
 # Mean. height - plotted by life history
@@ -324,4 +321,3 @@ box()
 mtext(expression(bold("(d)")), side=3, line=-0.85, adj=-1.3, cex = 0.75)
 
 dev.off()
-

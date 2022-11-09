@@ -270,7 +270,7 @@ with(core18div, plot(log(CWM.LA)~mean, pch=19, xlab=expression(paste('Mean temp.
 abline(la.mn, lwd=2)
 axis(1, cex.lab=1.5)
 axis(2, at=c(-3,-1,1,3), cex.lab=1.5)
-legend(4,-2, expression(R^2 ~ "= 0.66, p-value < 0.001"), box.lty=0, bg="transparent", cex = 0.8)
+legend(4,-2, expression(R^2 ~ "= 0.68, p-value < 0.001"), box.lty=0, bg="transparent", cex = 0.8)
 mtext(expression(bold("(a)")),side=3, line=-2, adj=-0.35, cex = 0.85)
 
 # mxH ~ sd
@@ -286,7 +286,7 @@ with(core18div, plot(log(CWM.SLA)~mean, pch=19, xlab=expression(paste('Mean temp
 abline(sla.mn, lwd=2)
 axis(1, cex.lab=1.5)
 axis(2, at=c(2,3,4,5), cex.lab=1.5)
-legend(6.7,4.2, expression(R^2 ~ "= 0.31, p-value = 0.004"), box.lty=0, bg="transparent", cex = 0.8)
+legend(6.7,4.2, expression(R^2 ~ "= 0.29, p-value = 0.005"), box.lty=0, bg="transparent", cex = 0.8)
 mtext(expression(bold("(c)")),side=3, line=-2, adj=-0.35, cex = 0.85)
 
 # fdis.4 ~ mean
@@ -366,11 +366,7 @@ for(i in seq_along(unique(fun.phy$a.f.p))){
 fp.mn.slope <- as.data.frame(fp.mn.slope)
 colnames(fp.mn.slope) <- c("slope", "p-value", "r2", "f-statistic_{1,23}" )
 fp.mn.slope$a.f.p <- seq(0,1,0.1)
-xtable(fp.mn.slope, digits=3) #put in the supplement
-
-# Don't plot this because yes it's significant, but this is not a linear normal relationship
-# DOES NOT MEET ASSUMPTIONS OF NORMALITY
-slope.mn.lm <- with(fp.mn.slope, lm(slope~a.f.p))
+xtable(fp.mn.slope, digits=3)
 
 # How the relationship between MNTD and clay (%) changes as the value of a changes
 fp.c.slope <- matrix(nrow=11, ncol=4)
@@ -381,16 +377,10 @@ for(i in seq_along(unique(fun.phy$a.f.p))){
   fp.c.slope[i,3] <- summary(model.c)$r.squared
   fp.c.slope[i,4] <- summary(model.c)$fstatistic[1]
 }
-
 fp.c.slope <- as.data.frame(fp.c.slope)
 colnames(fp.c.slope) <- c("slope", "p-value", "r2", "f-statistic_{1,23}" )
 fp.c.slope$a.f.p <- seq(0,1,0.1)
-xtable(fp.c.slope, digits=3) #put in the supplement
-
-# Don't plot this because yes it's significant, but this is not a linear normal relationship
-# DOES NOT MEET ASSUMPTIONS OF NORMALITY
-slope.c.lm <- with(fp.c.slope, lm(slope~a.f.p))
-# THE SLOPES ARE NOT SIGNIFICANT BUT THE RELATIONSHIP BETWEEEN THEM AND A is...
+xtable(fp.c.slope, digits=3)
 
 # FIG 4 - PLOTTING
 ub <- with(mean.fp, as.vector(mean.mntd+se.mntd))
@@ -419,11 +409,11 @@ axis(2, at=c(-0.4, -0.3, -0.2, -0.1))
 mtext(expression(bold("(b)")),side=3, line=-0.5, adj=-0.42, cex = 0.8)
 
 # across clay
-with(fp.c.slope, plot(slope~a.f.p, pch=19, col=brewer.pal(11,"BrBG")[11:1], axes=FALSE, ylim=c(0.014, 0.026),
+with(fp.c.slope, plot(slope~a.f.p, pch=19, col=brewer.pal(11,"BrBG")[11:1], axes=FALSE, ylim=c(-0.0005, 0.0205),
                        ylab=expression(paste('Slope('~SES[MNTD]~'~ % clay)')), xlab=expression(italic(a))))
 with(fp.c.slope, points(slope~a.f.p, cex=1.2))
 axis(1)
-axis(2, at=c(0.014, 0.018, 0.022, 0.026))
+axis(2, at=c(0, 0.01, 0.02))
 mtext(expression(bold("(c)")),side=3, line=-0.5, adj=-0.42, cex = 0.8)
 
 par(pin=c(0.07,0.7))

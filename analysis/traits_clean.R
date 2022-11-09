@@ -1,12 +1,15 @@
 ### Clean & combine all trait data into one data set ###
 ### Elizabeth Simpson 2021-03-24 ######################
 
-# Uncomment to set wd
-# setwd("~/Documents/projects/functional_traits_rhf")
+# Uncomment to set working directory
+setwd("~/Documents/projects/functional_traits_rhf")
 
 library("plyr")
 
-# EQ. to convert pixels to mm: pixels/(DPI:inch/pixels)*25.3mm/inch
+#############
+# FUNCTIONS #
+#############
+# Convert pixels to mm: pixels/(DPI:inch/pixels)*25.3mm/inch
 pix2mm <- function(pixels, DPI){
   mm.out <- NA
   for(i in seq_along(pixels)){
@@ -15,7 +18,10 @@ pix2mm <- function(pixels, DPI){
   return(mm.out)
 }
 
-### lOAD LEAF & HEIGHT DATA ###
+#############
+# LOAD DATA #
+#############
+
 # Leaf area - old scanner - 300 dpi
 LA.os <- rbind(read.delim("./analysis/stalkless-EGS/rhf_old_scan_just-mean/statistics.txt"),
                read.delim("./analysis/stalkless-EGS/rhf_old_scan_plus-sd/statistics.txt"),
@@ -40,18 +46,14 @@ col.notes <- read.csv("./raw_data/trait-collection-notes.csv", as.is=TRUE)
 # Filter collection notes to only those that processed the leaves and petioles properly
 col.notes.Y <- col.notes[col.notes$process.leaves.pets=="Y",]
 
-##############################
-### LEAVES - SLA, LA, odw ###
-##############################
+##############
+# CLEAN DATA #
+##############
 
-#####################################
-### LEAF AREA : Clean and combine ###
-# Convert surface.area pixels to mm
+### LEAF AREA
+# Convert surface.area pixels to mm - convert any other columns of interest to mm too
 LA.os$sa.mm <- pix2mm(LA.os$surface.area, 300)
 LA.ns$sa.mm <- pix2mm(LA.ns$surface.area, 600)
-
-#*#
-# CONVERT ANY OTHER COLUMNS THAT YOU DECIDE TO USE TO mm #
 
 # combine them
 area.stat <- rbind(LA.os, LA.ns)
@@ -79,10 +81,8 @@ area.indv <- as.data.frame(with(area.stat, tapply(sa.mm, sum.name, sum)))
 area.indv$indv <- row.names(area.indv)
 colnames(area.indv) <- c("t_sa", "indv")
 
-######################################################
-### LEAF MASS : Clean and combine (with leaf area) ###
-
-# Combine 2018 + 2019 leaf mass, trip to columns: N_leaves, Species, Bag_label [=indv], Leaf_mass_g, Petiole_mass_g
+### LEAF MASS
+# Combine 2018 + 2019 leaf mass data, columns: N_leaves, Species, Bag_label [=indv], Leaf_mass_g, Petiole_mass_g
 odw <- rbind(mass18[,c(4:6,9:10)], mass19[,c(4:5,7,11:12)]) # oven dry weight
 
 # Give each individual a unique code
@@ -101,7 +101,7 @@ for (i in seq_len(nrow(odw))){
   }
 }
 
-# DECISION --> Combine petiole and leaf mass into total mass
+# Combine petiole and leaf mass into total mass
 odw$t_mass <- NA
 for(i in seq_len(nrow(odw))){
   odw$t_mass[i]<- with(odw, Leaf_mass_g[i]+Petiole_mass_g[i])
@@ -115,7 +115,7 @@ odw.indv <- cbind(species, N_leaves, t_mass)
 odw.indv$indv <- rownames(odw.indv)
 colnames(odw.indv) <- c("species", "N_leaves", "t_mass", "indv")
 
-# Put all the leaf traits together and calculate SLA for all INDIVIDUALS
+### Combine all leaf data and CALCULATE SLA
 sla.indv <- merge(odw.indv, area.indv, by.x="indv", by.y="indv")
 
 sla.indv$i_mass <- NA
@@ -128,15 +128,15 @@ for(i in seq_len(nrow(sla.indv))){
   sla.indv$i_sla[i] <-with(sla.indv, i_sa[i]/i_mass[i])
 }
 
-# DECISION - Filter to only be the best collection for each species
+# Filter to only be the best collection for each species
 # need to remove letter off the end of each indv id to aggregate to species
 sla.indv$col.id <- NA
 for (i in seq_len(nrow(sla.indv))){
     sla.indv$col.id[i] <- substr(sla.indv$indv[i], start=1,stop=nchar(sla.indv$indv[i])-1)
 }
 
-# subset species by chosen best collection from the collection notes
-sla.indv.bc <- sla.indv[sla.indv$col.id %in% col.notes$leaf_col_analyze,]
+# subset species by chosen best collection and good leaf scans from the collection notes
+sla.indv.bc <- sla.indv[sla.indv$col.id %in% col.notes.Y$leaf_col_analyze,]
 
 # Summarize leaf traits (mean and variation) for each species based on number of observations for each species
 sla.mean <- as.data.frame(with(sla.indv.bc, tapply(i_sla, species, mean)))
@@ -151,7 +151,7 @@ mean.N <- as.data.frame(with(sla.indv.bc, tapply(N_leaves, species, mean)))
 leaf.traits <- cbind(sla.mean, la.mean, odw.mean, sla.sd, la.sd, odw.sd, total.N, mean.N)
 colnames(leaf.traits) <- c("sla.m", "la.m", "odw.m", "sla.sd", "la.sd", "odw.sd", "N.total", "N.m")
 
-# DECISION: calculate variation in traits based on total number of leaves measured
+# Calculate variation in traits based on total number of leaves measured
 # (Instead of mean number of leaves collected from each individual)
 leaf.traits$sla.se <- NA
 leaf.traits$la.se <- NA
@@ -164,19 +164,13 @@ for(i in seq_len(nrow(leaf.traits))){
 }
 
 leaf.traits <- leaf.traits[,c(1:3,9:11)] # Cut out SD and N info
-leaf.traits <- na.omit(leaf.traits) #only removes one species right now, for 137 sp. total
+leaf.traits <- na.omit(leaf.traits) # 123 sp. total
 
-##############
-### HEIGHT ###
-##############
-
+### HEIGHT
 # Making RHF height data long form - from Will Pearse, 2018-10-29 #
 # Combining 2018-2019 height data - Elizabeth Simpson,  2019-07-31
 
-########################
-### 2018 Height Data ###
-
-# Magic matrix --> numeric conversion trick
+# 2018 data
 subset <- t(as.matrix(ht18[,-1:-7]))
 heights <- as.numeric(subset)
 
@@ -190,8 +184,7 @@ expanded.ht18 <- na.omit(expanded.ht18)
 expanded.ht18 <- expanded.ht18[,-7]
 rownames(expanded.ht18) <- seq_along(1:nrow(expanded.ht18))
 
-# load in 2019 data (recorded in long form), match columns to 2018 data
-
+# 2019 data (recorded in long form), match columns to 2018 data
 ht19 <- ht19[,1:7]
 colnames(ht19)[7] <- "height"
 
@@ -216,24 +209,11 @@ for(i in seq_len(nrow(ht.traits))){
 ht.traits <- ht.traits[,c(1:2,5)] # remove sd and N info
 ht.traits <- na.omit(ht.traits) # removes 7 species for 131 species total
 
-#############################################
-### PUT ALL THE LEAF & HT traits together ###
-#############################################
-
+##############################
+### COMBINE & EXPORT DATA ###
+#############################
 leaf.traits$species <- rownames(leaf.traits)
 ht.traits$species <- rownames(ht.traits)
 
 all.traits <- merge(leaf.traits, ht.traits, by.x="species", by.y="species")
-
-# Add in CATEGORICAL TRAITS - gleaned from Vascular Plants of Northern Utah and IMB following Perez-Harguindeguy et al. 2013
-# only look at life history, growth form, dispersal syndrome, dispersal type, hybridization(Y/N), and origin for now
-# need to go through growth form and get more specific too
-
-#write.csv(all.traits$species, "./clean_data/cat_traits_names.csv")
-
-#cat.traits <- read.csv("./clean_data/cat_traits_rhf.csv", as.is=TRUE)
-#cat.traits <- cat.traits[,1:7]
-
-#all.traits <- merge(all.traits, cat.traits, by.x="species", by.y="species")
-
 write.csv(all.traits, "./clean_data/clean_traits_rhf.csv")
