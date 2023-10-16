@@ -1,7 +1,7 @@
 # Microenvironment at core RHF plots: soil temp (2017-18 and 2018-19), texture, & terrain
 # Elizabeth Simpson # 2019-07-29 | 2021-1-25
-# Set working directory
-# setwd("~/Documents/projects/functional_traits_rhf")
+
+### Set working directory to the location of functional_traits_rhf folder
 
 library(soiltexture)
 library(lubridate)

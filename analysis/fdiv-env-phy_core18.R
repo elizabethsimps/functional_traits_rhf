@@ -2,7 +2,7 @@
 # Elizabeth Simpson # 2021-03-25
 # Uses code from Will Pearse to get comparative.comm set up
 
-setwd("~/Documents/projects/functional_traits_rhf") # uncomment to set working directory
+### Set working directory to the location of functional_traits_rhf folder
 
 ###############
 ### HEADERS ###

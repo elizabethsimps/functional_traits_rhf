@@ -1,7 +1,8 @@
 # Assessing how categorization of species by life histories affects FT~env analysis
 # Elizabeth Simpson
 # 2022-08-08
-source("~/Documents/projects/functional_traits_rhf/analysis/fdiv-env-phy_core18.R")
+
+### Set working directory to the location of functional_traits_rhf folder
 
 ########################################################################################################################################
 ### Sub-Q2: Do species that use a particular life history strategy --- woody perennial, herbaceous perennial, or annual/biennial --- ###

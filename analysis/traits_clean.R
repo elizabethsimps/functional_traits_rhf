@@ -1,10 +1,9 @@
 ### Clean & combine all trait data into one data set ###
 ### Elizabeth Simpson 2021-03-24 ######################
 
-# Uncomment to set working directory
-setwd("~/Documents/projects/functional_traits_rhf")
+### Set working directory to the location of functional_traits_rhf folder
 
-library("plyr")
+library(plyr)
 
 #############
 # FUNCTIONS #
