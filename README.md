@@ -1,6 +1,6 @@
 # functional_traits_rhf
 
-The raw functional trait data, metadata, and analysis for vegetation plots near Right Hand Fork, Logan, UT, USA to reproduce analyses for the paper titled "Variation in near-surface soil temperature drives plant assemblage insurance potential" by Elizabeth G. Simpson, Ian Fraser, Hillary Woolf, and William D. Pearse
+This repository includes raw functional trait data, metadata, and analysis for vegetation plots near Right Hand Fork, Logan, UT, USA to reproduce analyses for the paper titled "Variation in near-surface soil temperature drives plant assemblage insurance potential" by Elizabeth G. Simpson, Ian Fraser, Hillary Woolf, and William D. Pearse
 
 This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 
